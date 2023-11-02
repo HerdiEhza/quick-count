@@ -13,7 +13,7 @@ class PerolehanSuaraPartaiSeeder extends Seeder
     public function run(): void
     {
         PerolehanSuaraPartai::factory()
-            ->count(10000)
+            ->count(17262)
             ->create();
     }
 }

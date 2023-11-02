@@ -1,5 +1,6 @@
 <div>
-    {{-- Care about people's approval and you will be their prisoner. --}}
+    {{-- If you look to others for fulfillment, you will never truly be fulfilled. --}}
+
     <div class="grid grid-cols-4 gap-4 p-4">
         @foreach ($partais as $partai)
         <ul>

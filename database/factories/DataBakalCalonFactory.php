@@ -24,8 +24,10 @@ class DataBakalCalonFactory extends Factory
     {
         return [
             'nama_bakal_calon' => $this->faker->name(),
-            'data_partai_id' => \App\Models\DataPartai::factory(),
-            'data_dapil_id' => \App\Models\DataDapil::factory(),
+            'data_partai_id' => $this->faker->numberBetween(1, 20),
+            'data_dapil_id' => $this->faker->numberBetween(1, 5),
+            // 'data_partai_id' => \App\Models\DataPartai::factory(),
+            // 'data_dapil_id' => \App\Models\DataDapil::factory(),
         ];
     }
 }

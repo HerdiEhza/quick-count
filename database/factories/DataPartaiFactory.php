@@ -23,7 +23,7 @@ class DataPartaiFactory extends Factory
     public function definition(): array
     {
         return [
-            'nama_partai' => $this->faker->text(9),
+            'nama_partai' => $this->faker->lexify('Partai '.$this->faker->city()),
             'logo_partai' => $this->faker->imageUrl(),
         ];
     }

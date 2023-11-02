@@ -24,8 +24,10 @@ class PerolehanSuaraBacalegFactory extends Factory
     {
         return [
             'suara' => $this->faker->numberBetween(25, 39),
-            'perolehan_suara_id' => \App\Models\PerolehanSuara::factory(),
-            'data_bakal_calon_id' => \App\Models\DataBakalCalon::factory(),
+            'perolehan_suara_id' => $this->faker->numberBetween(1, 200),
+            'data_bakal_calon_id' => $this->faker->numberBetween(1, 800),
+            // 'perolehan_suara_id' => \App\Models\PerolehanSuara::factory(),
+            // 'data_bakal_calon_id' => \App\Models\DataBakalCalon::factory(),
         ];
     }
 }

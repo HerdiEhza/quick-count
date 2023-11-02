@@ -23,7 +23,7 @@ class DataTpsFactory extends Factory
     public function definition(): array
     {
         return [
-            'nama_tps' => $this->faker->text(5),
+            'nama_tps' => $this->faker->lexify('TPS-##'),
             'alamat_tps' => $this->faker->address(),
             'jumlah_dpt' => $this->faker->numberBetween(25, 39),
             'wilayah_provinsi_id' => \App\Models\WilayahProvinsi::factory(),

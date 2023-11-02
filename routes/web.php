@@ -15,7 +15,16 @@ use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'welcome');
 
-Route::get('/test', \App\Livewire\Dashboard::class);
+Route::get('/dashboard/qc', \App\Livewire\Dashboard::class)
+    ->middleware(['auth'])
+    ->name('dashboard.qc');
+Route::get('/dashboard/qc/detail/{caleg}', \App\Livewire\Dashboard::class)
+    ->middleware(['auth'])
+    ->name('dashboard.qc.detail');
+
+Route::get('/qc/input-suara', \App\Livewire\QuickCount\InputSuara::class)
+    ->middleware(['auth'])
+    ->name('qc.input-suara');
 
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])

@@ -13,7 +13,7 @@ class DataBakalCalonSeeder extends Seeder
     public function run(): void
     {
         DataBakalCalon::factory()
-            ->count(67)
+            ->count(800)
             ->create();
     }
 }

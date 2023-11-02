@@ -14,21 +14,22 @@ class Dashboard extends Component
     public function render()
     {
         $partais = DataPartai::
+        select(['id','nama_partai','logo_partai'])
         // with([
         //     'perolehanSuaraPartais' => function (Builder $query) {
         //         $query->withSum('suara as total_suara_partai', );
         //     },
         // ])
-        with([
+        ->with([
             'dataBakalCalons'=> function (Builder $query) {
-                    $query->withSum('perolehanSuaraBacalegs as total_suara_bacaleg', 'suara');
+                    $query->select(['id','data_partai_id','nama_bakal_calon'])->withSum('perolehanSuaraBacalegs as total_suara_bacaleg', 'suara');
                 },
             ])
         ->withSum('perolehanSuaraPartais as total_suara_partai', 'suara')
         ->get();
 
-        $suaras = PerolehanSuara::with('perolehanSuaraPartais')->get();
+        // $suaras = PerolehanSuara::with('perolehanSuaraPartais')->get();
 
-        return view('livewire.dashboard', compact('partais', 'suaras'));
+        return view('livewire.dashboard', compact('partais'));
     }
 }

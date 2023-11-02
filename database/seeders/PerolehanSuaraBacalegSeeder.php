@@ -13,7 +13,7 @@ class PerolehanSuaraBacalegSeeder extends Seeder
     public function run(): void
     {
         PerolehanSuaraBacaleg::factory()
-            ->count(10000)
+            ->count(17262)
             ->create();
     }
 }

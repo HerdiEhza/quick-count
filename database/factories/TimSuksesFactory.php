@@ -23,7 +23,7 @@ class TimSuksesFactory extends Factory
     public function definition(): array
     {
         return [
-            'nomor_ktp' => $this->faker->creditCardNumber(),
+            'nomor_ktp' => $this->faker->nik(),
             'nomor_hp' => $this->faker->phoneNumber(),
             'nama' => $this->faker->name(),
             'is_out_range' => $this->faker->boolean(),

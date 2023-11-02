@@ -24,8 +24,10 @@ class PerolehanSuaraPartaiFactory extends Factory
     {
         return [
             'suara' => $this->faker->numberBetween(25, 39),
-            'perolehan_suara_id' => \App\Models\PerolehanSuara::factory(),
-            'data_partai_id' => \App\Models\DataPartai::factory(),
+            'perolehan_suara_id' => $this->faker->numberBetween(1, 200),
+            'data_partai_id' => $this->faker->numberBetween(1, 20),
+            // 'perolehan_suara_id' => \App\Models\PerolehanSuara::factory(),
+            // 'data_partai_id' => \App\Models\DataPartai::factory(),
         ];
     }
 }
