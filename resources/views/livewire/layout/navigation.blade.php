@@ -35,10 +35,19 @@ new class extends Component
                         {{ __('Dashboard') }}
                     </x-nav-link>
                     <x-nav-link :href="route('dashboard.qc')" :active="request()->routeIs('dashboard.qc')" wire:navigate>
-                        {{ __('Dashboard QC') }}
+                        {{ __('QC Dashboard') }}
                     </x-nav-link>
                     <x-nav-link :href="route('qc.input-suara')" :active="request()->routeIs('qc.input-suara')" wire:navigate>
-                        {{ __('qc.input-suara') }}
+                        {{ __('QC Input Suara') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('timses.dashboard')" :active="request()->routeIs('timses.dashboard')" wire:navigate>
+                        {{ __('TIMSES Dashboard') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('timses.input-timses')" :active="request()->routeIs('timses.input-timses')" wire:navigate>
+                        {{ __('TIMSES Input Timses') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('timses.input-relawan')" :active="request()->routeIs('timses.input-relawan')" wire:navigate>
+                        {{ __('TIMSES Input Relawan') }}
                     </x-nav-link>
                 </div>
             </div>
@@ -92,10 +101,19 @@ new class extends Component
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('dashboard.qc')" :active="request()->routeIs('dashboard.qc')" wire:navigate>
-                {{ __('Dashboard QC') }}
+                {{ __('QC Dashboard') }}
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('qc.input-suara')" :active="request()->routeIs('qc.input-suara')" wire:navigate>
-                {{ __('qc.input-suara') }}
+                {{ __('QC Input Suara') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('timses.dashboard')" :active="request()->routeIs('timses.dashboard')" wire:navigate>
+                {{ __('TIMSES Dashboard') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('timses.input-timses')" :active="request()->routeIs('timses.input-timses')" wire:navigate>
+                {{ __('TIMSES Input Timses') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('timses.input-relawan')" :active="request()->routeIs('timses.input-relawan')" wire:navigate>
+                {{ __('TIMSES Input Relawan') }}
             </x-responsive-nav-link>
         </div>
 
