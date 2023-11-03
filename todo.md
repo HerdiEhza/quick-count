@@ -1,1 +1,2 @@
-step upload foto checkin pake return redirect back setelah upload
+- step upload foto checkin pake return redirect back setelah upload
+- harusnya check in setiap mau input suara (satu saksi bisa banyak TPS)
