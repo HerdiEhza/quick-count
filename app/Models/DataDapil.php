@@ -11,7 +11,7 @@ class DataDapil extends Model
     use HasFactory;
     use Searchable;
 
-    protected $fillable = ['nama_dapil'];
+    protected $fillable = ['nama_dapil', 'kategori_pemilu_id'];
 
     protected $searchableFields = ['*'];
 

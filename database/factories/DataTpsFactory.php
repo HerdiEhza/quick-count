@@ -30,9 +30,9 @@ class DataTpsFactory extends Factory
             'wilayah_kabupaten_kota_id' => \App\Models\WilayahKabupatenKota::factory(),
             'wilayah_kecamatan_id' => \App\Models\WilayahKecamatan::factory(),
             'wilayah_kelurahan_desa_id' => \App\Models\WilayahKelurahanDesa::factory(),
-            'data_dapil_ri_id' => \App\Models\DataDapil::factory(),
-            'data_dapil_prov_id' => \App\Models\DataDapil::factory(),
-            'data_dapil_kab_kota_id' => \App\Models\DataDapil::factory(),
+            'data_dapil_ri_id' => $this->faker->numberBetween(1, 2),
+            'data_dapil_prov_id' => $this->faker->numberBetween(3, 10),
+            'data_dapil_kab_kota_id' => $this->faker->numberBetween(11, 73),
         ];
     }
 }

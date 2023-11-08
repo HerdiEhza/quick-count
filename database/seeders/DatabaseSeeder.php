@@ -29,8 +29,8 @@ class DatabaseSeeder extends Seeder
 
         $this->call(PermissionsSeeder::class);
 
-        $this->call(DataDapilSeeder::class);
         $this->call(DataKategoriPemiluSeeder::class);
+        $this->call(DataDapilSeeder::class);
         $this->call(DataPartaiSeeder::class);
         $this->call(DataBakalCalonSeeder::class);
         $this->call(DataTpsSeeder::class);

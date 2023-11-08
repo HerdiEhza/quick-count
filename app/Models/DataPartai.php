@@ -11,7 +11,7 @@ class DataPartai extends Model
     use HasFactory;
     use Searchable;
 
-    protected $fillable = ['nama_partai', 'logo_partai'];
+    protected $fillable = ['nama_partai', 'logo_partai', 'nomor_urut'];
 
     protected $searchableFields = ['*'];
 

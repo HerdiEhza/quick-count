@@ -24,6 +24,13 @@ return new class extends Migration {
                 ->on('data_dapils')
                 ->onUpdate('CASCADE')
                 ->onDelete('CASCADE');
+
+            $table
+                ->foreign('kategori_pemilu_id')
+                ->references('id')
+                ->on('data_kategori_pemilus')
+                ->onUpdate('CASCADE')
+                ->onDelete('CASCADE');
         });
     }
 
@@ -35,6 +42,7 @@ return new class extends Migration {
         Schema::table('data_bakal_calons', function (Blueprint $table) {
             $table->dropForeign(['data_partai_id']);
             $table->dropForeign(['data_dapil_id']);
+            $table->dropForeign(['kategori_pemilu_id']);
         });
     }
 };

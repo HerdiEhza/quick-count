@@ -15,6 +15,11 @@ class DataBakalCalon extends Model
         'data_partai_id',
         'data_dapil_id',
         'nama_bakal_calon',
+        'nomor_urut',
+        'domisili',
+        'foto_path',
+        'jenis_kelamin',
+        'kategori_pemilu_id',
     ];
 
     protected $searchableFields = ['*'];

@@ -13,6 +13,7 @@ return new class extends Migration {
         Schema::create('data_dapils', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nama_dapil');
+            $table->unsignedBigInteger('kategori_pemilu_id');
 
             $table->timestamps();
         });

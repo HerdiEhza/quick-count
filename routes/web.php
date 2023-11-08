@@ -20,7 +20,7 @@ Route::view('/dynamic-form', 'dynamic-form');
 Route::get('/dashboard/qc', \App\Livewire\Dashboard::class)
     ->middleware(['auth'])
     ->name('dashboard.qc');
-Route::get('/dashboard/qc/detail/{caleg}', \App\Livewire\Dashboard::class)
+Route::get('/dashboard/qc/detail/{caleg}', \App\Livewire\Detail::class)
     ->middleware(['auth'])
     ->name('dashboard.qc.detail');
 

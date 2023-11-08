@@ -14,7 +14,12 @@ return new class extends Migration {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('data_partai_id');
             $table->unsignedBigInteger('data_dapil_id');
+            $table->unsignedBigInteger('kategori_pemilu_id');
+            $table->string('nomor_urut')->nullable();
             $table->string('nama_bakal_calon');
+            $table->string('domisili')->nullable();
+            $table->string('foto_path')->nullable();
+            $table->string('jenis_kelamin')->nullable();
 
             $table->timestamps();
         });
