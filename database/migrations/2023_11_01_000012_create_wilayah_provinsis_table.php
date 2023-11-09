@@ -13,8 +13,8 @@ return new class extends Migration {
         Schema::create('wilayah_provinsis', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nama_provinsi');
-            $table->string('jumlah_tps');
-            $table->string('jumlah_dpt');
+            $table->string('jumlah_tps')->nullable();
+            $table->string('jumlah_dpt')->nullable();
 
             $table->timestamps();
         });

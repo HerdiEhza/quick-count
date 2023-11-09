@@ -1,0 +1,86 @@
+[
+    {
+        "nama_kabupaten_kota": "SAMBAS",
+        "jumlah_tps": 1822,
+        "jumlah_dpt": null,
+        "wilayah_provinsi_id": 1
+    },
+    {
+        "nama_kabupaten_kota": "MEMPAWAH",
+        "jumlah_tps": 894,
+        "jumlah_dpt": null,
+        "wilayah_provinsi_id": 1
+    },
+    {
+        "nama_kabupaten_kota": "SANGGAU",
+        "jumlah_tps": 1692,
+        "jumlah_dpt": null,
+        "wilayah_provinsi_id": 1
+    },
+    {
+        "nama_kabupaten_kota": "KETAPANG",
+        "jumlah_tps": 1752,
+        "jumlah_dpt": null,
+        "wilayah_provinsi_id": 1
+    },
+    {
+        "nama_kabupaten_kota": "SINTANG",
+        "jumlah_tps": 1509,
+        "jumlah_dpt": null,
+        "wilayah_provinsi_id": 1
+    },
+    {
+        "nama_kabupaten_kota": "KAPUAS HULU",
+        "jumlah_tps": 984,
+        "jumlah_dpt": null,
+        "wilayah_provinsi_id": 1
+    },
+    {
+        "nama_kabupaten_kota": "BENGKAYANG",
+        "jumlah_tps": 916,
+        "jumlah_dpt": null,
+        "wilayah_provinsi_id": 1
+    },
+    {
+        "nama_kabupaten_kota": "LANDAK",
+        "jumlah_tps": 1472,
+        "jumlah_dpt": null,
+        "wilayah_provinsi_id": 1
+    },
+    {
+        "nama_kabupaten_kota": "SEKADAU",
+        "jumlah_tps": 698,
+        "jumlah_dpt": null,
+        "wilayah_provinsi_id": 1
+    },
+    {
+        "nama_kabupaten_kota": "MELAWI",
+        "jumlah_tps": 726,
+        "jumlah_dpt": null,
+        "wilayah_provinsi_id": 1
+    },
+    {
+        "nama_kabupaten_kota": "KAYONG UTARA",
+        "jumlah_tps": 378,
+        "jumlah_dpt": null,
+        "wilayah_provinsi_id": 1
+    },
+    {
+        "nama_kabupaten_kota": "KUBU RAYA",
+        "jumlah_tps": 1822,
+        "jumlah_dpt": null,
+        "wilayah_provinsi_id": 1
+    },
+    {
+        "nama_kabupaten_kota": "PONTIANAK",
+        "jumlah_tps": 1822,
+        "jumlah_dpt": null,
+        "wilayah_provinsi_id": 1
+    },
+    {
+        "nama_kabupaten_kota": "SINGKAWANG",
+        "jumlah_tps": 706,
+        "jumlah_dpt": null,
+        "wilayah_provinsi_id": 1
+    }
+]

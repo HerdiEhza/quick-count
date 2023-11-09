@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use App\Models\WilayahKecamatan;
+use Illuminate\Support\Facades\File;
 
 class WilayahKecamatanSeeder extends Seeder
 {
@@ -12,8 +13,22 @@ class WilayahKecamatanSeeder extends Seeder
      */
     public function run(): void
     {
-        WilayahKecamatan::factory()
-            ->count(5)
-            ->create();
+        // WilayahKecamatan::factory()
+        //     ->count(5)
+        //     ->create();
+
+        $get_kecamatan = File::get('database/data/wilayahKecamatan.json');
+        $kecamatans = json_decode($get_kecamatan, true);
+
+
+        foreach ($kecamatans as $kecamatan) {
+            WilayahKecamatan::query()->updateOrCreate([
+                // 'id' => $paslon['id'],
+                'nama_kecamatan' => $kecamatan['nama_kecamatan'],
+                'jumlah_tps' => $kecamatan['jumlah_tps'],
+                'jumlah_dpt' => $kecamatan['jumlah_dpt'],
+                'wilayah_kabupaten_kota_id' => $kecamatan['wilayah_kabupaten_kota_id'],
+            ]);
+        };
     }
 }

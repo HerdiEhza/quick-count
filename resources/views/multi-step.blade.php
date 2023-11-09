@@ -56,7 +56,7 @@
                         <div x-show.transition.in="step === 1">
                             <div class="mb-5 text-center">
                                 <div class="relative w-32 h-32 mx-auto mb-2 mb-4 bg-gray-100 border rounded-full shadow-inset">
-                                    <img id="image" class="object-cover w-full h-32 rounded-full" :src="image" />
+                                    <img id="image" class="object-cover w-full h-32" :src="image" />
                                 </div>
 
                                 <label
@@ -78,20 +78,6 @@
                                     var reader = new FileReader();
                                     reader.onload = (e) => image = e.target.result;
                                     reader.readAsDataURL(file);">
-                            </div>
-
-                            <div class="mb-5">
-                                <label for="firstname" class="block mb-1 font-bold text-gray-700">Firstname</label>
-                                <input type="text"
-                                    class="w-full px-4 py-3 font-medium text-gray-600 rounded-lg shadow-sm focus:outline-none focus:shadow-outline"
-                                    placeholder="Enter your firstname...">
-                            </div>
-
-                            <div class="mb-5">
-                                <label for="email" class="block mb-1 font-bold text-gray-700">Email</label>
-                                <input type="email"
-                                    class="w-full px-4 py-3 font-medium text-gray-600 rounded-lg shadow-sm focus:outline-none focus:shadow-outline"
-                                    placeholder="Enter your email address...">
                             </div>
 
                         </div>

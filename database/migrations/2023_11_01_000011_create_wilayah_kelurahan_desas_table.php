@@ -14,8 +14,8 @@ return new class extends Migration {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('wilayah_kecamatan_id');
             $table->string('nama_kelurahan_desa');
-            $table->string('jumlah_tps');
-            $table->string('jumlah_dpt');
+            $table->string('jumlah_tps')->nullable();
+            $table->string('jumlah_dpt')->nullable();
 
             $table->timestamps();
         });
