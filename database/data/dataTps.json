@@ -1,0 +1,14 @@
+[
+    {
+        "nama_tps": null,
+        "alamat_tps": null,
+        "jumlah_dpt": null,
+        "wilayah_provinsi_id": null,
+        "wilayah_kabupaten_kota_id": null,
+        "wilayah_kecamatan_id": null,
+        "wilayah_kelurahan_desa_id": null,
+        "data_dapil_ri_id": null,
+        "data_dapil_prov_id": null,
+        "data_dapil_kab_kota_id": null
+    }
+]
