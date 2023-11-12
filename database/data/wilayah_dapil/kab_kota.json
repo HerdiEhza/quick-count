@@ -1,0 +1,170 @@
+[
+    {
+        "dapil_id":1,
+        "kabupaten_kota_id": 1
+    },
+    {
+        "dapil_id":1,
+        "kabupaten_kota_id": 2
+    },
+    {
+        "dapil_id":2,
+        "kabupaten_kota_id": 3
+    },
+    {
+        "dapil_id":1,
+        "kabupaten_kota_id": 4
+    },
+    {
+        "dapil_id":2,
+        "kabupaten_kota_id": 5
+    },
+    {
+        "dapil_id":2,
+        "kabupaten_kota_id": 6
+    },
+    {
+        "dapil_id":1,
+        "kabupaten_kota_id": 7
+    },
+    {
+        "dapil_id":1,
+        "kabupaten_kota_id": 8
+    },
+    {
+        "dapil_id":2,
+        "kabupaten_kota_id": 9
+    },
+    {
+        "dapil_id": 2,
+        "kabupaten_kota_id": 10
+    },
+    {
+        "dapil_id": 1,
+        "kabupaten_kota_id": 11
+    },
+    {
+        "dapil_id": 1,
+        "kabupaten_kota_id": 12
+    },
+    {
+        "dapil_id": 1,
+        "kabupaten_kota_id": 13
+    },
+    {
+        "dapil_id": 1,
+        "kabupaten_kota_id": 14
+    },
+    {
+        "dapil_id":6,
+        "kabupaten_kota_id": 1
+    },
+    {
+        "dapil_id":4,
+        "kabupaten_kota_id": 2
+    },
+    {
+        "dapil_id":8,
+        "kabupaten_kota_id": 3
+    },
+    {
+        "dapil_id":10,
+        "kabupaten_kota_id": 4
+    },
+    {
+        "dapil_id":9,
+        "kabupaten_kota_id": 5
+    },
+    {
+        "dapil_id":9,
+        "kabupaten_kota_id": 6
+    },
+    {
+        "dapil_id":5,
+        "kabupaten_kota_id": 7
+    },
+    {
+        "dapil_id":7,
+        "kabupaten_kota_id": 8
+    },
+    {
+        "dapil_id":8,
+        "kabupaten_kota_id": 9
+    },
+    {
+        "dapil_id": 9,
+        "kabupaten_kota_id": 10
+    },
+    {
+        "dapil_id": 10,
+        "kabupaten_kota_id": 11
+    },
+    {
+        "dapil_id": 4,
+        "kabupaten_kota_id": 12
+    },
+    {
+        "dapil_id": 3,
+        "kabupaten_kota_id": 13
+    },
+    {
+        "dapil_id": 5,
+        "kabupaten_kota_id": 14
+    },
+    {
+        "dapil_id":11,
+        "kabupaten_kota_id": 1
+    },
+    {
+        "dapil_id":21,
+        "kabupaten_kota_id": 2
+    },
+    {
+        "dapil_id":22,
+        "kabupaten_kota_id": 3
+    },
+    {
+        "dapil_id":27,
+        "kabupaten_kota_id": 4
+    },
+    {
+        "dapil_id":38,
+        "kabupaten_kota_id": 5
+    },
+    {
+        "dapil_id":40,
+        "kabupaten_kota_id": 6
+    },
+    {
+        "dapil_id":44,
+        "kabupaten_kota_id": 7
+    },
+    {
+        "dapil_id":49,
+        "kabupaten_kota_id": 8
+    },
+    {
+        "dapil_id":54,
+        "kabupaten_kota_id": 9
+    },
+    {
+        "dapil_id": 60,
+        "kabupaten_kota_id": 10
+    },
+    {
+        "dapil_id": 62,
+        "kabupaten_kota_id": 11
+    },
+    {
+        "dapil_id": 65,
+        "kabupaten_kota_id": 12
+    },
+    {
+        "dapil_id": 76,
+        "kabupaten_kota_id": 13
+    },
+    {
+        "dapil_id": 78,
+        "kabupaten_kota_id": 14
+    }
+]

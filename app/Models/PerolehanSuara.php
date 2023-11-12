@@ -19,6 +19,7 @@ class PerolehanSuara extends Model
         'foto_ba',
         'data_tps_id',
         'data_kategori_pemilu_id',
+        'is_active',
     ];
 
     protected $searchableFields = ['*'];

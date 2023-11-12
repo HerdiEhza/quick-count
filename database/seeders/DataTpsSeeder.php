@@ -32,8 +32,8 @@ class DataTpsSeeder extends Seeder
                 'wilayah_kelurahan_desa_id' => $tpsValue['wilayah_kelurahan_desa_id'],
                 'data_dapil_ri_id' => $tpsValue['data_dapil_ri_id'],
                 'data_dapil_prov_id' => $tpsValue['data_dapil_prov_id'],
-                'data_dapil_kab_kota_id' => null,
-                // 'data_dapil_kab_kota_id' => $tpsValue['data_dapil_kab_kota_id'],
+                // 'data_dapil_kab_kota_id' => null,
+                'data_dapil_kab_kota_id' => $tpsValue['data_dapil_kab_kota_id'],
             ]);
         };
     }

@@ -19,6 +19,7 @@ return new class extends Migration {
             $table->string('foto_ba');
             $table->unsignedBigInteger('data_tps_id');
             $table->unsignedBigInteger('data_kategori_pemilu_id');
+            $table->boolean('is_active')->default(true);
 
             $table->timestamps();
         });

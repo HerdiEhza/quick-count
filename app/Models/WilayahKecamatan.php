@@ -5,6 +5,7 @@ namespace App\Models;
 use App\Models\Scopes\Searchable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasManyThrough;
 
 class WilayahKecamatan extends Model
 {
@@ -40,5 +41,17 @@ class WilayahKecamatan extends Model
     public function allDataTps()
     {
         return $this->hasMany(DataTps::class);
+    }
+
+    public function perolehanSuara(): HasManyThrough
+    {
+        return $this->hasManyThrough(
+            PerolehanSuara::class, // Deployment | yang mau diambil
+            DataTps::class, // Environment
+            'wilayah_kecamatan_id', // Foreign key on the environments table...
+            'data_tps_id', // Foreign key on the deployments table...
+            'id', // Local key on the projects table...
+            'id' // Local key on the environments table...
+        )->where('is_active', true);
     }
 }

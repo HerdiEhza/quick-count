@@ -54,7 +54,7 @@ new class extends Component
 
             <!-- Settings Dropdown -->
             <div class="hidden sm:flex sm:items-center sm:ml-6">
-                <x-dropdown align="right" width="48">
+                <x-dropdown-laravel align="right" width="48">
                     <x-slot name="trigger">
                         <button class="inline-flex items-center px-3 py-2 text-sm font-medium leading-4 text-gray-500 transition duration-150 ease-in-out bg-white border border-transparent rounded-md dark:text-gray-400 dark:bg-gray-800 hover:text-gray-700 dark:hover:text-gray-300 focus:outline-none">
                             <div x-data="{ name: '{{ auth()->user()->name }}' }" x-text="name" x-on:profile-updated.window="name = $event.detail.name"></div>
@@ -68,18 +68,18 @@ new class extends Component
                     </x-slot>
 
                     <x-slot name="content">
-                        <x-dropdown-link :href="route('profile')" wire:navigate>
+                        <x-dropdown-laravel-link :href="route('profile')" wire:navigate>
                             {{ __('Profile') }}
-                        </x-dropdown-link>
+                        </x-dropdown-laravel-link>
 
                         <!-- Authentication -->
                         <button wire:click="logout" class="w-full text-left">
-                            <x-dropdown-link>
+                            <x-dropdown-laravel-link>
                                 {{ __('Log Out') }}
-                            </x-dropdown-link>
+                            </x-dropdown-laravel-link>
                         </button>
                     </x-slot>
-                </x-dropdown>
+                </x-dropdown-laravel>
             </div>
 
             <!-- Hamburger -->
