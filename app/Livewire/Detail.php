@@ -81,15 +81,16 @@ class Detail extends Component
             ->with([
                 'kabupatenKota' => function (Builder $q) {
                     $q->with([
-                            'perolehanSuara' => function (Builder $q) {
-                                $q->withOnly([
-                                    'perolehanSuaraBacalegs' => function (Builder $query) {
-                                        $query->withSum('perolehanSuaraBacalegs as total_suara_bacaleg', 'suara');
-                                    },
-                                ]);
-                            },
-                        ])
-                        ->withCount('allDataTps as total_tps');
+                        'perolehanSuara' => function (Builder $q) {
+                            $q->withSum('perolehanSuaraBacalegs as total_suara_bacaleg', 'suara');
+                            // $q->withOnly([
+                            //     'perolehanSuaraBacalegs' => function (Builder $query) {
+                            //         $query->withSum('perolehanSuaraBacalegs as total_suara_bacaleg', 'suara');
+                            //     },
+                            // ]);
+                        },
+                    ])
+                    ->withCount('allDataTps as total_tps');
                 },
             ])
             ->withSum('kabupatenKota as total_dpt', 'jumlah_dpt')

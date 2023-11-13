@@ -31,6 +31,13 @@ return new class extends Migration {
                 ->on('data_kategori_pemilus')
                 ->onUpdate('CASCADE')
                 ->onDelete('CASCADE');
+
+            $table
+                ->foreign('data_dapil_id')
+                ->references('id')
+                ->on('data_dapils')
+                ->onUpdate('CASCADE')
+                ->onDelete('CASCADE');
         });
     }
 
@@ -43,6 +50,7 @@ return new class extends Migration {
             $table->dropForeign(['user_id']);
             $table->dropForeign(['data_tps_id']);
             $table->dropForeign(['data_kategori_pemilu_id']);
+            $table->dropForeign(['data_dapil_id']);
         });
     }
 };

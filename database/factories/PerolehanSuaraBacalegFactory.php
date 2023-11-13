@@ -23,9 +23,9 @@ class PerolehanSuaraBacalegFactory extends Factory
     public function definition(): array
     {
         return [
-            'suara' => $this->faker->numberBetween(25, 39),
+            'suara' => $this->faker->numberBetween(25, 69),
             'perolehan_suara_id' => $this->faker->numberBetween(1, 200),
-            'data_bakal_calon_id' => $this->faker->numberBetween(1, 800),
+            'data_bakal_calon_id' => $this->faker->numberBetween(1, 927),
             // 'perolehan_suara_id' => \App\Models\PerolehanSuara::factory(),
             // 'data_bakal_calon_id' => \App\Models\DataBakalCalon::factory(),
         ];

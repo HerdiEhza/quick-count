@@ -4,22 +4,39 @@ namespace App\Livewire\QuickCount;
 
 use Livewire\Component;
 use App\Models\DataDapil;
-use App\Models\DataKategoriPemilu;
 use App\Models\DataPartai;
 use Livewire\Attributes\On;
+use Livewire\Attributes\Rule;
+use Livewire\WithFileUploads;
 use App\Models\PerolehanSuara;
+use App\Models\DataKategoriPemilu;
+use App\Models\DataTps;
+use App\Models\WilayahKabupatenKota;
+use App\Models\WilayahKecamatan;
+use App\Models\WilayahKelurahanDesa;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Contracts\Database\Eloquent\Builder;
 
 class InputSuara extends Component
 {
+    use WithFileUploads;
+
     public array $suaraPartai;
     public array $suaraBacaleg;
     public $tpsActive = 1;
     public $kategoriPemiluActive = 1;
 
+    public $formStep = 2;
+
+    public $kabKotaActive;
+    public $kecamatanActive;
+    public $kelDesaActive;
+
     public $kategoriPemilu;
     public $dapilActive;
+
+    #[Rule('image|max:1024')]
+    public $photo;
 
     #[On('refresh-page')]
     public function refreshPost()
@@ -29,6 +46,14 @@ class InputSuara extends Component
 
     // protected $listeners = ['refresh-page' => '$refresh'];
 
+    public function prevStep()
+    {
+        $this->formStep--;
+    }
+    public function nextStep()
+    {
+        $this->formStep++;
+    }
     public function store()
     {
         $masterSuara = PerolehanSuara::create([
@@ -59,18 +84,10 @@ class InputSuara extends Component
 
     public function render()
     {
-        $partais = DataPartai::
-            // with([
-            //     'perolehanSuaraPartais' => function (Builder $query) {
-            //         $query->withSum('suara as total_suara_partai', );
-            //     },
-            // ])
-            with([
-                'dataBakalCalons:id,data_partai_id,nama_bakal_calon',
-                ])
-            
-            ->take(3)
-            ->get();
+        $kabKotas = WilayahKabupatenKota::all();
+        $kecamatans = WilayahKecamatan::where('wilayah_kabupaten_kota_id', $this->kabKotaActive)->get();
+        $kelDesas = WilayahKelurahanDesa::where('wilayah_kecamatan_id', $this->kecamatanActive)->get();
+        $tps = DataTps::where('wilayah_kelurahan_desa_id', $this->kelDesaActive)->get();
 
         $kategoriPemilus = DataKategoriPemilu::select(['id','nama_kategori_pemilu'])->get();
 
@@ -85,7 +102,10 @@ class InputSuara extends Component
             ->get();
 
         return view('livewire.quick-count.input-suara', [
-            'partais' => $partais,
+            'kabKotas' => $kabKotas,
+            'kecamatans' => $kecamatans,
+            'kelDesas' => $kelDesas,
+            'tps' => $tps,
             'kategoriPemilus' => $kategoriPemilus,
             'dapils' => $dapils,
             'dataPilihans' => $dataPilihans,

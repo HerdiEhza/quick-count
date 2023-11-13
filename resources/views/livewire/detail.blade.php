@@ -137,8 +137,9 @@
                                         {{ $detail_1->total_dpt ?? '0' }}
                                     </td>
                                     <td class="p-4 text-sm text-center text-gray-900 whitespace-nowrap">
+                                        {{-- {{ $detail_1->perolehanSuara->total_suara_bacaleg }} --}}
                                         @forelse ($detail_1->perolehanSuara as $suaraBacaleg)
-                                            {{ $suaraBacaleg->perolehanSuaraBacalegs->total_suara_bacaleg }}
+                                            {{ $suaraBacaleg->total_suara_bacaleg }}
                                         @empty
                                             0
                                         @endforelse

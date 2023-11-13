@@ -19,6 +19,7 @@ class PerolehanSuara extends Model
         'foto_ba',
         'data_tps_id',
         'data_kategori_pemilu_id',
+        'data_dapil_id',
         'is_active',
     ];
 
@@ -34,6 +35,11 @@ class PerolehanSuara extends Model
     public function perolehanSuaraBacalegs()
     {
         return $this->hasMany(PerolehanSuaraBacaleg::class);
+    }
+
+    public function dataDapil()
+    {
+        return $this->belongsTo(DataDapil::class);
     }
 
     public function user()
