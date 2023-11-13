@@ -7,13 +7,15 @@ use App\Models\DataDapil;
 use App\Models\DataPartai;
 use Livewire\Attributes\On;
 use App\Models\DataBakalCalon;
+use App\Models\DataTps;
 use Illuminate\Contracts\Database\Eloquent\Builder;
 
-class DetailTiga extends Component
+class DetailEmpat extends Component
 {
     public $caleg;
     public $detail_2;
     public $detail_3;
+    public $detail_4;
 
     public function render()
     {
@@ -55,10 +57,23 @@ class DetailTiga extends Component
             ->withSum('kelurahanDesa as total_dpt', 'jumlah_dpt')
             ->firstOrFail();
 
-        return view('livewire.detail-tiga', [
+        $tps = DataTps::whereIn('wilayah_kelurahan_desa_id', [$this->detail_4])
+            ->withOnly([
+                'perolehanSuaras' => function (Builder $q) {
+                    $q->withOnly([
+                        'perolehanSuaraBacalegs' => function (Builder $query) {
+                            $query->withSum('perolehanSuaraBacalegs as total_suara_bacaleg', 'suara');
+                        },
+                    ]);
+                },
+            ])
+            ->get();
+
+        return view('livewire.detail-empat', [
             'dataBacaleg' => $dataBacaleg,
             'partais' => $partais,
             'dapils' => $dapils,
+            'tps' => $tps,
         ]);
     }
 }

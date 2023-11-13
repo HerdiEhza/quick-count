@@ -17,13 +17,13 @@ class DataBakalCalonSeeder extends Seeder
         //     ->count(800)
         //     ->create();
 
-        $DPR_RI_KALBAR_1 = File::get('data_caleg/json/DPR_RI_KALBAR_1.json');
-        $DPRD_PROV_KALBAR_1 = File::get('data_caleg/json/DPRD_PROV_KALBAR_1.json');
-        $DPRD_KOTA_PTK_1 = File::get('data_caleg/json/DPRD_KOTA_PTK_1.json');
-        $DPRD_KOTA_PTK_2 = File::get('data_caleg/json/DPRD_KOTA_PTK_2.json');
-        $DPRD_KOTA_PTK_3 = File::get('data_caleg/json/DPRD_KOTA_PTK_3.json');
-        $DPRD_KOTA_PTK_4 = File::get('data_caleg/json/DPRD_KOTA_PTK_4.json');
-        $DPRD_KOTA_PTK_5 = File::get('data_caleg/json/DPRD_KOTA_PTK_5.json');
+        $DPR_RI_KALBAR_1 = File::get('database/data/bakal_calon/DPR_RI_KALBAR_1.json');
+        $DPRD_PROV_KALBAR_1 = File::get('database/data/bakal_calon/DPRD_PROV_KALBAR_1.json');
+        $DPRD_KOTA_PTK_1 = File::get('database/data/bakal_calon/DPRD_KOTA_PTK_1.json');
+        $DPRD_KOTA_PTK_2 = File::get('database/data/bakal_calon/DPRD_KOTA_PTK_2.json');
+        $DPRD_KOTA_PTK_3 = File::get('database/data/bakal_calon/DPRD_KOTA_PTK_3.json');
+        $DPRD_KOTA_PTK_4 = File::get('database/data/bakal_calon/DPRD_KOTA_PTK_4.json');
+        $DPRD_KOTA_PTK_5 = File::get('database/data/bakal_calon/DPRD_KOTA_PTK_5.json');
         
         $paslons = json_decode($DPR_RI_KALBAR_1, true);
 

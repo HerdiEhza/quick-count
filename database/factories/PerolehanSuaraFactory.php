@@ -28,7 +28,7 @@ class PerolehanSuaraFactory extends Factory
             'foto_c1' => $this->faker->imageUrl(),
             'foto_ba' => $this->faker->imageUrl(),
             'user_id' => \App\Models\User::factory(),
-            'data_tps_id' => \App\Models\DataTps::factory(),
+            'data_tps_id' => $this->faker->numberBetween(1, 17622),
             'data_kategori_pemilu_id' => \App\Models\DataKategoriPemilu::factory(),
         ];
     }

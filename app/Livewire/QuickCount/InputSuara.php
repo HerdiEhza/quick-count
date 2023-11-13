@@ -3,10 +3,13 @@
 namespace App\Livewire\QuickCount;
 
 use Livewire\Component;
+use App\Models\DataDapil;
+use App\Models\DataKategoriPemilu;
 use App\Models\DataPartai;
+use Livewire\Attributes\On;
 use App\Models\PerolehanSuara;
 use Illuminate\Support\Facades\Auth;
-use Livewire\Attributes\On;
+use Illuminate\Contracts\Database\Eloquent\Builder;
 
 class InputSuara extends Component
 {
@@ -14,6 +17,9 @@ class InputSuara extends Component
     public array $suaraBacaleg;
     public $tpsActive = 1;
     public $kategoriPemiluActive = 1;
+
+    public $kategoriPemilu;
+    public $dapilActive;
 
     #[On('refresh-page')]
     public function refreshPost()
@@ -54,20 +60,35 @@ class InputSuara extends Component
     public function render()
     {
         $partais = DataPartai::
-        // with([
-        //     'perolehanSuaraPartais' => function (Builder $query) {
-        //         $query->withSum('suara as total_suara_partai', );
-        //     },
-        // ])
-        with([
-            'dataBakalCalons:id,data_partai_id,nama_bakal_calon',
-            ])
-        ->select(['id','nama_partai','logo_partai'])
-        ->take(3)
-        ->get();
+            // with([
+            //     'perolehanSuaraPartais' => function (Builder $query) {
+            //         $query->withSum('suara as total_suara_partai', );
+            //     },
+            // ])
+            with([
+                'dataBakalCalons:id,data_partai_id,nama_bakal_calon',
+                ])
+            
+            ->take(3)
+            ->get();
 
-        return view('livewire.quick-count.input-suara', compact(
-            'partais',
-        ));
+        $kategoriPemilus = DataKategoriPemilu::select(['id','nama_kategori_pemilu'])->get();
+
+        $dapils = DataDapil::where('kategori_pemilu_id', $this->kategoriPemilu)->whereHas('dataBakalCalons')->get();
+
+        $dataPilihans = DataPartai::select(['id','nomor_urut','nama_partai','logo_partai'])
+            ->withOnly([
+                'dataBakalCalons' => function (Builder $q) {
+                    $q->where('data_dapil_id', $this->dapilActive);
+                },
+            ])
+            ->get();
+
+        return view('livewire.quick-count.input-suara', [
+            'partais' => $partais,
+            'kategoriPemilus' => $kategoriPemilus,
+            'dapils' => $dapils,
+            'dataPilihans' => $dataPilihans,
+        ]);
     }
 }

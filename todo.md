@@ -3,4 +3,4 @@
 
 - dapil bakal calon masih sangsot karna ada penambahan DAPIL
 
-!! stuck di kecamatan keluar semua
+!! MASIH ADA NAMA TPS YANG (0160)

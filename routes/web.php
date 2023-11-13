@@ -29,6 +29,9 @@ Route::get('/dashboard/qc/detail/{caleg}/dd/{detail_2}', \App\Livewire\DetailDua
 Route::get('/dashboard/qc/detail/{caleg}/dd/{detail_2}/ddd/{detail_3}', \App\Livewire\DetailTiga::class)
     ->middleware(['auth'])
     ->name('dashboard.qc.detail.3');
+Route::get('/dashboard/qc/detail/{caleg}/dd/{detail_2}/ddd/{detail_3}/dddd/{detail_4}', \App\Livewire\DetailEmpat::class)
+    ->middleware(['auth'])
+    ->name('dashboard.qc.detail.4');
 
 Route::get('/qc/input-suara', \App\Livewire\QuickCount\InputSuara::class)
     ->middleware(['auth'])

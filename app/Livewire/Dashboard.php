@@ -18,7 +18,7 @@ class Dashboard extends Component
 
     public function mount()
     {
-        $this->dapils = DataDapil::all();
+        $this->dapils = DataDapil::whereHas('dataBakalCalons')->get();
 
         $this->partais = DataPartai::
             select(['id','nama_partai','logo_partai','nomor_urut'])

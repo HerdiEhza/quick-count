@@ -38,7 +38,8 @@ class DetailDua extends Component
         $dapils = DataDapil::where('id', $dataBacaleg->dataDapil->id)
             ->with([
                 'kecamatan' => function (Builder $q) {
-                    $q->with([
+                    $q->where('wilayah_kabupaten_kota_id', $this->detail_2)
+                        ->with([
                             'perolehanSuara' => function (Builder $q) {
                                 $q->withOnly([
                                     'perolehanSuaraBacalegs' => function (Builder $query) {

@@ -26,7 +26,7 @@
                         <thead>
                             <tr>
                                 <th class="px-4 py-3 text-xs font-semibold text-left text-gray-700 uppercase align-middle border-l-0 border-r-0 bg-gray-50 whitespace-nowrap">
-                                    Nama daerah
+                                    Nama TPS
                                 </th>
                                 <th class="px-4 py-3 text-xs font-semibold text-center text-gray-700 uppercase align-middle border-l-0 border-r-0 bg-gray-50 whitespace-nowrap">
                                     Total DPT
@@ -34,36 +34,23 @@
                                 <th class="px-4 py-3 text-xs font-semibold text-center text-gray-700 uppercase align-middle border-l-0 border-r-0 bg-gray-50 whitespace-nowrap">
                                     Perolehan Suara
                                 </th>
-                                <th class="px-4 py-3 text-xs font-semibold text-center text-gray-700 uppercase align-middle border-l-0 border-r-0 bg-gray-50 whitespace-nowrap">
-                                    Total Tps
-                                </th>
-                                <th class="px-4 py-3 text-xs font-semibold text-left text-gray-700 uppercase align-middle border-l-0 border-r-0 bg-gray-50 whitespace-nowrap min-w-140-px">
-                                </th>
                             </tr>
                         </thead>
                         <tbody class="divide-y divide-gray-100">
-                            @foreach ($dapils->kelurahanDesa as $detail_3)
+                            @foreach ($tps as $data_tps)
                                 <tr>
                                     <td class="p-4 text-sm text-gray-900 whitespace-nowrap">
-                                        {{ $detail_3->nama_kelurahan_desa }}
+                                        {{ $data_tps->nama_tps }}
                                     </td>
                                     <td class="p-4 text-sm text-center text-gray-900 whitespace-nowrap">
-                                        {{ $detail_3->total_dpt ?? '0' }}
+                                        {{ $data_tps->jumlah_dpt ?? '0' }}
                                     </td>
                                     <td class="p-4 text-sm text-center text-gray-900 whitespace-nowrap">
-                                        @forelse ($detail_3->perolehanSuara as $suaraBacaleg)
+                                        @forelse ($data_tps->perolehanSuaras as $suaraBacaleg)
                                             {{ $suaraBacaleg->perolehanSuaraBacalegs->total_suara_bacaleg }}
                                         @empty
                                             0
                                         @endforelse
-                                    </td>
-                                    <td class="p-4 text-sm text-center text-gray-900 whitespace-nowrap">
-                                        {{ $detail_3->total_tps ?? '0' }}
-                                    </td>
-                                    <td class="p-4 text-sm text-center text-gray-900 whitespace-nowrap">
-                                        <a href="{{ route('dashboard.qc.detail.4', ['caleg' => $dataBacaleg->id, 'detail_2' => $this->detail_2, 'detail_3' => $this->detail_3, 'detail_4' => $detail_3->id]) }}">
-                                            Detail
-                                        </a>
                                     </td>
                                 </tr>
                             @endforeach
