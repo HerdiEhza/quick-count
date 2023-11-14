@@ -42,7 +42,53 @@
                             </tr>
                         </thead>
                         <tbody class="divide-y divide-gray-100">
-                            @foreach ($dapils->kecamatan as $detail_2)
+                            @if ($dapilActive->data_dapil_id <= 10)
+                                @foreach ($dapils->kecamatan as $detail_2)
+                                    <tr>
+                                        <td class="p-4 text-sm text-gray-900 whitespace-nowrap">
+                                            {{ $detail_2->nama_kecamatan }}
+                                        </td>
+                                        <td class="p-4 text-sm text-center text-gray-900 whitespace-nowrap">
+                                            {{ number_format($detail_2->total_dpt) ?? '0' }}
+                                        </td>
+                                        <td class="p-4 text-sm text-center text-gray-900 whitespace-nowrap">
+                                            {{ number_format($detail_2->suara_caleg) ?? '0' }}
+                                        </td>
+                                        <td class="p-4 text-sm text-center text-gray-900 whitespace-nowrap">
+                                            {{ number_format($detail_2->total_tps) ?? '0' }}
+                                        </td>
+                                        <td class="p-4 text-sm text-center text-gray-900 whitespace-nowrap">
+                                            <a href="{{ route('dashboard.qc.detail.3', ['caleg' => $dataBacaleg->id, 'detail_2' => $this->detail_2, 'detail_3' => $detail_2->id]) }}">
+                                                Detail
+                                            </a>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            @else
+                                @foreach ($dapils->kelurahanDesa as $detail_2)
+                                    <tr>
+                                        <td class="p-4 text-sm text-gray-900 whitespace-nowrap">
+                                            {{ $detail_2->nama_kelurahan_desa }}
+                                        </td>
+                                        <td class="p-4 text-sm text-center text-gray-900 whitespace-nowrap">
+                                            {{ number_format($detail_2->total_dpt) ?? '0' }}
+                                        </td>
+                                        <td class="p-4 text-sm text-center text-gray-900 whitespace-nowrap">
+                                            {{ number_format($detail_2->suara_caleg) ?? '0' }}
+                                        </td>
+                                        <td class="p-4 text-sm text-center text-gray-900 whitespace-nowrap">
+                                            {{ number_format($detail_2->total_tps) ?? '0' }}
+                                        </td>
+                                        <td class="p-4 text-sm text-center text-gray-900 whitespace-nowrap">
+                                            <a href="{{ route('dashboard.qc.detail.3', ['caleg' => $dataBacaleg->id, 'detail_2' => $this->detail_2, 'detail_3' => $detail_2->id]) }}">
+                                                Detail
+                                            </a>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            @endif
+
+                            {{-- @foreach ($dapils->kecamatan as $detail_2)
                                 <tr>
                                     <td class="p-4 text-sm text-gray-900 whitespace-nowrap">
                                         {{ $detail_2->nama_kecamatan }}
@@ -66,7 +112,7 @@
                                         </a>
                                     </td>
                                 </tr>
-                            @endforeach
+                            @endforeach --}}
                         </tbody>
                     </table>
                 </div>

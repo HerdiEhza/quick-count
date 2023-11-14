@@ -43,6 +43,17 @@
                                         {{ $data_tps->nama_tps }}
                                     </td>
                                     <td class="p-4 text-sm text-center text-gray-900 whitespace-nowrap">
+                                        {{ number_format($data_tps->total_dpt) ?? '0' }}
+                                    </td>
+                                    <td class="p-4 text-sm text-center text-gray-900 whitespace-nowrap">
+                                        {{ number_format($data_tps->suara_caleg) ?? '0' }}
+                                    </td>
+                                </tr>
+                                {{-- <tr>
+                                    <td class="p-4 text-sm text-gray-900 whitespace-nowrap">
+                                        {{ $data_tps->nama_tps }}
+                                    </td>
+                                    <td class="p-4 text-sm text-center text-gray-900 whitespace-nowrap">
                                         {{ $data_tps->jumlah_dpt ?? '0' }}
                                     </td>
                                     <td class="p-4 text-sm text-center text-gray-900 whitespace-nowrap">
@@ -52,7 +63,7 @@
                                             0
                                         @endforelse
                                     </td>
-                                </tr>
+                                </tr> --}}
                             @endforeach
                         </tbody>
                     </table>

@@ -37,6 +37,11 @@ class PerolehanSuara extends Model
         return $this->hasMany(PerolehanSuaraBacaleg::class);
     }
 
+    // public function getPerolehanSuaraBacalegAttribute()
+    // {
+    //     return $this->perolehanSuaraBacalegs()->sum('suara');
+    // }
+
     public function dataDapil()
     {
         return $this->belongsTo(DataDapil::class);

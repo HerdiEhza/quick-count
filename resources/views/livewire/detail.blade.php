@@ -9,34 +9,19 @@
                         <h2 class="font-semibold">HASIL HITUNG SUARA PEMILU LEGISLATIF {{ $dataBacaleg->dataDapil->kategori_dapil }} 2024</h2>
                         <p>WILAYAH PEMILIHAN {{ $dataBacaleg->dataDapil->nama_dapil }} - PROVINSI KALIMANTAN BARAT</p>
                         <div class="flex flex-col items-center justify-center w-full mt-3 md:justify-between md:flex-row">
-                            <div>
-                                <img alt="..." src="{{ asset('assets/logo-partai/'.$dataBacaleg->dataPartai->logo_partai) }}" class="h-auto align-middle border-none max-h-[100px] max-w-[150px]">
+                            <div class="w-[150px]">
+                                <img alt="Logo Partai" src="{{ asset('assets/logo-partai/'.$dataBacaleg->dataPartai->logo_partai) }}" class="h-auto align-middle border-none max-h-[100px] max-w-[150px]">
                             </div>
                             <div>
                                 <p>DAPIL {{ $dataBacaleg->dataDapil->nama_dapil }}</p>
                                 <p>{{ $dataBacaleg->dataPartai->nama_partai }}</p>
                                 <p class="font-semibold">{{ $dataBacaleg->nama_bakal_calon }}</p>
                             </div>
-                            <div>
-                                <img alt="..." src="{{ $dataBacaleg->foto_path ?? 'https://eu.ui-avatars.com/api/?name='.$dataBacaleg->nama_bakal_calon.'&size=96' }}" class="h-auto align-middle border-none max-w-[150px]">
+                            <div class="w-[150px]">
+                                <img alt="Foto Bacaleg" src="{{ $dataBacaleg->foto_path ?? 'https://eu.ui-avatars.com/api/?name='.$dataBacaleg->nama_bakal_calon.'&size=96' }}" class="h-auto align-middle border-none max-w-[150px]">
                             </div>
                         </div>
                     </div>
-                    {{-- <div class="h-24">
-                        <img class="w-auto h-24" src="{{ asset('assets/logo-partai/'.$dataBacaleg->dataPartai->logo_partai) }}" alt="">
-                    </div>
-                    <div class="my-auto">
-                        <h2 class="font-semibold">
-                            HASIL HITUNG SUARA PEMILU LEGISLATIF {{ $dataBacaleg->dataDapil->kategori_dapil }} 2024
-                        </h2>
-                        <p>WILAYAH PEMILIHAN {{ $dataBacaleg->dataDapil->nama_dapil }} - PROV. KALIMANTAN BARAT</p>
-                        <p>DAPIL {{ $dataBacaleg->dataDapil->nama_dapil }}<span class="px-4 py-0.5 ml-2 text-xs text-white bg-blue-700 rounded-full dark:bg-blue-600">{{ $dataBacaleg->dataDapil->jumlah_kursi }} Kursi</span></p>
-                        <p>{{ $dataBacaleg->dataPartai->nama_partai }}</p>
-                        <p>{{ $dataBacaleg->nama_bakal_calon }}</p>
-                    </div>
-                    <div class="h-24">
-                        <img class="w-24 h-auto" src="{{ $dataBacaleg->foto_path ?? 'https://eu.ui-avatars.com/api/?name='.$dataBacaleg->nama_bakal_calon.'&size=96' }}" alt="">
-                    </div> --}}
                 </div>
                 <div class="px-4">
                     {{-- <div class="grid w-full grid-cols-1 gap-4 mt-4 md:grid-cols-2 xl:grid-cols-2">
@@ -157,19 +142,13 @@
                                                         {{ $detail_1->nama_kabupaten_kota }}
                                                     </td>
                                                     <td class="p-4 text-sm text-center text-gray-900 whitespace-nowrap">
-                                                        {{ $detail_1->total_dpt ?? '0' }}
+                                                        {{ number_format($detail_1->total_dpt) ?? '0' }}
                                                     </td>
                                                     <td class="p-4 text-sm text-center text-gray-900 whitespace-nowrap">
-                                                        {{-- {{ $detail_1->perolehanSuara[0]->total_suara_bacaleg }} --}}
-                                                        {{ $detail_1->perolehanSuara }}
-                                                        {{-- @forelse ($detail_1->perolehanSuara as $suaraBacaleg)
-                                                            {{ $suaraBacaleg->total_suara_bacaleg }}
-                                                        @empty
-                                                            0
-                                                        @endforelse --}}
+                                                        {{ number_format($detail_1->suara_caleg) ?? '0' }}
                                                     </td>
                                                     <td class="p-4 text-sm text-center text-gray-900 whitespace-nowrap">
-                                                        {{ $detail_1->total_tps ?? '0' }}
+                                                        {{ number_format($detail_1->total_tps) ?? '0' }}
                                                     </td>
                                                     <td class="p-4 text-sm text-center text-gray-900 whitespace-nowrap">
                                                         <a href="{{ route('dashboard.qc.detail.2', ['caleg' => $dataBacaleg->id, 'detail_2' => $detail_1->id]) }}">
@@ -185,18 +164,13 @@
                                                         {{ $detail_1->nama_kecamatan }}
                                                     </td>
                                                     <td class="p-4 text-sm text-center text-gray-900 whitespace-nowrap">
-                                                        {{ $detail_1->total_dpt ?? '0' }}
+                                                        {{ number_format($detail_1->total_dpt) ?? '0' }}
                                                     </td>
                                                     <td class="p-4 text-sm text-center text-gray-900 whitespace-nowrap">
-                                                        {{-- {{ $detail_1->perolehanSuara->total_suara_bacaleg }} --}}
-                                                        @forelse ($detail_1->perolehanSuara as $suaraBacaleg)
-                                                            {{ $suaraBacaleg->total_suara_bacaleg }}
-                                                        @empty
-                                                            0
-                                                        @endforelse
+                                                        {{ number_format($detail_1->suara_caleg) ?? '0' }}
                                                     </td>
                                                     <td class="p-4 text-sm text-center text-gray-900 whitespace-nowrap">
-                                                        {{ $detail_1->total_tps ?? '0' }}
+                                                        {{ number_format($detail_1->total_tps) ?? '0' }}
                                                     </td>
                                                     <td class="p-4 text-sm text-center text-gray-900 whitespace-nowrap">
                                                         <a href="{{ route('dashboard.qc.detail.2', ['caleg' => $dataBacaleg->id, 'detail_2' => $detail_1->id]) }}">

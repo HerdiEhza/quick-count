@@ -7,6 +7,7 @@ use App\Models\DataDapil;
 use App\Models\DataPartai;
 use Livewire\Attributes\On;
 use App\Models\DataBakalCalon;
+use App\Models\PerolehanSuaraBacaleg;
 use Illuminate\Contracts\Database\Eloquent\Builder;
 
 class Detail extends Component
@@ -58,6 +59,7 @@ class Detail extends Component
 
         // ============================================================================================================== //
         $dapilActive = DataBakalCalon::where('id', $this->caleg)->select('data_dapil_id')->firstOrFail();
+        $calegActive = $this->caleg;
 
         // dd($dapilActive);
         $dataBacaleg = DataBakalCalon::where('id', $this->caleg)
@@ -86,77 +88,35 @@ class Detail extends Component
             ])
             ->firstOrFail();
 
-        $calegActive = $this->caleg;
-
         if ($dapilActive->data_dapil_id <= 10) {
             $dapils = DataDapil::where('id', $dataBacaleg->dataDapil->id)
                 ->with([
                     'kabupatenKota' => function (Builder $q) use ($calegActive) {
-                        $q->withOnly([
-                            'perolehanSuara' => function (Builder $q) use ($calegActive) {
-                                $q->withSum([
-                                    'perolehanSuaraBacalegs as total_suara_bacaleg' => function ($query) use ($calegActive) { 
-                                        $query->whereRelation('dataBakalCalon', 'data_bakal_calon_id', $calegActive);
-                                    }], 'suara'
-                                );
-                            }
-                        ])
-                        ->withCount('allDataTps as total_tps');
-                    }
-                ])
-                ->withSum('kabupatenKota as total_dpt', 'jumlah_dpt')
-                ->firstOrFail();
-                
-                // dd($calegActive);
-                // dd($dapils->kabupatenKota[1]->perolehanSuara[2]->total_suara_bacaleg);
-
-                // ->with([
-                //         'kabupatenKota' => function (Builder $q) {
-                //             $q->whereRelation('perolehanSuara.perolehanSuaraBacalegs', 'data_bakal_calon_id', $this->caleg)
-                //                 ->withSum('perolehanSuaraBacalegs as total_suara_bacaleg', 'suara');
-                //             };
-                //         ])
-                //                 // $q->with([
-                //                 //     'perolehanSuara' => function (Builder $q) {
-                //                 //         $q->whereRelation('perolehanSuaraBacalegs', 'data_bakal_calon_id', $this->caleg)
-                //                 //             ->withSum('perolehanSuaraBacalegs as total_suara_bacaleg', 'suara');
-                //                 //         // $q->withOnly([
-                //                 //         //     'perolehanSuaraBacalegs' => function (Builder $query) {
-                //                 //         //         $query->sum('suara');
-                //                 //         //         // $query->withSum('perolehanSuaraBacalegs as total_suara_bacaleg', 'suara');
-                //                 //         //     },
-                //                 //         // ]);
-                //                 //     },
-                //                 // ])
-                //         ->withCount('allDataTps as total_tps');
-                //     // },
-                // ])
-                // ->withSum('kabupatenKota as total_dpt', 'jumlah_dpt')
-                // ->firstOrFail();
-
-        } else {
-            $dapils = DataDapil::where('id', $dataBacaleg->dataDapil->id)
-                ->with([
-                    'Kecamatan' => function (Builder $q) {
-                        $q->with([
-                            'perolehanSuara' => function (Builder $q) {
-                                // $q->withSum('perolehanSuaraBacalegs as total_suara_bacaleg', 'suara');
-                                $q->withOnly([
-                                    'perolehanSuaraBacalegs' => function (Builder $query) {
-                                        $query->sum('suara');
-                                        // $query->withSum('perolehanSuaraBacalegs as total_suara_bacaleg', 'suara');
-                                    },
-                                ]);
-                            },
-                        ])
+                        $q->withSum([
+                            'perolehanSuaraCaleg as suara_caleg' => function ($query) use ($calegActive) { 
+                                $query->where('data_bakal_calon_id', $calegActive);
+                            }], 'suara'
+                        )
                         ->withCount('allDataTps as total_tps');
                     },
                 ])
-                ->withSum('Kecamatan as total_dpt', 'jumlah_dpt')
+                ->withSum('kabupatenKota as total_dpt', 'jumlah_dpt')
                 ->firstOrFail();
-
+        } else {
+            $dapils = DataDapil::where('id', $dataBacaleg->dataDapil->id)
+                ->with([
+                    'kecamatan' => function (Builder $q) use ($calegActive) {
+                        $q->withSum([
+                            'perolehanSuaraCaleg as suara_caleg' => function ($query) use ($calegActive) { 
+                                $query->where('data_bakal_calon_id', $calegActive);
+                            }], 'suara'
+                        )
+                        ->withCount('allDataTps as total_tps');
+                    },
+                ])
+                ->withSum('kecamatan as total_dpt', 'jumlah_dpt')
+                ->firstOrFail();
         }
-
 
         return view('livewire.detail', [
             'dapilActive' => $dapilActive,

@@ -5,6 +5,7 @@ namespace App\Models;
 use App\Models\Scopes\Searchable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasManyThrough;
 
 class DataTps extends Model
 {
@@ -31,6 +32,18 @@ class DataTps extends Model
     public function perolehanSuaras()
     {
         return $this->hasMany(PerolehanSuara::class);
+    }
+
+    public function perolehanSuaraCaleg(): HasManyThrough
+    {
+        return $this->hasManyThrough(
+            PerolehanSuaraBacaleg::class, // Deployment | yang mau diambil
+            PerolehanSuara::class, // Environment
+            'data_tps_id', // Foreign key on the environments table...
+            'perolehan_suara_id', // Foreign key on the deployments table...
+            'id', // Local key on the projects table...
+            'id' // Local key on the environments table...
+        )->where('is_active', true);
     }
 
     public function allTimSukses()

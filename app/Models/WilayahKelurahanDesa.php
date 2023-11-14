@@ -11,6 +11,7 @@ class WilayahKelurahanDesa extends Model
 {
     use HasFactory;
     use Searchable;
+    use \Staudenmeir\EloquentHasManyDeep\HasRelationships;
 
     protected $fillable = [
         'wilayah_kecamatan_id',
@@ -48,5 +49,10 @@ class WilayahKelurahanDesa extends Model
             'id', // Local key on the projects table...
             'id' // Local key on the environments table...
         )->where('is_active', true);
+    }
+
+    public function perolehanSuaraCaleg()
+    {
+        return $this->hasManyDeep(PerolehanSuaraBacaleg::class, [DataTps::class, PerolehanSuara::class]);
     }
 }

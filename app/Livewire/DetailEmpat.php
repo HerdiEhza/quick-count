@@ -19,6 +19,9 @@ class DetailEmpat extends Component
 
     public function render()
     {
+        $dapilActive = DataBakalCalon::where('id', $this->caleg)->select('data_dapil_id')->firstOrFail();
+        $calegActive = $this->caleg;
+
         $dataBacaleg = DataBakalCalon::where('id', $this->caleg)
             ->select(['id','nama_bakal_calon','data_partai_id','data_dapil_id','kategori_pemilu_id','foto_path'])
             ->withOnly([
@@ -38,41 +41,37 @@ class DetailEmpat extends Component
             ])
             ->firstOrFail();
 
-        $dapils = DataDapil::where('id', $dataBacaleg->dataDapil->id)
-            ->with([
-                'kelurahanDesa' => function (Builder $q) {
-                    $q->where('wilayah_kecamatan_id', $this->detail_3)
-                        ->with([
-                            'perolehanSuara' => function (Builder $q) {
-                                $q->withOnly([
-                                    'perolehanSuaraBacalegs' => function (Builder $query) {
-                                        $query->withSum('perolehanSuaraBacalegs as total_suara_bacaleg', 'suara');
-                                    },
-                                ]);
-                            },
-                        ])
-                        ->withCount('allDataTps as total_tps');
-                },
-            ])
-            ->withSum('kelurahanDesa as total_dpt', 'jumlah_dpt')
-            ->firstOrFail();
+        // $dapils = DataDapil::where('id', $dataBacaleg->dataDapil->id)
+        //     ->with([
+        //         'kelurahanDesa' => function (Builder $q) {
+        //             $q->where('wilayah_kecamatan_id', $this->detail_3)
+        //                 ->with([
+        //                     'perolehanSuara' => function (Builder $q) {
+        //                         $q->withOnly([
+        //                             'perolehanSuaraBacalegs' => function (Builder $query) {
+        //                                 $query->withSum('perolehanSuaraBacalegs as total_suara_bacaleg', 'suara');
+        //                             },
+        //                         ]);
+        //                     },
+        //                 ])
+        //                 ->withCount('allDataTps as total_tps');
+        //         },
+        //     ])
+        //     ->withSum('kelurahanDesa as total_dpt', 'jumlah_dpt')
+        //     ->firstOrFail();
 
         $tps = DataTps::whereIn('wilayah_kelurahan_desa_id', [$this->detail_4])
-            ->withOnly([
-                'perolehanSuaras' => function (Builder $q) {
-                    $q->withOnly([
-                        'perolehanSuaraBacalegs' => function (Builder $query) {
-                            $query->withSum('perolehanSuaraBacalegs as total_suara_bacaleg', 'suara');
-                        },
-                    ]);
-                },
-            ])
+            ->withSum([
+                'perolehanSuaraCaleg as suara_caleg' => function ($query) use ($calegActive) { 
+                    $query->where('data_bakal_calon_id', $calegActive);
+                }], 'suara'
+            )
             ->get();
 
         return view('livewire.detail-empat', [
             'dataBacaleg' => $dataBacaleg,
             'partais' => $partais,
-            'dapils' => $dapils,
+            // 'dapils' => $dapils,
             'tps' => $tps,
         ]);
     }
