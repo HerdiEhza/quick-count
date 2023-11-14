@@ -8,4 +8,5 @@
 CARI TAU BAGAIMANA CARA SAVE ALPINE JS local baru saat save di push
 
 [ ] Input suara tinggal benahin dan test save data
+[ ] Tambah visualisasi chart map (dokumentasi di chart.html)
 [X] Detail suara bacaleg masih error

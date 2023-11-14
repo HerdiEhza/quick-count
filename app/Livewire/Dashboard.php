@@ -33,26 +33,35 @@ class Dashboard extends Component
                         $query->where('data_dapil_id', $this->dapilActive)->select(['id','data_partai_id','nama_bakal_calon', 'nomor_urut'])->withSum('perolehanSuaraBacalegs as total_suara_bacaleg', 'suara');
                     },
                 ])
-            ->withSum('perolehanSuaraPartais as total_suara_partai', 'suara')
+            // ->withSum('perolehanSuaraPartais as total_suara_partai', 'suara')
+            ->withSum([
+                'perolehanSuaraPartais as total_suara_partai' => function ($query) { 
+                    $query->whereRelation('perolehanSuara.dataDapil', 'data_dapil_id', $this->dapilActive);
+                }], 'suara'
+            )
             ->get();
     }
 
     public function updatedDapilActive()
     {
         $this->partais = DataPartai::
-        select(['id','nama_partai','logo_partai','nomor_urut'])
-        // with([
-        //     'perolehanSuaraPartais' => function (Builder $query) {
-        //         $query->withSum('suara as total_suara_partai', );
-        //     },
-        // ])
-        ->with([
-            'dataBakalCalons'=> function (Builder $query) {
-                    $query->where('data_dapil_id', $this->dapilActive)->select(['id','data_partai_id','nama_bakal_calon', 'nomor_urut'])->withSum('perolehanSuaraBacalegs as total_suara_bacaleg', 'suara');
-                },
-            ])
-        ->withSum('perolehanSuaraPartais as total_suara_partai', 'suara')
-        ->get();
+            select(['id','nama_partai','logo_partai','nomor_urut'])
+            // with([
+            //     'perolehanSuaraPartais' => function (Builder $query) {
+            //         $query->withSum('suara as total_suara_partai', );
+            //     },
+            // ])
+            ->with([
+                'dataBakalCalons'=> function (Builder $query) {
+                        $query->where('data_dapil_id', $this->dapilActive)->select(['id','data_partai_id','nama_bakal_calon', 'nomor_urut'])->withSum('perolehanSuaraBacalegs as total_suara_bacaleg', 'suara');
+                    },
+                ])
+            ->withSum([
+                'perolehanSuaraPartais as total_suara_partai' => function ($query) { 
+                    $query->whereRelation('perolehanSuara.dataDapil', 'data_dapil_id', $this->dapilActive);
+                }], 'suara'
+            )
+            ->get();
     }
 
     public function render()
@@ -61,11 +70,11 @@ class Dashboard extends Component
 
         $partaiMenangs = DataPartai::select(['id','nama_partai','logo_partai'])
             ->withSum([
-                'perolehanSuaraPartais' => function ($query) { 
+                'perolehanSuaraPartais as total_suara_partai_menang' => function ($query) { 
                     $query->whereRelation('perolehanSuara.dataDapil', 'data_dapil_id', $this->dapilActive);
                 }], 'suara'
             )
-            ->orderByDesc('perolehan_suara_partais_sum_suara')
+            ->orderByDesc('total_suara_partai_menang')
             ->take($dataDapil->jumlah_kursi)
             ->get();
 

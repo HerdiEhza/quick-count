@@ -1,0 +1,1 @@
+Ingat dashboard detail itu berdasarkan id dapil (jika ada penambahan DAPIL harap diperhatikan)
