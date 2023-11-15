@@ -63,6 +63,11 @@ class DataDapil extends Model
         return $this->belongsToMany(WilayahKelurahanDesa::class, 'data_dapil_has_wilayah_kelurahan_desas', 'dapil_id', 'kelurahan_desa_id');
     }
 
+    public function perolehanSuara()
+    {
+        return $this->hasMany(PerolehanSuara::class, 'data_dapil_id');
+    }
+
     // public function kabupatenKota(): HasManyThrough
     // {
     //     // return $this->hasManyThrough(WilayahKabupatenKota::class, DataTps::class);

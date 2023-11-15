@@ -5,11 +5,13 @@ namespace App\Livewire;
 use App\Models\DataBakalCalon;
 use App\Models\DataDapil;
 use App\Models\DataPartai;
+use App\Models\DataTps;
 use App\Models\PerolehanSuara;
 use Livewire\Component;
 // use Illuminate\Database\Eloquent\Builder;
 // use Illuminate\Database\Query\Builder;
 use Illuminate\Contracts\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Builder as EloquentBuilder;
 
 class Dashboard extends Component
 {
@@ -66,7 +68,35 @@ class Dashboard extends Component
 
     public function render()
     {
-        $dataDapil = DataDapil::select(['id','nama_dapil','jumlah_kursi'])->where('id', $this->dapilActive)->firstOrFail();
+        $dataDapil = DataDapil::select(['id','nama_dapil','jumlah_kursi'])
+                        ->where('id', $this->dapilActive)
+                        ->firstOrFail();
+
+        if ($this->dapilActive <= 2) {
+            $totalTps = $dataDapil->select(['id'])->withCount([
+                                                    'dataTpsDPRRI as total_tps',
+                                                    'perolehanSuara as total_suara_tps_masuk' => function (Builder $query) {
+                                                        $query->where('data_dapil_id', $this->dapilActive)->where('is_active', true);
+                                                    }
+                                                ])->firstOrFail();
+            $persentaseSuaraMasuk = $totalTps->total_suara_tps_masuk === 0 ? 0 : number_format((($totalTps->total_tps / $totalTps->total_suara_tps_masuk) * 100), 2);
+        } elseif ($this->dapilActive >= 3 AND $this->dapilActive <= 10) {
+            $totalTps = $dataDapil->select(['id'])->withCount([
+                                                    'dataTpsDPRDProvinsi as total_tps',
+                                                    'perolehanSuara as total_suara_tps_masuk' => function (Builder $query) {
+                                                        $query->where('data_dapil_id', $this->dapilActive)->where('is_active', true);
+                                                    }
+                                                ])->firstOrFail();
+            $persentaseSuaraMasuk = $totalTps->total_suara_tps_masuk === 0 ? 0 : number_format((($totalTps->total_tps / $totalTps->total_suara_tps_masuk) * 100), 2);
+        } else {
+            $totalTps = $dataDapil->select(['id'])->withCount([
+                                                    'dataTpsDPRDKabKota as total_tps',
+                                                    'perolehanSuara as total_suara_tps_masuk' => function (Builder $query) {
+                                                        $query->where('data_dapil_id', $this->dapilActive)->where('is_active', true);
+                                                    }
+                                                ])->firstOrFail();
+            $persentaseSuaraMasuk = $totalTps->total_suara_tps_masuk === 0 ? 0 : number_format((($totalTps->total_tps / $totalTps->total_suara_tps_masuk) * 100), 2);
+        }
 
         $partaiMenangs = DataPartai::select(['id','nama_partai','logo_partai'])
             ->withSum([
@@ -92,6 +122,9 @@ class Dashboard extends Component
 
         return view('livewire.dashboard', [
             'dataDapil' => $dataDapil,
+            'totalTps' => $totalTps,
+            'persentaseSuaraMasuk' => $persentaseSuaraMasuk,
+            // 'totalSuaraTpsMasuk' => $totalSuaraTpsMasuk,
             'partaiMenangs' => $partaiMenangs,
             'bacalegMenangs' => $bacalegMenangs,
         ]);

@@ -13,7 +13,7 @@
                 <div class="h-full p-6 bg-white rounded-lg shadow-lg dark:bg-gray-800">
                     <div class="flex flex-row flex-wrap items-center">
                         <div class="flex-shrink w-1/2 max-w-full">
-                            <h5 class="mb-1 text-gray-500">Total view</h5>
+                            <h5 class="mb-1 text-gray-500">Total TPS / Suara Masuk</h5>
                             <h3 class="mb-1 text-lg font-bold">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                     class="inline-block -mt-1 ltr:mr-2 rtl:ml-2 bi bi-eye" viewBox="0 0 16 16">
@@ -23,7 +23,8 @@
                                     <path
                                         d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z">
                                     </path>
-                                </svg> 143.210
+                                </svg>
+                                <span>{{ number_format($totalTps->total_tps).' / '.number_format($totalTps->total_suara_tps_masuk) }}</span>
                             </h3>
                             <p class="text-sm text-green-500">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
@@ -32,7 +33,7 @@
                                         d="M8 12a.5.5 0 0 0 .5-.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 .5.5z">
                                     </path>
                                 </svg>
-                                46.2%
+                                {{ $persentaseSuaraMasuk }}%
                             </p>
                         </div>
                         <div class="flex-shrink w-1/2 max-w-full">
