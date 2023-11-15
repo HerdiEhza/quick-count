@@ -16,6 +16,7 @@ use App\Models\WilayahKecamatan;
 use App\Models\WilayahKelurahanDesa;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Contracts\Database\Eloquent\Builder;
+use Livewire\Attributes\Url;
 
 class InputSuara extends Component
 {
@@ -23,17 +24,24 @@ class InputSuara extends Component
 
     public array $suaraPartai;
     public array $suaraBacaleg;
-    public $tpsActive = 1;
-    public $kategoriPemiluActive = 1;
-
+    
     public $formStep = 2;
-
+    
+    #[Url(as: 'kp')]
+    public $kategoriPemiluActive;
+    #[Url(as: 'd')]
+    public $dapilActive;
+    
+    #[Url(as: 'kk')]
     public $kabKotaActive;
+    #[Url(as: 'k')]
     public $kecamatanActive;
+    #[Url(as: 'kd')]
     public $kelDesaActive;
+    #[Url(as: 't')]
+    public $tpsActive;
 
     public $kategoriPemilu;
-    public $dapilActive;
 
     #[Rule('image|max:1024')]
     public $photo;
@@ -84,14 +92,17 @@ class InputSuara extends Component
 
     public function render()
     {
-        $kabKotas = WilayahKabupatenKota::all();
-        $kecamatans = WilayahKecamatan::where('wilayah_kabupaten_kota_id', $this->kabKotaActive)->get();
-        $kelDesas = WilayahKelurahanDesa::where('wilayah_kecamatan_id', $this->kecamatanActive)->get();
-        $tps = DataTps::where('wilayah_kelurahan_desa_id', $this->kelDesaActive)->get();
+        $kabKotas = WilayahKabupatenKota::select(['id','nama_kabupaten_kota'])->get();
+        $kecamatans = WilayahKecamatan::select(['id','nama_kecamatan'])->where('wilayah_kabupaten_kota_id', $this->kabKotaActive)->get();
+        $kelDesas = WilayahKelurahanDesa::select(['id','nama_kelurahan_desa'])->where('wilayah_kecamatan_id', $this->kecamatanActive)->get();
+        $tps = DataTps::select(['id','nama_tps'])->where('wilayah_kelurahan_desa_id', $this->kelDesaActive)->get();
 
         $kategoriPemilus = DataKategoriPemilu::select(['id','nama_kategori_pemilu'])->get();
 
-        $dapils = DataDapil::where('kategori_pemilu_id', $this->kategoriPemilu)->whereHas('dataBakalCalons')->get();
+        $dapils = DataDapil::select(['id','nama_dapil','kategori_pemilu_id'])
+                    ->where('kategori_pemilu_id', $this->kategoriPemiluActive)
+                    ->whereHas('dataBakalCalons')
+                    ->get();
 
         $dataPilihans = DataPartai::select(['id','nomor_urut','nama_partai','logo_partai'])
             ->withOnly([

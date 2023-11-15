@@ -1,7 +1,8 @@
 <div class="py-12">
     <div class="mx-auto max-w-7xl">
-        <div class="flex items-center w-full p-4">
-            <select wire:model.live="dapilActive">
+        <div class="items-center w-full p-4">
+            <label for="dapilActive" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Pilih DAPIL</label>
+            <select wire:model.live="dapilActive" id="dapilActive" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
                 @foreach ($dapils as $dapil)
                     <option value="{{ $dapil->id }}">{{ $dapil->nama_dapil }}</option>
                 @endforeach
@@ -9,11 +10,11 @@
         </div>
 
         <div class="grid grid-cols-1 gap-4 p-4 sm:grid-cols-2 lg:grid-cols-4">
-            <div class="flex-shrink w-full max-w-full">
-                <div class="h-full p-6 bg-white rounded-lg shadow-lg dark:bg-gray-800">
-                    <div class="flex flex-row flex-wrap items-center">
-                        <div class="flex-shrink w-1/2 max-w-full">
-                            <h5 class="mb-1 text-gray-500">Total TPS / Suara Masuk</h5>
+            <div class="flex w-full max-w-full">
+                <div class="w-full h-full p-4 bg-white rounded-lg shadow-lg dark:bg-gray-800">
+                    <div class="flex items-center w-full">
+                        <div class="flex flex-col w-full">
+                            <h5 class="mb-1 text-sm text-gray-500">Total TPS / Suara Masuk</h5>
                             <h3 class="mb-1 text-lg font-bold">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                     class="inline-block -mt-1 ltr:mr-2 rtl:ml-2 bi bi-eye" viewBox="0 0 16 16">
@@ -36,19 +37,14 @@
                                 {{ $persentaseSuaraMasuk }}%
                             </p>
                         </div>
-                        <div class="flex-shrink w-1/2 max-w-full">
-                            <canvas class="max-w-100" id="LineAreaSm"
-                                style="display: block; box-sizing: border-box; height: 69px; width: 139px;" width="139"
-                                height="69"></canvas>
-                        </div>
                     </div>
                 </div>
             </div>
-            <div class="flex-shrink w-full max-w-full">
-                <div class="h-full p-6 bg-white rounded-lg shadow-lg dark:bg-gray-800">
-                    <div class="flex flex-row flex-wrap items-center">
-                        <div class="flex-shrink w-1/2 max-w-full">
-                            <h5 class="mb-1 text-gray-500">Total likes</h5>
+            <div class="flex w-full max-w-full">
+                <div class="w-full h-full p-4 bg-white rounded-lg shadow-lg dark:bg-gray-800">
+                    <div class="flex items-center w-full">
+                        <div class="flex flex-col w-full">
+                            <h5 class="mb-1 text-sm text-gray-500">Total likes</h5>
                             <h3 class="mb-1 text-lg font-bold">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                     class="inline-block -mt-1 ltr:mr-2 rtl:ml-2 bi bi-hand-thumbs-up" viewBox="0 0 16 16">
@@ -67,19 +63,14 @@
                                 16.2%
                             </p>
                         </div>
-                        <div class="flex-shrink w-1/2 max-w-full">
-                            <canvas class="max-w-100" id="BarChartSm"
-                                style="display: block; box-sizing: border-box; height: 69px; width: 139px;" width="139"
-                                height="69"></canvas>
-                        </div>
                     </div>
                 </div>
             </div>
-            <div class="flex-shrink w-full max-w-full">
-                <div class="h-full p-6 bg-white rounded-lg shadow-lg dark:bg-gray-800">
-                    <div class="flex flex-row flex-wrap items-center">
-                        <div class="flex-shrink w-1/2 max-w-full">
-                            <h5 class="mb-1 text-gray-500">Total Comments</h5>
+            <div class="flex w-full max-w-full">
+                <div class="w-full h-full p-4 bg-white rounded-lg shadow-lg dark:bg-gray-800">
+                    <div class="flex items-center w-full">
+                        <div class="flex flex-col w-full">
+                            <h5 class="mb-1 text-sm text-gray-500">Total Comments</h5>
                             <h3 class="mb-1 text-lg font-bold">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                     class="inline-block -mt-1 ltr:mr-2 rtl:ml-2 bi bi-chat-left-text" viewBox="0 0 16 16">
@@ -101,19 +92,14 @@
                                 11.2%
                             </p>
                         </div>
-                        <div class="flex-shrink w-1/2 max-w-full">
-                            <canvas class="max-w-100" id="BarComments"
-                                style="display: block; box-sizing: border-box; height: 69px; width: 139px;" width="139"
-                                height="69"></canvas>
-                        </div>
                     </div>
                 </div>
             </div>
-            <div class="flex-shrink w-full max-w-full">
-                <div class="h-full p-6 bg-white rounded-lg shadow-lg dark:bg-gray-800">
-                    <div class="flex flex-row flex-wrap items-center">
-                        <div class="flex-shrink w-1/2 max-w-full">
-                            <h5 class="mb-1 text-gray-500">Total Share</h5>
+            <div class="flex w-full max-w-full">
+                <div class="w-full h-full p-4 bg-white rounded-lg shadow-lg dark:bg-gray-800">
+                    <div class="flex items-center w-full">
+                        <div class="flex flex-col w-full">
+                            <h5 class="mb-1 text-sm text-gray-500">Total Share</h5>
                             <h3 class="mb-1 text-lg font-bold">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                     class="inline-block -mt-1 ltr:mr-2 rtl:ml-2 bi bi-share" viewBox="0 0 16 16">
@@ -132,17 +118,12 @@
                                 6.2%
                             </p>
                         </div>
-                        <div class="flex-shrink w-1/2 max-w-full">
-                            <canvas class="max-w-100" id="BarShare"
-                                style="display: block; box-sizing: border-box; height: 69px; width: 139px;" width="139"
-                                height="69"></canvas>
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="flex w-full px-4 space-x-4">
+        <div class="grid grid-cols-1 gap-4 p-4 sm:grid-cols-2 lg:grid-cols-2">
             <div class="relative w-full overflow-x-auto">
                 <table class="w-full text-sm text-left text-gray-500 border-2 border-gray-300 rounded-sm rtl:text-right dark:text-gray-400">
                     <caption class="p-5 text-lg font-semibold text-left text-gray-900 bg-white rtl:text-right dark:text-white dark:bg-gray-800">
@@ -223,7 +204,7 @@
             </div>
         </div>
 
-        <div class="grid grid-cols-4 gap-4 p-4">
+        <div class="grid grid-cols-1 gap-4 p-4 sm:grid-cols-2 lg:grid-cols-4">
             @foreach ($partais as $partai)
             <div class="py-2 bg-white border-2 border-gray-300 rounded dark:border-gray-400">
                 <div class="flex items-center px-2 py-4 border-b border-gray-500 dark:border-gray-600 gap-x-4">

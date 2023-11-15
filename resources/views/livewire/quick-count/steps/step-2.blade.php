@@ -1,6 +1,7 @@
 <div class="mb-5">
     <form wire:submit="save">
-        <div class="mb-5 text-center" x-data="app()">
+        {{-- <div class="mb-5 text-center" x-data="app()"> --}}
+        <div class="mb-5 text-center">
             <div class="relative w-64 h-64 mx-auto mb-4 bg-gray-100 border rounded-sm shadow-inset">
                 <img id="image" class="object-cover w-full h-64" :src="image" />
             </div>
