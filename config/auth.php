@@ -17,6 +17,10 @@ return [
         'guard' => 'web',
         'passwords' => 'users',
     ],
+    'timses'=>[
+        'driver'=>'eloquent',
+        'model'=>App\Models\Timses\Timses::class,
+    ],
 
     /*
     |--------------------------------------------------------------------------
@@ -39,6 +43,10 @@ return [
         'web' => [
             'driver' => 'session',
             'provider' => 'users',
+        ],
+        'timses'=>[
+            'driver'=>'session',
+            'provider'=>'timses',
         ],
     ],
 
@@ -63,6 +71,11 @@ return [
         'users' => [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
+        ],
+
+        'timses'=>[
+            'driver'=>'eloquent',
+            'model'=>App\Models\Timses\Timses::class,
         ],
 
         // 'users' => [
@@ -94,6 +107,13 @@ return [
         'users' => [
             'provider' => 'users',
             'table' => 'password_reset_tokens',
+            'expire' => 60,
+            'throttle' => 60,
+        ],
+
+        'timses'=>[
+            'driver'=>'eloquent',
+            'model'=>App\Models\Timses\Timses::class,
             'expire' => 60,
             'throttle' => 60,
         ],

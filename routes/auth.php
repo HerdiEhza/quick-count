@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\TimsesAuthController;
 use App\Http\Controllers\Auth\VerifyEmailController;
 use Illuminate\Support\Facades\Route;
 use Livewire\Volt\Volt;
@@ -29,3 +30,10 @@ Route::middleware('auth')->group(function () {
     Volt::route('confirm-password', 'pages.auth.confirm-password')
         ->name('password.confirm');
 });
+
+// add timses auth
+Route::get('/timses/login', [TimsesAuthController::class, 'login'])->name('timses.login');
+Route::post('/timses/login', [TimsesAuthController::class, 'store'])->name('timses.login.store');
+Route::post('/timses/logout', [TimsesAuthController::class, 'timses'])->name('timses.logout');
+
+Route::get('/panel', [TimsesPagesController::class, 'panel_home'])->name('panel')->middleware('auth:timses');
