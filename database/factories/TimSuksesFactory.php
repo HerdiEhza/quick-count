@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\DataTps;
 use App\Models\TimSukses;
 use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Factories\Factory;
@@ -22,17 +23,20 @@ class TimSuksesFactory extends Factory
      */
     public function definition(): array
     {
+        $tpsData = DataTps::findOrFail(rand(1, 2716));
+
         return [
             'nomor_ktp' => $this->faker->nik(),
             'nomor_hp' => $this->faker->phoneNumber(),
             'nama' => $this->faker->name(),
-            'is_out_range' => $this->faker->boolean(),
-            'data_bakal_calon_id' => \App\Models\DataBakalCalon::factory(),
-            'user_id' => \App\Models\User::factory(),
-            'data_tps_id' => \App\Models\DataTps::factory(),
-            'wilayah_kabupaten_kota_id' => \App\Models\WilayahKabupatenKota::factory(),
-            'wilayah_kecamatan_id' => \App\Models\WilayahKecamatan::factory(),
-            'wilayah_kelurahan_desa_id' => \App\Models\WilayahKelurahanDesa::factory(),
+            'is_out_range' => $this->faker->boolean(0),
+            // 'data_bakal_calon_id' => $this->faker->numberBetween(1, 200),
+            'data_bakal_calon_id' => 127,
+            'user_id' => $this->faker->numberBetween(500, 800),
+            'data_tps_id' => $tpsData->id,
+            'wilayah_kabupaten_kota_id' => $tpsData->wilayah_kabupaten_kota_id,
+            'wilayah_kecamatan_id' => $tpsData->wilayah_kecamatan_id,
+            'wilayah_kelurahan_desa_id' => $tpsData->wilayah_kelurahan_desa_id,
         ];
     }
 }

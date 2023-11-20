@@ -3,16 +3,21 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+
+use Awobaz\Compoships\Database\Eloquent\Relations\HasMany as RelationsHasMany;
 use Laravel\Sanctum\HasApiTokens;
 use Spatie\Permission\Traits\HasRoles;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasManyThrough;
 
 class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable, HasRoles;
+    use \Awobaz\Compoships\Compoships;
 
     /**
      * The attributes that are mass assignable.
@@ -48,5 +53,33 @@ class User extends Authenticatable
     public function fotoCheckIn(): BelongsToMany
     {
         return $this->belongsToMany(DataTps::class, 'user_data_tps_photo', 'user_id', 'data_tps_id');
+    }
+
+    public function timses(): HasMany
+    {
+        return $this->hasMany(TimSukses::class);
+    }
+
+    public function timsesRing1(): HasMany
+    {
+        return $this->hasMany(TimSukses::class);
+    }
+
+    // public function timsesRing2(): RelationsHasMany
+    // {
+    //     return $this->hasMany(TimSukses::class);
+    // }
+
+    public function timsesRing2(): HasManyThrough
+    {
+        // return $this->hasManyThrough(WilayahKabupatenKota::class, DataTps::class);
+        return $this->hasManyThrough(
+            TimSukses::class, // Deploymet
+            User::class, // Environment
+            'timses_leader_id', // Foreign key on the environments table...
+            'user_id', // Foreign key on the deployments table...
+            'id', // Local key on the projects table...
+            'id' // Local key on the environments table...
+        );
     }
 }

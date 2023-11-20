@@ -13,7 +13,7 @@ class TimSuksesSeeder extends Seeder
     public function run(): void
     {
         TimSukses::factory()
-            ->count(5)
+            ->count(1500)
             ->create();
     }
 }

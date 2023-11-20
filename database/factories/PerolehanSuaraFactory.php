@@ -2,6 +2,8 @@
 
 namespace Database\Factories;
 
+use App\Models\DataDapil;
+use App\Models\DataTps;
 use Illuminate\Support\Str;
 use App\Models\PerolehanSuara;
 use Illuminate\Database\Eloquent\Factories\Factory;
@@ -22,17 +24,20 @@ class PerolehanSuaraFactory extends Factory
      */
     public function definition(): array
     {
+        $kategoriDapil = DataDapil::findOrFail(rand(1, 80));
+        $tpsData = DataTps::findOrFail(rand(1, 17622));
+        
         return [
             'suara_sah' => $this->faker->numberBetween(25, 39),
             'suara_tidak_sah' => $this->faker->numberBetween(25, 39),
             'foto_c1' => $this->faker->imageUrl(),
             'foto_ba' => $this->faker->imageUrl(),
             'user_id' => \App\Models\User::factory(),
-            // 'data_tps_id' => $this->faker->numberBetween(1, 17622),
-            'data_tps_id' => $this->faker->numberBetween(1, 2716),
-            'data_kategori_pemilu_id' => $this->faker->numberBetween(2, 4),
+            'data_tps_id' => $this->faker->numberBetween(1, 17622),
+            // 'data_tps_id' => $kategoriDapil->kategori_pemilu_id === 2 $tpsData->id,
+            'data_kategori_pemilu_id' => $kategoriDapil->kategori_pemilu_id,
             // 'data_dapil_id' => $this->faker->numberBetween(1, 80),
-            'data_dapil_id' => $this->faker->numberBetween(1, 1),
+            'data_dapil_id' => $kategoriDapil->id,
         ];
     }
 }
