@@ -1,15 +1,15 @@
 <div>
 
-    <div class="h-full py-14">
+    <div class="h-full py-8">
 
         
         <!-- Statistics Cards -->
         <div class="grid grid-cols-1 gap-4 p-4 sm:grid-cols-2 lg:grid-cols-4">
             <div class="flex-shrink w-full max-w-full">
-                <div class="h-full p-6 bg-white rounded-lg shadow-lg dark:bg-gray-800">
+                <div class="h-full p-4 border-2 rounded-md dark:bg-gray-800">
                     <div class="flex flex-row flex-wrap items-center">
                         <div class="flex-shrink w-full max-w-full">
-                            <h5 class="mb-1 text-gray-500">Total TPS</h5>
+                            <h5 class="mb-1 text-sm text-gray-500">Total TPS</h5>
                             <h3 class="mb-1 text-lg font-bold">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                     class="inline-block -mt-1 ltr:mr-2 rtl:ml-2 bi bi-eye" viewBox="0 0 16 16">
@@ -36,10 +36,10 @@
                 </div>
             </div>
             <div class="flex-shrink w-full max-w-full">
-                <div class="h-full p-6 bg-white rounded-lg shadow-lg dark:bg-gray-800">
+                <div class="h-full p-4 border-2 rounded-md dark:bg-gray-800">
                     <div class="flex flex-row flex-wrap items-center">
                         <div class="flex-shrink w-full max-w-full">
-                            <h5 class="mb-1 text-gray-500">Total DPT</h5>
+                            <h5 class="mb-1 text-sm text-gray-500">Total DPT</h5>
                             <h3 class="mb-1 text-lg font-bold">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                     class="inline-block -mt-1 ltr:mr-2 rtl:ml-2 bi bi-hand-thumbs-up" viewBox="0 0 16 16">
@@ -63,10 +63,10 @@
                 </div>
             </div>
             <div class="flex-shrink w-full max-w-full">
-                <div class="h-full p-6 bg-white rounded-lg shadow-lg dark:bg-gray-800">
+                <div class="h-full p-4 border-2 rounded-md dark:bg-gray-800">
                     <div class="flex flex-row flex-wrap items-center">
                         <div class="flex-shrink w-full max-w-full">
-                            <h5 class="mb-1 text-gray-500">Total dukungan / total target dukungan</h5>
+                            <h5 class="mb-1 text-sm text-gray-500">Total dukungan / total target dukungan</h5>
                             <h3 class="mb-1 text-lg font-bold">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                     class="inline-block -mt-1 ltr:mr-2 rtl:ml-2 bi bi-chat-left-text" viewBox="0 0 16 16">
@@ -94,10 +94,10 @@
                 </div>
             </div>
             <div class="flex-shrink w-full max-w-full">
-                <div class="h-full p-6 bg-white rounded-lg shadow-lg dark:bg-gray-800">
+                <div class="h-full p-4 border-2 rounded-md dark:bg-gray-800">
                     <div class="flex flex-row flex-wrap items-center">
                         <div class="flex-shrink w-full max-w-full">
-                            <h5 class="mb-1 text-gray-500">Target tercapai</h5>
+                            <h5 class="mb-1 text-sm text-gray-500">Target tercapai</h5>
                             <h3 class="mb-1 text-lg font-bold">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                     class="inline-block -mt-1 ltr:mr-2 rtl:ml-2 bi bi-share" viewBox="0 0 16 16">
@@ -122,12 +122,28 @@
         </div>
         <!-- ./Statistics Cards -->
         <!-- Statistics Cards -->
-        <div class="grid grid-cols-1 gap-4 p-4 sm:grid-cols-2 lg:grid-cols-2">
+        <div class="grid grid-cols-1 gap-4 p-4 sm:grid-cols-3 lg:grid-cols-3">
             <div class="flex-shrink w-full max-w-full">
-                <div class="h-full p-6 bg-white rounded-lg shadow-lg dark:bg-gray-800">
+                <div class="h-full p-4 border-2 rounded-md dark:bg-gray-800">
                     <div class="flex flex-row flex-wrap items-center">
-                        <div class="flex-shrink w-1/2 max-w-full">
-                            <h5 class="mb-1 text-gray-500">Dana untuk RING 1</h5>
+                        <div class="flex-shrink w-full max-w-full">
+                            <h5 class="mb-1 text-sm text-gray-500">Total Dana</h5>
+                            <h3 class="mb-1 text-lg font-bold">
+                                Rp
+                                <span>{{ number_format(($danaRing1 * 20000) + ($danaRing2 * 30000)) }}</span>
+                            </h3>
+                            <p class="text-sm text-green-500">
+                                *Total Dana Ring 1 & Dana Ring 2
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="flex-shrink w-full max-w-full">
+                <div class="h-full p-4 border-2 rounded-md dark:bg-gray-800">
+                    <div class="flex flex-row flex-wrap items-center">
+                        <div class="flex-shrink w-full max-w-full">
+                            <h5 class="mb-1 text-sm text-gray-500">Dana untuk RING 1</h5>
                             <h3 class="mb-1 text-lg font-bold">
                                 Rp
                                 <span>{{ number_format($danaRing1 * 20000) }}</span>
@@ -140,10 +156,10 @@
                 </div>
             </div>
             <div class="flex-shrink w-full max-w-full">
-                <div class="h-full p-6 bg-white rounded-lg shadow-lg dark:bg-gray-800">
+                <div class="h-full p-4 border-2 rounded-md dark:bg-gray-800">
                     <div class="flex flex-row flex-wrap items-center">
-                        <div class="flex-shrink w-1/2 max-w-full">
-                            <h5 class="mb-1 text-gray-500">Dana untuk RING 2</h5>
+                        <div class="flex-shrink w-full max-w-full">
+                            <h5 class="mb-1 text-sm text-gray-500">Dana untuk RING 2</h5>
                             <h3 class="mb-1 text-lg font-bold">
                                 Rp
                                 <span>{{ number_format($danaRing2 * 30000) }}</span>
@@ -162,7 +178,7 @@
 
             <!-- TIMSES RING 1 -->
             <div
-                class="relative flex flex-col w-full min-w-0 mb-4 break-words rounded shadow-lg lg:mb-0 bg-gray-50 dark:bg-gray-800">
+                class="relative flex flex-col w-full min-w-0 mb-4 break-words border rounded-md lg:mb-0 bg-gray-50 dark:bg-gray-800">
                 <div class="px-0 mb-0 border-0 rounded-t">
                     <div class="flex flex-wrap items-center px-4 py-2">
                         <div class="relative flex-1 flex-grow w-full max-w-full">
@@ -178,6 +194,9 @@
                         <table class="items-center w-full bg-transparent border-collapse">
                             <thead>
                                 <tr>
+                                    <th
+                                        class="px-2 py-3 text-xs font-semibold text-left text-gray-500 uppercase align-middle bg-gray-100 border border-l-0 border-r-0 border-gray-200 border-solid dark:bg-gray-600 dark:text-gray-100 dark:border-gray-500 whitespace-nowrap">
+                                        No</th>
                                     <th
                                         class="px-4 py-3 text-xs font-semibold text-left text-gray-500 uppercase align-middle bg-gray-100 border border-l-0 border-r-0 border-gray-200 border-solid dark:bg-gray-600 dark:text-gray-100 dark:border-gray-500 whitespace-nowrap">
                                         Nama</th>
@@ -199,9 +218,13 @@
                                 @forelse ($timsesRing1 as $dukunganRing1)
                                     <tr class="text-gray-700 dark:text-gray-100">
                                         <th
-                                            class="p-4 px-4 text-xs text-left align-middle border-t-0 border-l-0 border-r-0 whitespace-nowrap">
-                                            {{ $dukunganRing1->name }}
+                                            class="p-4 px-2 text-xs text-left align-middle border-t-0 border-l-0 border-r-0 whitespace-nowrap">
+                                            {{ $loop->iteration }}.
                                         </th>
+                                        <td
+                                            class="p-4 px-4 text-xs align-middle border-t-0 border-l-0 border-r-0 whitespace-nowrap">
+                                            {{ $dukunganRing1->name }}
+                                        </td>
                                         <td
                                             class="p-4 px-4 text-xs align-middle border-t-0 border-l-0 border-r-0 whitespace-nowrap">
                                             480</td>
@@ -239,7 +262,7 @@
             
             <!-- TIMSES RING 2 -->
             <div
-                class="relative flex flex-col w-full min-w-0 mb-4 break-words rounded shadow-lg lg:mb-0 bg-gray-50 dark:bg-gray-800">
+                class="relative flex flex-col w-full min-w-0 mb-4 break-words border rounded-md lg:mb-0 bg-gray-50 dark:bg-gray-800">
                 <div class="px-0 mb-0 border-0 rounded-t">
                     <div class="flex flex-wrap items-center px-4 py-2">
                         <div class="relative flex-1 flex-grow w-full max-w-full">
@@ -255,6 +278,9 @@
                         <table class="items-center w-full bg-transparent border-collapse">
                             <thead>
                                 <tr>
+                                    <th
+                                        class="px-2 py-3 text-xs font-semibold text-left text-gray-500 uppercase align-middle bg-gray-100 border border-l-0 border-r-0 border-gray-200 border-solid dark:bg-gray-600 dark:text-gray-100 dark:border-gray-500 whitespace-nowrap">
+                                        No</th>
                                     <th
                                         class="px-4 py-3 text-xs font-semibold text-left text-gray-500 uppercase align-middle bg-gray-100 border border-l-0 border-r-0 border-gray-200 border-solid dark:bg-gray-600 dark:text-gray-100 dark:border-gray-500 whitespace-nowrap">
                                         Nama</th>
@@ -276,9 +302,13 @@
                                 @forelse ($timsesRing2 as $dukunganRing2)
                                     <tr class="text-gray-700 dark:text-gray-100">
                                         <th
-                                            class="p-4 px-4 text-xs text-left align-middle border-t-0 border-l-0 border-r-0 whitespace-nowrap">
-                                            {{ $dukunganRing2->name }}
+                                            class="p-4 px-2 text-xs text-left align-middle border-t-0 border-l-0 border-r-0 whitespace-nowrap">
+                                            {{ $loop->iteration }}.
                                         </th>
+                                        <td
+                                            class="p-4 px-4 text-xs align-middle border-t-0 border-l-0 border-r-0 whitespace-nowrap">
+                                            {{ $dukunganRing2->name }}
+                                        </td>
                                         <td
                                             class="p-4 px-4 text-xs align-middle border-t-0 border-l-0 border-r-0 whitespace-nowrap">
                                             480</td>
@@ -322,64 +352,85 @@
                 <h3 class="text-lg font-semibold">Dukungan berdasarkan wilayah</h3>
             </div>
             <div class="md:col-span-2 xl:col-span-1">
-                <div class="p-3 bg-gray-200 rounded dark:bg-gray-800">
+                <div class="p-3 bg-gray-100 border rounded dark:bg-gray-800">
                     <div class="flex justify-between py-1 text-black dark:text-white">
                         <h3 class="text-sm font-semibold">Dukungan di Kabupaten / Kota</h3>
                     </div>
-                    <div class="mt-2 text-sm text-black dark:text-gray-50">
-                        <div class="p-2 mt-1 bg-white border-b border-gray-100 rounded cursor-pointer dark:bg-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700 dark:border-gray-900">
-                            <div class="flex justify-between">
-                                <dt class="text-sm font-medium leading-6 text-gray-900">Sambas</dt>
-                                <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">500</dd>
-                            </div>
-                        </div>
+                    <ul class="mt-2 text-sm text-black dark:text-gray-50">
+                        @forelse ($kabKotas as $kabKota)
+                            <li class="p-2 mt-1 bg-white border-b border-gray-100 rounded cursor-pointer dark:bg-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700 dark:border-gray-900">
+                                <div class="flex justify-between">
+                                    <div class="flex space-x-2">
+                                        <dt class="text-sm font-normal leading-6 text-gray-900">{{ $loop->iteration }}.</dt>
+                                        <dt class="text-sm font-medium leading-6 text-gray-900">{{ $kabKota->nama_kabupaten_kota }}</dt>
+                                    </div>
+                                    <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{{ number_format($kabKota->total_dukungan_kab_kota) }}</dd>
+                                </div>
+                            </li>
+                        @empty
+                            
+                        @endforelse
                         <div class="mt-3">
                             <button class="w-full px-3 py-1 mb-1 mr-1 text-xs font-bold text-white uppercase transition-all duration-150 ease-linear bg-blue-500 rounded outline-none dark:bg-gray-100 active:bg-blue-600 dark:text-gray-800 dark:active:text-gray-700 focus:outline-none" type="button">Lihat detail</button>
                         </div>
-                    </div>
+                    </ul>
                 </div>
             </div>
             <div class="md:col-span-2 xl:col-span-1">
-                <div class="p-3 bg-gray-200 rounded dark:bg-gray-800">
+                <div class="p-3 bg-gray-100 border rounded dark:bg-gray-800">
                     <div class="flex justify-between py-1 text-black dark:text-white">
                         <h3 class="text-sm font-semibold">Dukungan di Kecamatan</h3>
                     </div>
-                    <div class="mt-2 text-sm text-black dark:text-gray-50">
-                        <div class="p-2 mt-1 bg-white border-b border-gray-100 rounded cursor-pointer dark:bg-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700 dark:border-gray-900">
-                            <div class="flex justify-between">
-                                <dt class="text-sm font-medium leading-6 text-gray-900">Sambas</dt>
-                                <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">500</dd>
-                            </div>
-                        </div>
+                    <ul class="mt-2 text-sm text-black dark:text-gray-50">
+                        @forelse ($kecamatans as $kecamatan)
+                            <li class="p-2 mt-1 bg-white border-b border-gray-100 rounded cursor-pointer dark:bg-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700 dark:border-gray-900">
+                                <div class="flex justify-between">
+                                    <div class="flex space-x-2">
+                                        <dt class="text-sm font-normal leading-6 text-gray-900">{{ $loop->iteration }}.</dt>
+                                        <dt class="text-sm font-medium leading-6 text-gray-900">{{ $kecamatan->nama_kecamatan }}</dt>
+                                    </div>
+                                    <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{{ number_format($kecamatan->total_dukungan_kecamatan) }}</dd>
+                                </div>
+                            </li>
+                        @empty
+                            
+                        @endforelse
                         <div class="mt-3">
                             <button class="w-full px-3 py-1 mb-1 mr-1 text-xs font-bold text-white uppercase transition-all duration-150 ease-linear bg-blue-500 rounded outline-none dark:bg-gray-100 active:bg-blue-600 dark:text-gray-800 dark:active:text-gray-700 focus:outline-none" type="button">Lihat detail</button>
                         </div>
-                    </div>
+                    </ul>
                 </div>
             </div>
             <div class="md:col-span-2 xl:col-span-1">
-                <div class="p-3 bg-gray-200 rounded dark:bg-gray-800">
+                <div class="p-3 bg-gray-100 border rounded dark:bg-gray-800">
                     <div class="flex justify-between py-1 text-black dark:text-white">
                         <h3 class="text-sm font-semibold">Dukungan di Kelurahan / Desa</h3>
                     </div>
-                    <div class="mt-2 text-sm text-black dark:text-gray-50">
-                        <div class="p-2 mt-1 bg-white border-b border-gray-100 rounded cursor-pointer dark:bg-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700 dark:border-gray-900">
-                            <div class="flex justify-between">
-                                <dt class="text-sm font-medium leading-6 text-gray-900">Sambas</dt>
-                                <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">500</dd>
-                            </div>
-                        </div>
+                    <ul class="mt-2 text-sm text-black dark:text-gray-50">
+                        @forelse ($kelDesas as $kelDesa)
+                            <li class="p-2 mt-1 bg-white border-b border-gray-100 rounded cursor-pointer dark:bg-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700 dark:border-gray-900">
+                                <div class="flex justify-between">
+                                    <div class="flex space-x-2">
+                                        <dt class="text-sm font-normal leading-6 text-gray-900">{{ $loop->iteration }}.</dt>
+                                        <dt class="text-sm font-medium leading-6 text-gray-900">{{ $kelDesa->nama_kelurahan_desa }}</dt>
+                                    </div>
+                                    <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{{ number_format($kelDesa->total_dukungan_kel_desa) }}</dd>
+                                </div>
+                            </li>
+                        @empty
+                            
+                        @endforelse
                         <div class="mt-3">
                             <button class="w-full px-3 py-1 mb-1 mr-1 text-xs font-bold text-white uppercase transition-all duration-150 ease-linear bg-blue-500 rounded outline-none dark:bg-gray-100 active:bg-blue-600 dark:text-gray-800 dark:active:text-gray-700 focus:outline-none" type="button">Lihat detail</button>
                         </div>
-                    </div>
+                    </ul>
                 </div>
             </div>
         </div>
         <!-- ./Dukungan Wilayah -->
 
         <!-- Client Table -->
-        <div class="mx-4 mt-4">
+        {{-- <div class="mx-4 mt-4">
             <div class="w-full overflow-hidden rounded-lg shadow-xs">
                 <div class="w-full overflow-x-auto">
                     <table class="w-full">
@@ -583,7 +634,7 @@
                     </span>
                 </div>
             </div>
-        </div>
+        </div> --}}
         <!-- ./Client Table -->
     </div>
 
