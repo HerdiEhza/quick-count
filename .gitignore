@@ -18,5 +18,8 @@ yarn-error.log
 /.idea
 /.vscode
 
+/public/*.DS_Store
+/database/*.DS_Store
+/data_caleg/*.DS_Store
 .DS_Store
 /.DS_Store
