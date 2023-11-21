@@ -21,16 +21,19 @@ class Dashboard extends Component
 
     public function render()
     {
-        $getDapil = DataDapil::findOrFail(config('orchid_opinion.dapil'));
-        $kabKotas = WilayahKabupatenKota::withCount(['allTimSukses as total_dukungan_kab_kota' => fn ($q) => ($q->where('data_bakal_calon_id', config('orchid_opinion.bacaleg')))])
+        // $getDapil = DataDapil::findOrFail(config('orchid_opinion.dapil'));
+        $kabKotas = WilayahKabupatenKota::WhereRelation('dapils', 'dapil_id', config('orchid_opinion.dapil'))
+                    ->withCount(['allTimSukses as total_dukungan_kab_kota' => fn ($q) => ($q->where('data_bakal_calon_id', config('orchid_opinion.bacaleg')))])
                     ->orderByDesc('total_dukungan_kab_kota')
                     ->take(9)
                     ->get();
-        $kecamatans = WilayahKecamatan::withCount(['allTimSukses as total_dukungan_kecamatan' => fn ($q) => ($q->where('data_bakal_calon_id', config('orchid_opinion.bacaleg')))])
+        $kecamatans = WilayahKecamatan::WhereRelation('dapils', 'dapil_id', config('orchid_opinion.dapil'))
+                    ->withCount(['allTimSukses as total_dukungan_kecamatan' => fn ($q) => ($q->where('data_bakal_calon_id', config('orchid_opinion.bacaleg')))])
                     ->orderByDesc('total_dukungan_kecamatan')
                     ->take(9)
                     ->get();
-        $kelDesas = WilayahKelurahanDesa::withCount(['allTimSukses as total_dukungan_kel_desa' => fn ($q) => ($q->where('data_bakal_calon_id', config('orchid_opinion.bacaleg')))])
+        $kelDesas = WilayahKelurahanDesa::WhereRelation('dapils', 'dapil_id', config('orchid_opinion.dapil'))
+                    ->withCount(['allTimSukses as total_dukungan_kel_desa' => fn ($q) => ($q->where('data_bakal_calon_id', config('orchid_opinion.bacaleg')))])
                     ->orderByDesc('total_dukungan_kel_desa')
                     ->take(9)
                     ->get();
@@ -48,27 +51,23 @@ class Dashboard extends Component
             ->withSum('dataTpsDPRDKabKota as total_dpt', 'jumlah_dpt')
             ->findOrFail(config('orchid_opinion.dapil'));
         }
-        $getUserRing1 = User::where('timses_ring', 1);
-        $getDanaRing1 = User::where('timses_ring', 1)
-                            ->withCount(['timses as dana_ring_1' => fn ($q) => ($q->where('data_bakal_calon_id', config('orchid_opinion.bacaleg')))])
-                            ->get();
-        $danaRing1 = $getDanaRing1->sum('dana_ring_1');
-        $getDanaRing2 = User::where('timses_ring', 2)
-                            ->withCount(['timses as dana_ring_2' => fn ($q) => ($q->where('data_bakal_calon_id', config('orchid_opinion.bacaleg')))])
-                            ->get();
-        $danaRing2 = $getDanaRing2->sum('dana_ring_2');
 
-        $timsesRing1 = User::where('timses_ring', 1)
-                        ->whereRelation('timses', 'data_bakal_calon_id', config('orchid_opinion.bacaleg'))
-                        ->withCount(['timses as total_dukungan_ring1' => fn ($q) => ($q->where('data_bakal_calon_id', config('orchid_opinion.bacaleg')))])
-                        ->orderByDesc('total_dukungan_ring1')
+        $getUserRing1 = User::where('timses_ring', 1)
+                            ->whereRelation('timses', 'data_bakal_calon_id', config('orchid_opinion.bacaleg'))
+                            ->withCount(['timses as total_dukungan_ring1' => fn ($q) => ($q->where('data_bakal_calon_id', config('orchid_opinion.bacaleg')))]);
+        $getUserRing2 = User::where('timses_ring', 2)
+                            ->whereRelation('timses', 'data_bakal_calon_id', config('orchid_opinion.bacaleg'))
+                            ->withCount(['timses as total_dukungan_ring2' => fn ($q) => ($q->where('data_bakal_calon_id', config('orchid_opinion.bacaleg')))]);
+
+        $danaRing1 = $getUserRing1->orderByDesc('total_dukungan_ring1')->get()->sum('total_dukungan_ring1');
+        $danaRing2 = $getUserRing2->orderByDesc('total_dukungan_ring2')->get()->sum('total_dukungan_ring2');
+
+        // $timsesRing1 = $getUserRing1
+        $timsesRing1 = $getUserRing1
                         ->take(5)
                         ->get();
 
-        $timsesRing2 = User::where('timses_ring', 2)
-                        ->whereRelation('timses', 'data_bakal_calon_id', config('orchid_opinion.bacaleg'))
-                        ->withCount(['timses as total_dukungan_ring2' => fn ($q) => ($q->where('data_bakal_calon_id', config('orchid_opinion.bacaleg')))])
-                        ->orderByDesc('total_dukungan_ring2')
+        $timsesRing2 = $getUserRing2
                         ->take(5)
                         ->get();
 

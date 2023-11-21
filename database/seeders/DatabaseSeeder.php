@@ -38,10 +38,10 @@ class DatabaseSeeder extends Seeder
         $this->call(WilayahKabupatenKotaSeeder::class);
         $this->call(WilayahKecamatanSeeder::class);
         $this->call(WilayahKelurahanDesaSeeder::class);
-        $this->call(DataTpsSeeder::class);
         $this->call(WilayahDapilSeeder::class);
-        $this->call(TimSuksesSeeder::class);
+        $this->call(DataTpsSeeder::class);
 
+        $this->call(TimSuksesSeeder::class);
         
         $this->call(PerolehanSuaraSeeder::class);
         $this->call(PerolehanSuaraBacalegSeeder::class);

@@ -5,14 +5,15 @@ namespace App\Models;
 use App\Models\Scopes\Searchable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasManyThrough;
 
 class WilayahKabupatenKota extends Model
 {
     use HasFactory;
     use Searchable;
-    use \Awobaz\Compoships\Compoships;
     use \Staudenmeir\EloquentHasManyDeep\HasRelationships;
+    use \Awobaz\Compoships\Compoships;
 
     protected $fillable = [
         'wilayah_provinsi_id',
@@ -43,6 +44,12 @@ class WilayahKabupatenKota extends Model
     public function allDataTps()
     {
         return $this->hasMany(DataTps::class);
+    }
+
+    public function dapils(): BelongsToMany
+    {
+        // return $this->belongsToMany(DataDapil::class, 'data_dapil_has_wilayah_kabupaten_kotas', 'dapil_id', 'kabupaten_kota_id');
+        return $this->belongsToMany(DataDapil::class, 'data_dapil_has_wilayah_kabupaten_kotas', 'kabupaten_kota_id', 'dapil_id');
     }
 
     public function perolehanSuara(): HasManyThrough

@@ -354,7 +354,7 @@
             <div class="md:col-span-2 xl:col-span-1">
                 <div class="p-3 bg-gray-100 border rounded dark:bg-gray-800">
                     <div class="flex justify-between py-1 text-black dark:text-white">
-                        <h3 class="text-sm font-semibold">Dukungan di Kabupaten / Kota</h3>
+                        <h3 class="text-sm font-semibold">Kabupaten / Kota</h3>
                     </div>
                     <ul class="mt-2 text-sm text-black dark:text-gray-50">
                         @forelse ($kabKotas as $kabKota)
@@ -379,7 +379,7 @@
             <div class="md:col-span-2 xl:col-span-1">
                 <div class="p-3 bg-gray-100 border rounded dark:bg-gray-800">
                     <div class="flex justify-between py-1 text-black dark:text-white">
-                        <h3 class="text-sm font-semibold">Dukungan di Kecamatan</h3>
+                        <h3 class="text-sm font-semibold">Kecamatan</h3>
                     </div>
                     <ul class="mt-2 text-sm text-black dark:text-gray-50">
                         @forelse ($kecamatans as $kecamatan)
@@ -404,7 +404,7 @@
             <div class="md:col-span-2 xl:col-span-1">
                 <div class="p-3 bg-gray-100 border rounded dark:bg-gray-800">
                     <div class="flex justify-between py-1 text-black dark:text-white">
-                        <h3 class="text-sm font-semibold">Dukungan di Kelurahan / Desa</h3>
+                        <h3 class="text-sm font-semibold">Kelurahan / Desa</h3>
                     </div>
                     <ul class="mt-2 text-sm text-black dark:text-gray-50">
                         @forelse ($kelDesas as $kelDesa)

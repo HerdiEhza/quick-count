@@ -5,6 +5,7 @@ namespace App\Models;
 use App\Models\Scopes\Searchable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasManyThrough;
 
 class WilayahKecamatan extends Model
@@ -12,6 +13,7 @@ class WilayahKecamatan extends Model
     use HasFactory;
     use Searchable;
     use \Staudenmeir\EloquentHasManyDeep\HasRelationships;
+    use \Awobaz\Compoships\Compoships;
     
     protected $fillable = [
         'wilayah_kabupaten_kota_id',
@@ -42,6 +44,11 @@ class WilayahKecamatan extends Model
     public function allDataTps()
     {
         return $this->hasMany(DataTps::class);
+    }
+
+    public function dapils(): BelongsToMany
+    {
+        return $this->belongsToMany(DataDapil::class, 'data_dapil_has_wilayah_kecamatans', 'kecamatan_id', 'dapil_id');
     }
 
     public function perolehanSuara(): HasManyThrough
