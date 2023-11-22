@@ -2,7 +2,9 @@
 
 namespace App\Livewire\Timses;
 
+use App\Models\DataTps;
 use App\Models\TimSukses;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 
@@ -37,6 +39,17 @@ class InputRelawan extends Component
     }
     public function render()
     {
-        return view('livewire.timses.input-relawan');
+        $wilayah = collect(Auth::user()->wilayahTimses)->pluck('id', 'nama_kelurahan_desa');
+
+        $ListTps = DataTps::whereIn('wilayah_kelurahan_desa_id', $wilayah->all())
+                    ->with([
+                        'wilayahKelurahanDesa'
+                    ])
+                    ->get();
+
+        return view('livewire.timses.input-relawan', [
+            'ListTps' => $ListTps,
+            // 'wilayah' => $wilayah,
+        ]);
     }
 }

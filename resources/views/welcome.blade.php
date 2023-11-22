@@ -50,7 +50,7 @@
             style="background-image: url({{ asset('assets/tortoise-shell.svg') }});"></div>
     </section>
 
-    <section class="bg-white dark:bg-gray-900">
+    <section class="mt-8 bg-white dark:bg-gray-900">
         <div class="w-full max-w-screen-xl px-4 py-12 mx-auto space-y-16 lg:px-6">
             <div class="text-gray-500 sm:text-lg dark:text-gray-400">
                 <h2 class="mb-4 text-4xl font-bold tracking-tight text-gray-900 dark:text-white">Biodata Diri</h2>

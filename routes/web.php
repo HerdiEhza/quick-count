@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::view('/', 'welcome');
 Route::view('/multi-step', 'multi-step');
 Route::view('/dynamic-form', 'dynamic-form');
+Route::redirect('/login', '/admin/login');
 
 Route::prefix('admin')->group(function () {
     Route::get('/quick-count/dashboard', \App\Livewire\Dashboard::class)

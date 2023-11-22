@@ -55,6 +55,11 @@ class User extends Authenticatable
         return $this->belongsToMany(DataTps::class, 'user_data_tps_photo', 'user_id', 'data_tps_id');
     }
 
+    public function wilayahTimses(): BelongsToMany
+    {
+        return $this->belongsToMany(WilayahKelurahanDesa::class, 'user_timses_wilayah_tps', 'user_id', 'wilayah_kelurahan_desa_id');
+    }
+
     public function timses(): HasMany
     {
         return $this->hasMany(TimSukses::class);

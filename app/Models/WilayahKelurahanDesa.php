@@ -41,10 +41,14 @@ class WilayahKelurahanDesa extends Model
         return $this->hasMany(DataTps::class);
     }
 
-
     public function dapils(): BelongsToMany
     {
         return $this->belongsToMany(DataDapil::class, 'data_dapil_has_wilayah_kelurahan_desas', 'kelurahan_desa_id', 'dapil_id');
+    }
+
+    public function userTimses(): BelongsToMany
+    {
+        return $this->belongsToMany(User::class, 'user_timses_wilayah_tps', 'wilayah_kelurahan_desa_id', 'user_id');
     }
     
     public function perolehanSuara(): HasManyThrough
