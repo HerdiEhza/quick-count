@@ -6,6 +6,10 @@ return [
     'dapil' => 1,
     'kategori_pemilu' => 2,
 
+    'timses' => [
+        'use_ktp' => true,
+    ],
+
     'passwords' => [
         'users' => [
             'provider' => 'users',
