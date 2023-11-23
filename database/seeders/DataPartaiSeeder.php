@@ -16,7 +16,7 @@ class DataPartaiSeeder extends Seeder
         //     ->count(20)
         //     ->create();
 
-        $partai =  [
+        $partai = [
             [
                 'nomor_urut' => 1,
                 'nama_partai' => 'Partai Kebangkitan Bangsa',

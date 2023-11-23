@@ -11,15 +11,25 @@ use Livewire\Component;
 class InputRelawan extends Component
 {
     public array $data;
+
     public array $nomor_ktp;
+
     public array $nomor_hp;
+
     public $nama = 'test';
+
     public $data_bakal_calon_id = 1;
+
     public $user_id;
+
     public $data_tps_id = 1;
+
     public $wilayah_kabupaten_kota_id = 1;
+
     public $wilayah_kecamatan_id = 1;
+
     public $wilayah_kelurahan_desa_id = 1;
+
     public $is_out_range = false;
 
     public function store()
@@ -37,15 +47,18 @@ class InputRelawan extends Component
             'is_out_range' => $this->is_out_range,
         ]);
     }
+
     public function render()
     {
-        $wilayah = collect(Auth::user()->wilayahTimses)->pluck('id', 'nama_kelurahan_desa');
+        // $wilayah = collect(Auth::user()->timsesTps);
+        $wilayah = collect(Auth::user()->timsesTps)->pluck('id', 'nama_tps');
+        // dd($wilayah);
 
-        $ListTps = DataTps::whereIn('wilayah_kelurahan_desa_id', $wilayah->all())
-                    ->with([
-                        'wilayahKelurahanDesa'
-                    ])
-                    ->get();
+        $ListTps = DataTps::whereIn('id', $wilayah->all())
+            ->with([
+                'wilayahKelurahanDesa',
+            ])
+            ->get();
 
         return view('livewire.timses.input-relawan', [
             'ListTps' => $ListTps,

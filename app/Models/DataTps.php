@@ -3,8 +3,9 @@
 namespace App\Models;
 
 use App\Models\Scopes\Searchable;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasManyThrough;
 
 class DataTps extends Model
@@ -44,6 +45,11 @@ class DataTps extends Model
             'id', // Local key on the projects table...
             'id' // Local key on the environments table...
         )->where('is_active', true);
+    }
+
+    public function tpsTimses(): BelongsToMany
+    {
+        return $this->belongsToMany(User::class, 'user_timses_tps', 'data_tps_id', 'user_id');
     }
 
     public function allTimSukses()

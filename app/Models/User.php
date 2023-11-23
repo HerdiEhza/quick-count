@@ -5,19 +5,19 @@ namespace App\Models;
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 
 use Awobaz\Compoships\Database\Eloquent\Relations\HasMany as RelationsHasMany;
-use Laravel\Sanctum\HasApiTokens;
-use Spatie\Permission\Traits\HasRoles;
-use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasManyThrough;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
+use Laravel\Sanctum\HasApiTokens;
+use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable, HasRoles;
     use \Awobaz\Compoships\Compoships;
+    use HasApiTokens, HasFactory, HasRoles, Notifiable;
 
     /**
      * The attributes that are mass assignable.
@@ -55,9 +55,9 @@ class User extends Authenticatable
         return $this->belongsToMany(DataTps::class, 'user_data_tps_photo', 'user_id', 'data_tps_id');
     }
 
-    public function wilayahTimses(): BelongsToMany
+    public function timsesTps(): BelongsToMany
     {
-        return $this->belongsToMany(WilayahKelurahanDesa::class, 'user_timses_wilayah_tps', 'user_id', 'wilayah_kelurahan_desa_id');
+        return $this->belongsToMany(DataTps::class, 'user_timses_tps', 'user_id', 'data_tps_id');
     }
 
     public function timses(): HasMany

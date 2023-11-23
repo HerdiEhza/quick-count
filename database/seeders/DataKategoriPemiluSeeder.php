@@ -2,8 +2,8 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Seeder;
 use App\Models\DataKategoriPemilu;
+use Illuminate\Database\Seeder;
 
 class DataKategoriPemiluSeeder extends Seeder
 {

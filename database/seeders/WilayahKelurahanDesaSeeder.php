@@ -2,8 +2,8 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Seeder;
 use App\Models\WilayahKelurahanDesa;
+use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\File;
 
 class WilayahKelurahanDesaSeeder extends Seeder
@@ -20,7 +20,6 @@ class WilayahKelurahanDesaSeeder extends Seeder
         $get_kel_desa = File::get('database/data/wilayahKelurahanDesa.json');
         $keldesas = json_decode($get_kel_desa, true);
 
-
         foreach ($keldesas as $keldes) {
             WilayahKelurahanDesa::query()->updateOrCreate([
                 // 'id' => $paslon['id'],
@@ -29,7 +28,7 @@ class WilayahKelurahanDesaSeeder extends Seeder
                 'jumlah_dpt' => $keldes['jumlah_dpt'],
                 'wilayah_kecamatan_id' => $keldes['wilayah_kecamatan_id'],
             ]);
-        };
+        }
 
         WilayahKelurahanDesa::create([
             'nama_kelurahan_desa' => 'test kelurahan desa',

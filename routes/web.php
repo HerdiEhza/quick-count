@@ -34,11 +34,11 @@ Route::prefix('admin')->group(function () {
     Route::get('/quick-count/dashboard/detail/{caleg}/dd/{detail_2}/ddd/{detail_3}/dddd/{detail_4}', \App\Livewire\DetailEmpat::class)
         ->middleware(['auth'])
         ->name('dashboard.qc.detail.4');
-    
+
     Route::get('/quick-count/input-suara', \App\Livewire\QuickCount\InputSuara::class)
         ->middleware(['auth'])
         ->name('qc.input-suara');
-    
+
     Route::get('/timses/dashboard', \App\Livewire\Timses\Dashboard::class)
         ->middleware(['auth'])
         ->name('timses.dashboard');
@@ -48,14 +48,14 @@ Route::prefix('admin')->group(function () {
     Route::get('/timses/input-relawan', \App\Livewire\Timses\InputRelawan::class)
         ->middleware(['auth'])
         ->name('timses.input-relawan');
-    
+
     Route::view('dashboard', 'dashboard')
         ->middleware(['auth', 'verified'])
         ->name('dashboard');
-    
+
     Route::view('profile', 'profile')
         ->middleware(['auth'])
         ->name('profile');
-    
+
     require __DIR__.'/auth.php';
 });

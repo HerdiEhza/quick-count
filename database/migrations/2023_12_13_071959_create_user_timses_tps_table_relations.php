@@ -11,16 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('user_timses_wilayah_tps', function (Blueprint $table) {
+        Schema::create('user_timses_tps', function (Blueprint $table) {
             $table->foreignId('user_id')->nullable()->constrained(
-                table: 'users', indexName: 'wilayah_tps_user_id'
+                table: 'users', indexName: 'timses_tps_user_id'
             )->cascadeOnDelete()->cascadeOnUpdate();
 
-            $table->foreignId('wilayah_kelurahan_desa_id')->nullable()->constrained(
-                table: 'wilayah_kelurahan_desas', indexName: 'wilayah_tps_wilayah_kelurahan_desa_id'
+            $table->foreignId('data_tps_id')->nullable()->constrained(
+                table: 'data_tps', indexName: 'timses_tps_data_tps_id'
             )->cascadeOnDelete()->cascadeOnUpdate();
 
-            $table->primary(['user_id', 'wilayah_kelurahan_desa_id'], 'wilayah_kel_desa_data_user_id_kel_desa_id_primary');
+            $table->primary(['user_id', 'data_tps_id'], 'timses_tps_user_id_data_tps_id_primary');
         });
     }
 
@@ -29,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('user_timses_wilayah_tps');
+        Schema::dropIfExists('user_timses_tps');
     }
 };

@@ -4,7 +4,6 @@ namespace Database\Factories;
 
 use App\Models\DataDapil;
 use App\Models\DataTps;
-use Illuminate\Support\Str;
 use App\Models\PerolehanSuara;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -26,7 +25,7 @@ class PerolehanSuaraFactory extends Factory
     {
         $kategoriDapil = DataDapil::findOrFail(rand(1, 80));
         $tpsData = DataTps::findOrFail(rand(1, 17622));
-        
+
         return [
             'suara_sah' => $this->faker->numberBetween(25, 39),
             'suara_tidak_sah' => $this->faker->numberBetween(25, 39),

@@ -20,7 +20,6 @@ class DataTpsSeeder extends Seeder
         $get_tps1 = File::get('database/data/dataTps.json');
         $tps = json_decode($get_tps1, true);
 
-
         foreach ($tps as $tpsValue) {
             DataTps::query()->updateOrCreate([
                 // 'id' => $paslon['id'],
@@ -35,6 +34,6 @@ class DataTpsSeeder extends Seeder
                 // 'data_dapil_kab_kota_id' => null,
                 'data_dapil_kab_kota_id' => $tpsValue['data_dapil_kab_kota_id'],
             ]);
-        };
+        }
     }
 }

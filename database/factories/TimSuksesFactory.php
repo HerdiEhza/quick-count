@@ -4,7 +4,6 @@ namespace Database\Factories;
 
 use App\Models\DataTps;
 use App\Models\TimSukses;
-use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class TimSuksesFactory extends Factory

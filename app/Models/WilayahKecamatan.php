@@ -3,18 +3,18 @@
 namespace App\Models;
 
 use App\Models\Scopes\Searchable;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasManyThrough;
 
 class WilayahKecamatan extends Model
 {
+    use \Awobaz\Compoships\Compoships;
     use HasFactory;
     use Searchable;
     use \Staudenmeir\EloquentHasManyDeep\HasRelationships;
-    use \Awobaz\Compoships\Compoships;
-    
+
     protected $fillable = [
         'wilayah_kabupaten_kota_id',
         'nama_kecamatan',

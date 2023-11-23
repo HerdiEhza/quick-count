@@ -2,7 +2,6 @@
 
 namespace Database\Factories;
 
-use Illuminate\Support\Str;
 use App\Models\WilayahKabupatenKota;
 use Illuminate\Database\Eloquent\Factories\Factory;
 

@@ -3,15 +3,15 @@
 namespace App\Models;
 
 use App\Models\Scopes\Searchable;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class WilayahProvinsi extends Model
 {
+    use \Awobaz\Compoships\Compoships;
     use HasFactory;
     use Searchable;
-    use \Awobaz\Compoships\Compoships;
 
     protected $fillable = ['nama_provinsi', 'jumlah_tps', 'jumlah_dpt'];
 

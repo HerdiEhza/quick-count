@@ -24,7 +24,7 @@ class DataBakalCalonSeeder extends Seeder
         $DPRD_KOTA_PTK_3 = File::get('database/data/bakal_calon/DPRD_KOTA_PTK_3.json');
         $DPRD_KOTA_PTK_4 = File::get('database/data/bakal_calon/DPRD_KOTA_PTK_4.json');
         $DPRD_KOTA_PTK_5 = File::get('database/data/bakal_calon/DPRD_KOTA_PTK_5.json');
-        
+
         $paslons = json_decode($DPR_RI_KALBAR_1, true);
 
         $DPR_RI_KALBAR_1_files = json_decode($DPR_RI_KALBAR_1, true);
@@ -34,7 +34,6 @@ class DataBakalCalonSeeder extends Seeder
         $DPRD_KOTA_PTK_3_files = json_decode($DPRD_KOTA_PTK_3, true);
         $DPRD_KOTA_PTK_4_files = json_decode($DPRD_KOTA_PTK_4, true);
         $DPRD_KOTA_PTK_5_files = json_decode($DPRD_KOTA_PTK_5, true);
-
 
         foreach ($DPR_RI_KALBAR_1_files as $DPR_RI_KALBAR_1_file) {
             DataBakalCalon::query()->updateOrCreate([
@@ -47,7 +46,7 @@ class DataBakalCalonSeeder extends Seeder
                 'kategori_pemilu_id' => $DPR_RI_KALBAR_1_file['kategori_pemilu_id'],
                 'foto_path' => $DPR_RI_KALBAR_1_file['foto_path'],
             ]);
-        };
+        }
 
         foreach ($DPRD_PROV_KALBAR_1_files as $DPRD_PROV_KALBAR_1_file) {
             DataBakalCalon::query()->updateOrCreate([
@@ -60,7 +59,7 @@ class DataBakalCalonSeeder extends Seeder
                 'kategori_pemilu_id' => $DPRD_PROV_KALBAR_1_file['kategori_pemilu_id'],
                 'foto_path' => $DPRD_PROV_KALBAR_1_file['foto_path'],
             ]);
-        };
+        }
 
         foreach ($DPRD_KOTA_PTK_1_files as $DPRD_KOTA_PTK_1_file) {
             DataBakalCalon::query()->updateOrCreate([
@@ -73,7 +72,7 @@ class DataBakalCalonSeeder extends Seeder
                 'kategori_pemilu_id' => $DPRD_KOTA_PTK_1_file['kategori_pemilu_id'],
                 'foto_path' => $DPRD_KOTA_PTK_1_file['foto_path'],
             ]);
-        };
+        }
         foreach ($DPRD_KOTA_PTK_2_files as $DPRD_KOTA_PTK_2_file) {
             DataBakalCalon::query()->updateOrCreate([
                 // 'id' => $paslon['id'],
@@ -85,7 +84,7 @@ class DataBakalCalonSeeder extends Seeder
                 'kategori_pemilu_id' => $DPRD_KOTA_PTK_2_file['kategori_pemilu_id'],
                 'foto_path' => $DPRD_KOTA_PTK_2_file['foto_path'],
             ]);
-        };
+        }
         foreach ($DPRD_KOTA_PTK_3_files as $DPRD_KOTA_PTK_3_file) {
             DataBakalCalon::query()->updateOrCreate([
                 // 'id' => $paslon['id'],
@@ -97,7 +96,7 @@ class DataBakalCalonSeeder extends Seeder
                 'kategori_pemilu_id' => $DPRD_KOTA_PTK_3_file['kategori_pemilu_id'],
                 'foto_path' => $DPRD_KOTA_PTK_3_file['foto_path'],
             ]);
-        };
+        }
         foreach ($DPRD_KOTA_PTK_4_files as $DPRD_KOTA_PTK_4_file) {
             DataBakalCalon::query()->updateOrCreate([
                 // 'id' => $paslon['id'],
@@ -109,7 +108,7 @@ class DataBakalCalonSeeder extends Seeder
                 'kategori_pemilu_id' => $DPRD_KOTA_PTK_4_file['kategori_pemilu_id'],
                 'foto_path' => $DPRD_KOTA_PTK_4_file['foto_path'],
             ]);
-        };
+        }
         foreach ($DPRD_KOTA_PTK_5_files as $DPRD_KOTA_PTK_5_file) {
             DataBakalCalon::query()->updateOrCreate([
                 // 'id' => $paslon['id'],
@@ -121,8 +120,7 @@ class DataBakalCalonSeeder extends Seeder
                 'kategori_pemilu_id' => $DPRD_KOTA_PTK_5_file['kategori_pemilu_id'],
                 'foto_path' => $DPRD_KOTA_PTK_5_file['foto_path'],
             ]);
-        };
-        
+        }
 
         // foreach ($paslons as $paslon) {
         //     DataBakalCalon::query()->updateOrCreate([

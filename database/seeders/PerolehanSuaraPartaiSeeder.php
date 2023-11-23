@@ -2,8 +2,8 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Seeder;
 use App\Models\PerolehanSuaraPartai;
+use Illuminate\Database\Seeder;
 
 class PerolehanSuaraPartaiSeeder extends Seeder
 {

@@ -3,16 +3,16 @@
 namespace App\Models;
 
 use App\Models\Scopes\Searchable;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Relations\HasManyThrough;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasManyThrough;
 
 class DataDapil extends Model
 {
+    use \Awobaz\Compoships\Compoships;
     use HasFactory;
     use Searchable;
-    use \Awobaz\Compoships\Compoships;
 
     protected $fillable = [
         'kategori_dapil',
@@ -50,14 +50,17 @@ class DataDapil extends Model
     {
         return $this->belongsToMany(WilayahProvinsi::class, 'data_dapil_has_wilayah_provinsis', 'dapil_id', 'provinsi_id');
     }
+
     public function kabupatenKota(): BelongsToMany
     {
         return $this->belongsToMany(WilayahKabupatenKota::class, 'data_dapil_has_wilayah_kabupaten_kotas', 'dapil_id', 'kabupaten_kota_id');
     }
+
     public function kecamatan(): BelongsToMany
     {
         return $this->belongsToMany(WilayahKecamatan::class, 'data_dapil_has_wilayah_kecamatans', 'dapil_id', 'kecamatan_id');
     }
+
     public function kelurahanDesa(): BelongsToMany
     {
         return $this->belongsToMany(WilayahKelurahanDesa::class, 'data_dapil_has_wilayah_kelurahan_desas', 'dapil_id', 'kelurahan_desa_id');
