@@ -13,11 +13,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/boycot', function () {
+    return view('boycot');
+});
+
 Route::view('/', 'welcome');
 Route::view('/multi-step', 'multi-step');
 Route::view('/dynamic-form', 'dynamic-form');
 Route::redirect('/login', '/admin/login');
-
 Route::prefix('admin')->group(function () {
     Route::get('/quick-count/dashboard', \App\Livewire\Dashboard::class)
         ->middleware(['auth'])
@@ -57,5 +60,5 @@ Route::prefix('admin')->group(function () {
         ->middleware(['auth'])
         ->name('profile');
 
-    require __DIR__.'/auth.php';
+    require __DIR__ . '/auth.php';
 });
