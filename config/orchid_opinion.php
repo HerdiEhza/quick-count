@@ -7,7 +7,7 @@ return [
     'kategori_pemilu' => 2,
 
     'timses' => [
-        'use_ktp' => true,
+        'use_ktp' => false,
     ],
 
     'passwords' => [

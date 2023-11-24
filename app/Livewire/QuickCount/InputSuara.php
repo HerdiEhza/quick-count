@@ -46,8 +46,6 @@ class InputSuara extends Component
     #[Url(as: 't')]
     public $tpsActive;
 
-    public $kategoriPemilu;
-
     #[Rule('image|max:1024')]
     public $photo;
 
