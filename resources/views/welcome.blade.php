@@ -17,8 +17,9 @@
 </head>
 <body class="min-h-full">
     {{-- <section class="flex flex-col justify-between w-full h-screen px-4 pt-4 md:flex-row"> --}}
-    <section class="relative grid w-full h-full md:h-screen">
-        <div class="z-40 grid h-full grid-cols-1 px-4 pt-4 md:grid-cols-3 md:h-screen">
+    <section class="relative grid w-full h-full md:h-screen" style="min-height: -webkit-fill-available;">
+        <div class="z-40 grid h-full grid-cols-1 px-4 pt-4 md:grid-cols-3 md:h-screen"
+            style="min-height: -webkit-fill-available;">
             <img src="{{ asset('assets/foto-H.Miftah.webp') }}" alt="" class="self-end hidden w-full h-auto md:block">
             <div class="flex flex-col items-center text-center">
                 <div class="flex items-center space-x-2 text-center">
@@ -70,7 +71,8 @@
         </div>
 
         <div class="absolute top-0 bottom-0 w-full h-full md:h-screen"
-            style="background-image: url({{ asset('assets/tortoise-shell.svg') }});"></div>
+            style="background-image: url({{ asset('assets/tortoise-shell.svg') }}); min-height: -webkit-fill-available;">
+        </div>
     </section>
 
     <section class="mt-8 bg-white dark:bg-gray-900">
