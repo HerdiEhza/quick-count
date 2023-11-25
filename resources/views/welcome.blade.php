@@ -349,7 +349,14 @@
                             <p>Wakil Ketua DPW PPP Kalbar | Ketua DPW H. Retno Pramudya</p>
                         </h3>
                     </div>
-                </div>
+<div class="flex flex-col gap-2 py-4 sm:gap-6 sm:flex-row sm:items-center">
+                        <p class="w-32 text-lg font-normal text-gray-500 sm:text-right dark:text-gray-400 shrink-0">
+                            2021 - 2025
+                        </p>
+                        <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+                            <p>Sekretaris DPW PPP Kalbar | Ketua DPW H.A.M.Nasir.SH</p>
+                        </h3>
+                    </div>                </div>
             </div>
         </div>
         <div class="max-w-screen-xl px-4 py-8 mx-auto lg:px-6 sm:py-16 lg:py-24">
