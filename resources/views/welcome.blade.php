@@ -377,7 +377,7 @@
                     </div>
                     <div class="flex flex-col gap-2 py-4 sm:gap-6 sm:flex-row sm:items-center">
                         <p class="w-32 text-lg font-normal text-gray-500 sm:text-right dark:text-gray-400 shrink-0">
-                            2011 - 2016
+                            2014 - 2019
                         </p>
                         <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
                             <p>Anggota DPRD Prov. Kalbar | Dapil Ketapang – Kayong Utara</p>
@@ -385,7 +385,7 @@
                     </div>
                     <div class="flex flex-col gap-2 py-4 sm:gap-6 sm:flex-row sm:items-center">
                         <p class="w-32 text-lg font-normal text-gray-500 sm:text-right dark:text-gray-400 shrink-0">
-                            2016 - 2021
+                            2019 - 2024
                         </p>
                         <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
                             <p>Anggota DPRD Prov. Kalbar | Dapil Ketapang – Kayong Utara</p>
