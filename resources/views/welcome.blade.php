@@ -55,14 +55,14 @@
 
                 <div class="flex">
                     <div class="flex h-full p-4 m-auto text-center bg-white">
-                        <h2 class="text-3xl font-extrabold text-gray-700 md:text-5xl">1</h2>
+                        <h2 class="text-6xl font-extrabold text-gray-700 md:text-8xl">1</h2>
                     </div>
                     <div class="w-full">
                         <div class="p-2 text-center bg-white">
                             <h2 class="text-3xl font-extrabold text-gray-700 md:text-5xl">H. MIFTAH S.H.I</h2>
                         </div>
                         <div class="p-2 text-center bg-gray-300">
-                            <h2 class="text-2xl font-semibold text-gray-700 md:text-3xl">CALEG DPR RI KALBAR 1</h2>
+                            <h2 class="text-xl font-semibold text-gray-700 md:text-3xl">CALEG DPR RI KALBAR 1</h2>
                         </div>
                     </div>
                 </div>
