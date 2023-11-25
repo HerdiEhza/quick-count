@@ -21,15 +21,31 @@
         <div class="z-40 grid h-full grid-cols-1 px-4 pt-4 md:grid-cols-3 md:h-screen">
             <img src="{{ asset('assets/foto-H.Miftah.webp') }}" alt="" class="self-end hidden w-full h-auto md:block">
             <div class="flex flex-col items-center text-center">
-                <img src="{{ asset('assets/logo-partai/Logo_PPP.svg') }}" alt="" class="w-16 mb-4 md:mb-0 md:w-auto">
-                <p class="hidden mt-4 text-2xl text-white md:block">Partai Persatuan Pembangunan</p>
-                <div class="hidden mt-14 md:block">
+                <div class="flex items-center space-x-2 text-center">
+                    <div class="mb-4 md:mb-0">
+                        <p class="mt-1 text-6xl text-left text-white md:text-8xl">17</p>
+                    </div>
+                    <img src="{{ asset('assets/logo-partai/Logo_PPP.svg') }}" alt=""
+                        class="w-16 mb-4 md:mb-0 md:w-auto">
+                    <div class="mb-4 md:mb-0">
+                        <p class="mt-0 text-sm text-left text-white md:mt-1 md:text-2xl">Partai</p>
+                        <p class="mt-0 text-sm text-left text-white md:mt-1 md:text-2xl">Persatuan</p>
+                        <p class="mt-0 text-sm text-left text-white md:mt-1 md:text-2xl">Pembangunan</p>
+                    </div>
+                </div>
+                <div class="mt-4 mb-4 text-5xl font-extrabold md:mb-0 md:mt-8">
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 to-orange-500">
+                        SA<span class="text-6xl">1</span>U <span class="text-6xl">7</span>UJUAN
+                        MENJEMPUT KEMENANGAN
+                    </span>
+                </div>
+                {{-- <div class="hidden mt-14 md:block">
                     <p class="-mb-5 text-2xl text-white">Pilih</p>
                     <div class="text-white">
                         <span class="text-5xl">Nomor</span>
                         <span class="text-7xl">1</span>
                     </div>
-                </div>
+                </div> --}}
             </div>
             <img src="{{ asset('assets/foto-H.Miftah.webp') }}" alt="" class="block w-auto h-full md:hidden">
             <div class="flex flex-col justify-end h-auto pb-4 text-center md:text-right">
@@ -37,11 +53,18 @@
                 <h3 class="text-lg text-white md:text-2xl">ANGGOTA DPRD PROVINSI 3 PERIODE</h3>
                 <h3 class="text-lg text-white md:text-2xl">UNTUK DPR RI 2024</h3>
 
-                <div class="p-2 text-center bg-white">
-                    <h2 class="text-4xl font-extrabold text-gray-700 md:text-6xl">H. MIFTAH S.H.I</h2>
-                </div>
-                <div class="p-2 text-center bg-gray-300">
-                    <h2 class="text-2xl font-semibold text-gray-700 md:text-4xl">CALEG DPR RI KALBAR 1</h2>
+                <div class="flex">
+                    <div class="flex h-full p-4 m-auto text-center bg-white">
+                        <h2 class="text-3xl font-extrabold text-gray-700 md:text-5xl">1</h2>
+                    </div>
+                    <div class="w-full">
+                        <div class="p-2 text-center bg-white">
+                            <h2 class="text-3xl font-extrabold text-gray-700 md:text-5xl">H. MIFTAH S.H.I</h2>
+                        </div>
+                        <div class="p-2 text-center bg-gray-300">
+                            <h2 class="text-2xl font-semibold text-gray-700 md:text-3xl">CALEG DPR RI KALBAR 1</h2>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -349,14 +372,15 @@
                             <p>Wakil Ketua DPW PPP Kalbar | Ketua DPW H. Retno Pramudya</p>
                         </h3>
                     </div>
-<div class="flex flex-col gap-2 py-4 sm:gap-6 sm:flex-row sm:items-center">
+                    <div class="flex flex-col gap-2 py-4 sm:gap-6 sm:flex-row sm:items-center">
                         <p class="w-32 text-lg font-normal text-gray-500 sm:text-right dark:text-gray-400 shrink-0">
                             2021 - 2025
                         </p>
                         <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
                             <p>Sekretaris DPW PPP Kalbar | Ketua DPW H.A.M.Nasir.SH</p>
                         </h3>
-                    </div>                </div>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="max-w-screen-xl px-4 py-8 mx-auto lg:px-6 sm:py-16 lg:py-24">
