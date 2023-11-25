@@ -26,6 +26,18 @@ class DatabaseSeeder extends Seeder
                 'email' => 'marketing@dku.id',
                 'password' => Hash::make('Mekikau19'),
             ]);
+        $user = \App\Models\User::factory()
+            ->count(1)
+            ->create([
+                'email' => 'jo@dku.id',
+                'password' => Hash::make('Qwerty2021!'),
+            ]);
+        $user = \App\Models\User::factory()
+            ->count(1)
+            ->create([
+                'email' => 'sani@dku.id',
+                'password' => Hash::make('Qwerty2021!'),
+            ]);
 
         $this->call(PermissionsSeeder::class);
 
