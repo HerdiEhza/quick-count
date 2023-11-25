@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Laravel</title>
+    <title>H. MIFTAH S.H.I</title>
 
     <link rel="shortcut icon" href="{{ asset('assets/logo-partai/Logo_PPP.svg') }}" type="image/x-icon">
 
@@ -470,13 +470,15 @@
     </section>
     <section class="relative bg-white dark:bg-gray-900">
         <div class="z-40 max-w-screen-md px-4 py-8 mx-auto lg:py-16">
-            <h2 class="mb-4 text-4xl font-extrabold tracking-tight text-center text-gray-900 dark:text-white">Hubungi Kami</h2>
+            <h2 class="mb-4 text-4xl font-extrabold tracking-tight text-center text-gray-900 dark:text-white">Hubungi
+                Kami</h2>
             <p class="mb-8 font-light text-center text-gray-500 lg:mb-16 dark:text-gray-400 sm:text-xl">
                 Ingin menjadi relawan dukungan? atau ingin menjadi pemantau kecurangan di TPS Anda? beritahu Kami.
             </p>
             <form action="#" class="space-y-8">
                 <div>
-                    <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Alamat email</label>
+                    <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Alamat
+                        email</label>
                     <input type="email" id="email"
                         class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#0F6A41] focus:border-[#0F6A41] block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-[#0F6A41] dark:focus:border-[#0F6A41] dark:shadow-sm-light"
                         placeholder="nama@orchid-opinion.com" required>
@@ -489,7 +491,8 @@
                         placeholder="Beritahu kami keinginan Anda" required>
                 </div>
                 <div class="sm:col-span-2">
-                    <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Rincian pesan</label>
+                    <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Rincian
+                        pesan</label>
                     <textarea id="message" rows="6"
                         class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-[#0F6A41] focus:border-[#0F6A41] dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-[#0F6A41] dark:focus:border-[#0F6A41]"
                         placeholder="Tolong rincikan pesan Anda disini..."></textarea>
@@ -506,7 +509,8 @@
     <footer
         class="z-40 p-4 antialiased rounded-lg shadow-2xl shadow-indigo-500/40 bg-gray-50 sm:flex sm:items-center sm:justify-between sm:p-6 xl:p-8 dark:bg-gray-800">
         <p class="mb-4 text-sm text-center text-gray-500 dark:text-gray-400 sm:mb-0">
-            &copy; 2019-2022 <a href="https://orchid-opinion.com/" class="hover:underline" target="_blank">orchid-opinion.com</a>.
+            &copy; 2019-2022 <a href="https://orchid-opinion.com/" class="hover:underline"
+                target="_blank">orchid-opinion.com</a>.
             All rights reserved.
         </p>
         <div class="flex items-center justify-center space-x-1">
