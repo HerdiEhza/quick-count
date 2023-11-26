@@ -40,7 +40,7 @@
                     </span>
                 </div>
             </div>
-            <img src="{{ asset('assets/foto-H.Miftah.webp') }}" alt="" class="block w-auto h-full md:hidden">
+            <img src="{{ asset('assets/foto-H.Miftah.png') }}" alt="" class="block w-auto h-auto md:hidden">
             <div class="flex flex-col justify-end h-auto pb-4 text-center md:text-right">
                 <h3 class="text-lg text-white md:text-2xl">MOHON DOA & DUKUNGANNYA</h3>
                 <h3 class="text-lg text-white md:text-2xl">ANGGOTA DPRD PROVINSI 3 PERIODE</h3>
