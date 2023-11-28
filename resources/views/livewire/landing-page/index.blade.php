@@ -1,22 +1,5 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<main>
 
-    <title>H. MIFTAH S.H.I</title>
-
-    <link rel="shortcut icon" href="{{ asset('assets/logo-partai/Logo_PPP.svg') }}" type="image/x-icon">
-
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
-
-    <!-- Scripts -->
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
-</head>
-<body class="min-h-full">
-    {{-- <section class="flex flex-col justify-between px-4 pt-4 md:flex-row"> --}}
     <section class="relative grid w-full h-full" style="min-height: -webkit-fill-available;">
         <div class="z-40 grid h-full grid-cols-1 px-4 pt-4 md:grid-cols-3" style="min-height: -webkit-fill-available;">
             <img src="{{ asset('assets/foto-H.Miftah.webp') }}" alt="" class="self-end hidden w-full h-auto md:block">
@@ -266,7 +249,7 @@
                 <div class="items-center rounded-lg shadow bg-gray-50 sm:flex dark:bg-gray-800 dark:border-gray-700">
                     <p>
                         <img class="h-auto rounded-lg w-28 sm:rounded-none sm:rounded-l-lg"
-                            src="https://mikekim.com/wp-content/uploads/2017/01/logo-here.png" alt="logo_goes_here">
+                            src="https://ui-avatars.com/api/?name=LAMS" alt="logo_goes_here">
                     </p>
                     <div class="p-5">
                         <h3 class="text-lg font-bold tracking-tight text-gray-900 dark:text-white">
@@ -290,7 +273,7 @@
                 <div class="items-center rounded-lg shadow bg-gray-50 sm:flex dark:bg-gray-800 dark:border-gray-700">
                     <p>
                         <img class="h-auto rounded-lg w-28 sm:rounded-none sm:rounded-l-lg"
-                            src="https://mikekim.com/wp-content/uploads/2017/01/logo-here.png" alt="logo_goes_here">
+                            src="https://ui-avatars.com/api/?name=Sebayu" alt="logo_goes_here">
                     </p>
                     <div class="p-5">
                         <h3 class="text-lg font-bold tracking-tight text-gray-900 dark:text-white">
@@ -302,7 +285,7 @@
                 <div class="items-center rounded-lg shadow bg-gray-50 sm:flex dark:bg-gray-800 dark:border-gray-700">
                     <p>
                         <img class="h-auto rounded-lg w-28 sm:rounded-none sm:rounded-l-lg"
-                            src="https://mikekim.com/wp-content/uploads/2017/01/logo-here.png" alt="logo_goes_here">
+                            src="https://ui-avatars.com/api/?name=Anak Kolong Kalbar" alt="logo_goes_here">
                     </p>
                     <div class="p-5">
                         <h3 class="text-lg font-bold tracking-tight text-gray-900 dark:text-white">
@@ -504,23 +487,20 @@
                     sosial</p>
             </div>
             <div class="grid grid-cols-1 gap-y-4 md:grid-cols-3">
+                @forelse ($posts->articles as $article)
                 <article
                     class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                    <a href="#">
-                        <img class="p-8 rounded-t-lg"
-                            src="https://newsapi.org/v2/everything?q=tesla&from=2023-10-28&sortBy=publishedAt&apiKey=574bb1d394344ae2bcc8fc6848db4c81"
-                            alt="product image" />
-                    </a>
+                    <div class="">
+                        <img class="w-full h-full p-5 max-h-60" src="{{ $article->urlToImage }}" alt="product image" />
+                    </div>
                     <div class="px-5 pb-5">
-                        <a href="#">
-                            <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">Apple Watch
-                                Series 7
-                                GPS, Aluminium Case, Starlight Sport</h5>
-                        </a>
+                        <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white line-clamp-2">
+                            {{ $article->title }}
+                        </h5>
                         <div class="flex items-center mt-2.5 mb-5">
-                            <span class="flex items-center space-x-1 rtl:space-x-reverse">
-                                test
-                            </span>
+                            <p class="line-clamp-3">
+                                {{ $article->description }}
+                            </p>
                         </div>
                         <div class="flex items-center w-full">
                             <a href="#"
@@ -529,196 +509,13 @@
                         </div>
                     </div>
                 </article>
-                <article
-                    class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                    <a href="#">
-                        <img class="p-8 rounded-t-lg"
-                            src="https://newsapi.org/v2/everything?q=tesla&from=2023-10-28&sortBy=publishedAt&apiKey=574bb1d394344ae2bcc8fc6848db4c81"
-                            alt="product image" />
-                    </a>
-                    <div class="px-5 pb-5">
-                        <a href="#">
-                            <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">Apple Watch
-                                Series 7
-                                GPS, Aluminium Case, Starlight Sport</h5>
-                        </a>
-                        <div class="flex items-center mt-2.5 mb-5">
-                            <span class="flex items-center space-x-1 rtl:space-x-reverse">
-                                test
-                            </span>
-                        </div>
-                        <div class="flex items-center w-full">
-                            <a href="#"
-                                class="text-white bg-blue-700 w-full hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Lihat
-                                Postingan</a>
-                        </div>
-                    </div>
-                </article>
-                <article
-                    class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                    <a href="#">
-                        <img class="p-8 rounded-t-lg"
-                            src="https://newsapi.org/v2/everything?q=tesla&from=2023-10-28&sortBy=publishedAt&apiKey=574bb1d394344ae2bcc8fc6848db4c81"
-                            alt="product image" />
-                    </a>
-                    <div class="px-5 pb-5">
-                        <a href="#">
-                            <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">Apple Watch
-                                Series 7
-                                GPS, Aluminium Case, Starlight Sport</h5>
-                        </a>
-                        <div class="flex items-center mt-2.5 mb-5">
-                            <span class="flex items-center space-x-1 rtl:space-x-reverse">
-                                test
-                            </span>
-                        </div>
-                        <div class="flex items-center w-full">
-                            <a href="#"
-                                class="text-white bg-blue-700 w-full hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Lihat
-                                Postingan</a>
-                        </div>
-                    </div>
-                </article>
-                <article
-                    class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                    <a href="#">
-                        <img class="p-8 rounded-t-lg"
-                            src="https://newsapi.org/v2/everything?q=tesla&from=2023-10-28&sortBy=publishedAt&apiKey=574bb1d394344ae2bcc8fc6848db4c81"
-                            alt="product image" />
-                    </a>
-                    <div class="px-5 pb-5">
-                        <a href="#">
-                            <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">Apple Watch
-                                Series 7
-                                GPS, Aluminium Case, Starlight Sport</h5>
-                        </a>
-                        <div class="flex items-center mt-2.5 mb-5">
-                            <span class="flex items-center space-x-1 rtl:space-x-reverse">
-                                test
-                            </span>
-                        </div>
-                        <div class="flex items-center w-full">
-                            <a href="#"
-                                class="text-white bg-blue-700 w-full hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Lihat
-                                Postingan</a>
-                        </div>
-                    </div>
-                </article>
-                <article
-                    class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                    <a href="#">
-                        <img class="p-8 rounded-t-lg"
-                            src="https://newsapi.org/v2/everything?q=tesla&from=2023-10-28&sortBy=publishedAt&apiKey=574bb1d394344ae2bcc8fc6848db4c81"
-                            alt="product image" />
-                    </a>
-                    <div class="px-5 pb-5">
-                        <a href="#">
-                            <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">Apple Watch
-                                Series 7
-                                GPS, Aluminium Case, Starlight Sport</h5>
-                        </a>
-                        <div class="flex items-center mt-2.5 mb-5">
-                            <span class="flex items-center space-x-1 rtl:space-x-reverse">
-                                test
-                            </span>
-                        </div>
-                        <div class="flex items-center w-full">
-                            <a href="#"
-                                class="text-white bg-blue-700 w-full hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Lihat
-                                Postingan</a>
-                        </div>
-                    </div>
-                </article>
-                <article
-                    class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                    <a href="#">
-                        <img class="p-8 rounded-t-lg"
-                            src="https://newsapi.org/v2/everything?q=tesla&from=2023-10-28&sortBy=publishedAt&apiKey=574bb1d394344ae2bcc8fc6848db4c81"
-                            alt="product image" />
-                    </a>
-                    <div class="px-5 pb-5">
-                        <a href="#">
-                            <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">Apple Watch
-                                Series 7
-                                GPS, Aluminium Case, Starlight Sport</h5>
-                        </a>
-                        <div class="flex items-center mt-2.5 mb-5">
-                            <span class="flex items-center space-x-1 rtl:space-x-reverse">
-                                test
-                            </span>
-                        </div>
-                        <div class="flex items-center w-full">
-                            <a href="#"
-                                class="text-white bg-blue-700 w-full hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Lihat
-                                Postingan</a>
-                        </div>
-                    </div>
-                </article>
-                <article
-                    class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                    <a href="#">
-                        <img class="p-8 rounded-t-lg"
-                            src="https://newsapi.org/v2/everything?q=tesla&from=2023-10-28&sortBy=publishedAt&apiKey=574bb1d394344ae2bcc8fc6848db4c81"
-                            alt="product image" />
-                    </a>
-                    <div class="px-5 pb-5">
-                        <a href="#">
-                            <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">Apple Watch
-                                Series 7
-                                GPS, Aluminium Case, Starlight Sport</h5>
-                        </a>
-                        <div class="flex items-center mt-2.5 mb-5">
-                            <span class="flex items-center space-x-1 rtl:space-x-reverse">
-                                test
-                            </span>
-                        </div>
-                        <div class="flex items-center w-full">
-                            <a href="#"
-                                class="text-white bg-blue-700 w-full hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Lihat
-                                Postingan</a>
-                        </div>
-                    </div>
-                </article>
+                @empty
+
+                @endforelse
             </div>
         </div>
     </section>
 
-
-    {{-- <section class="relative bg-white dark:bg-gray-900">
-        <div class="z-40 max-w-screen-md px-4 py-8 mx-auto lg:py-16">
-            <h2 class="mb-4 text-4xl font-extrabold tracking-tight text-center text-gray-900 dark:text-white">Hubungi
-                Kami</h2>
-            <p class="mb-8 font-light text-center text-gray-500 lg:mb-16 dark:text-gray-400 sm:text-xl">
-                Ingin menjadi relawan dukungan? atau ingin menjadi pemantau kecurangan di TPS Anda? beritahu Kami.
-            </p>
-            <form action="#" class="space-y-8">
-                <div>
-                    <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Alamat
-                        email</label>
-                    <input type="email" id="email"
-                        class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#0F6A41] focus:border-[#0F6A41] block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-[#0F6A41] dark:focus:border-[#0F6A41] dark:shadow-sm-light"
-                        placeholder="nama@orchid-opinion.com" required>
-                </div>
-                <div>
-                    <label for="subject"
-                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Subjek</label>
-                    <input type="text" id="subject"
-                        class="block w-full p-3 text-sm text-gray-900 border border-gray-300 rounded-lg shadow-sm bg-gray-50 focus:ring-[#0F6A41] focus:border-[#0F6A41] dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-[#0F6A41] dark:focus:border-[#0F6A41] dark:shadow-sm-light"
-                        placeholder="Beritahu kami keinginan Anda" required>
-                </div>
-                <div class="sm:col-span-2">
-                    <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Rincian
-                        pesan</label>
-                    <textarea id="message" rows="6"
-                        class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-[#0F6A41] focus:border-[#0F6A41] dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-[#0F6A41] dark:focus:border-[#0F6A41]"
-                        placeholder="Tolong rincikan pesan Anda disini..."></textarea>
-                </div>
-                <button type="submit"
-                    class="px-5 py-3 text-sm font-medium text-center text-white rounded-lg bg-[#0F6A41] sm:w-fit hover:bg-[#0F6A41] focus:ring-4 focus:outline-none focus:ring-[#0F6A41] dark:bg-[#0F6A41] dark:hover:bg-[#0F6A41] dark:focus:ring-[#0F6A41]">Send
-                    message</button>
-            </form>
-        </div>
-    </section> --}}
     <footer
         class="z-40 p-4 antialiased rounded-lg shadow-2xl shadow-indigo-500/40 bg-gray-50 sm:flex sm:items-center sm:justify-between sm:p-6 xl:p-8 dark:bg-gray-800">
         <p class="mb-4 text-sm text-center text-gray-500 dark:text-gray-400 sm:mb-0">
@@ -758,5 +555,5 @@
             </div>
         </div>
     </footer>
-</body>
-</html>
+
+</main>

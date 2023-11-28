@@ -17,7 +17,10 @@ Route::get('/boycot', function () {
     return view('boycot');
 });
 
-Route::view('/', 'welcome');
+// Route::view('/', 'welcome');
+
+Route::get('/', \App\Livewire\LandingPage\Index::class)->name('landing-page.index');
+
 Route::view('/multi-step', 'multi-step');
 Route::view('/dynamic-form', 'dynamic-form');
 Route::redirect('/login', '/admin/login');
