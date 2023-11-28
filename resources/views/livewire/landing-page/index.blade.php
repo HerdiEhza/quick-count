@@ -479,7 +479,7 @@
         </div>
     </section>
 
-    <section>
+    {{-- <section>
         <div class="max-w-screen-xl px-4 py-8 mx-auto lg:py-16 lg:px-6 ">
             <div class="max-w-screen-sm mx-auto mb-8 text-center lg:mb-16">
                 <h2 class="mb-4 text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white">Postingan</h2>
@@ -492,29 +492,29 @@
                     class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                     <div class="">
                         <img class="w-full h-full p-5 max-h-60" src="{{ $article->urlToImage }}" alt="product image" />
-                    </div>
-                    <div class="px-5 pb-5">
-                        <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white line-clamp-2">
-                            {{ $article->title }}
-                        </h5>
-                        <div class="flex items-center mt-2.5 mb-5">
-                            <p class="line-clamp-3">
-                                {{ $article->description }}
-                            </p>
-                        </div>
-                        <div class="flex items-center w-full">
-                            <a href="#"
-                                class="text-white bg-blue-700 w-full hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Lihat
-                                Postingan</a>
-                        </div>
-                    </div>
-                </article>
-                @empty
-
-                @endforelse
-            </div>
+    </div>
+    <div class="px-5 pb-5">
+        <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white line-clamp-2">
+            {{ $article->title }}
+        </h5>
+        <div class="flex items-center mt-2.5 mb-5">
+            <p class="line-clamp-3">
+                {{ $article->description }}
+            </p>
         </div>
-    </section>
+        <div class="flex items-center w-full">
+            <a href="#"
+                class="text-white bg-blue-700 w-full hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Lihat
+                Postingan</a>
+        </div>
+    </div>
+    </article>
+    @empty
+
+    @endforelse
+    </div>
+    </div>
+    </section> --}}
 
     <footer
         class="z-40 p-4 antialiased rounded-lg shadow-2xl shadow-indigo-500/40 bg-gray-50 sm:flex sm:items-center sm:justify-between sm:p-6 xl:p-8 dark:bg-gray-800">
