@@ -16,8 +16,11 @@ use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable
 {
-    use \Awobaz\Compoships\Compoships;
-    use HasApiTokens, HasFactory, HasRoles, Notifiable;
+    // use \Awobaz\Compoships\Compoships;
+    use HasApiTokens;
+    use HasFactory;
+    use HasRoles;
+    use Notifiable;
 
     /**
      * The attributes that are mass assignable.
@@ -55,6 +58,11 @@ class User extends Authenticatable
         return $this->belongsToMany(DataTps::class, 'user_data_tps_photo', 'user_id', 'data_tps_id');
     }
 
+    public function wilayahPemantau(): BelongsToMany
+    {
+        return $this->belongsToMany(WilayahKelurahanDesa::class, 'user_pemantau_wilayah_kelurahan_desa', 'user_id', 'wilayah_kelurahan_desa_id');
+    }
+
     public function timsesTps(): BelongsToMany
     {
         return $this->belongsToMany(DataTps::class, 'user_timses_tps', 'user_id', 'data_tps_id');
@@ -68,6 +76,11 @@ class User extends Authenticatable
     public function timsesRing1(): HasMany
     {
         return $this->hasMany(TimSukses::class);
+    }
+
+    public function InputSuara(): HasMany
+    {
+        return $this->hasMany(PerolehanSuara::class);
     }
 
     // public function timsesRing2(): RelationsHasMany

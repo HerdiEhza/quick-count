@@ -55,8 +55,8 @@ class DatabaseSeeder extends Seeder
 
         $this->call(TimSuksesSeeder::class);
 
-        $this->call(PerolehanSuaraSeeder::class);
-        $this->call(PerolehanSuaraBacalegSeeder::class);
-        $this->call(PerolehanSuaraPartaiSeeder::class);
+        // $this->call(PerolehanSuaraSeeder::class);
+        // $this->call(PerolehanSuaraBacalegSeeder::class);
+        // $this->call(PerolehanSuaraPartaiSeeder::class);
     }
 }

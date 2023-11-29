@@ -30,6 +30,11 @@ class DataTps extends Model
 
     protected $table = 'data_tps';
 
+    public function fotoCheckIn(): BelongsToMany
+    {
+        return $this->belongsToMany(DataTps::class, 'user_data_tps_photo', 'data_tps_id', 'user_id');
+    }
+
     public function perolehanSuaras()
     {
         return $this->hasMany(PerolehanSuara::class);

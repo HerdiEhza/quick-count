@@ -25,7 +25,11 @@ class InputSuara extends Component
     public array $suaraPartai;
 
     public array $suaraBacaleg;
+    public $jumlahSuaraSah;
+    public $jumlahSuaraTidakSah;
+    public $jumlahDPT;
 
+    #[Url(as: 'formStep')]
     public $formStep = 2;
 
     #[Url(as: 'kp')]
@@ -47,15 +51,11 @@ class InputSuara extends Component
     public $tpsActive;
 
     #[Rule('image|max:1024')]
-    public $photo;
-
-    #[On('refresh-page')]
-    public function refreshPost()
-    {
-        // $refresh;
-    }
-
-    // protected $listeners = ['refresh-page' => '$refresh'];
+    public $photoCheckIn;
+    #[Rule('image|max:1024')]
+    public $photoC1;
+    #[Rule('image|max:1024')]
+    public $photoBAHPS;
 
     public function prevStep()
     {
@@ -69,14 +69,29 @@ class InputSuara extends Component
 
     public function store()
     {
+        $savephotoCheckIn = $this->photoCheckIn->store('photo_check_in');
+        $savephotoC1 = $this->photoC1->store('photo_c1');
+        $savephotoBAHPS = $this->photoBAHPS->store('photo_bahps');
+
+        // Auth::user()->check_in->updateOrCreate([
+        //     'data_tps_id' => $this->tpsActive,
+        //     'photo_path'	 => $this->photoCheckIn,
+        // ]);
+
+        DataTps::findOrFail($this->tpsActive)
+            ->fotoCheckIn()
+            ->sync([Auth::id() => ['photo_path' => $savephotoCheckIn]]);
+
         $masterSuara = PerolehanSuara::create([
             'user_id' => Auth::id(),
-            'suara_sah' => '1000',
-            'suara_tidak_sah' => '1000',
-            'foto_c1' => 'test',
-            'foto_ba' => 'test',
+            'suara_sah' => $this->jumlahSuaraSah,
+            'suara_tidak_sah' => $this->jumlahSuaraTidakSah,
+            'jumlah_dpt' => $this->jumlahDPT,
+            'foto_c1' => $savephotoC1,
+            'foto_ba' => $savephotoBAHPS,
             'data_tps_id' => $this->tpsActive,
             'data_kategori_pemilu_id' => $this->kategoriPemiluActive,
+            'data_dapil_id' => $this->dapilActive,
         ]);
 
         foreach ($this->suaraBacaleg as $key => $value) {
@@ -92,15 +107,28 @@ class InputSuara extends Component
             ]);
         }
 
-        $this->dispatch('refresh-page')->self();
+        // $this->dispatch('refresh-page')->self();
     }
 
     public function render()
     {
-        $kabKotas = WilayahKabupatenKota::select(['id', 'nama_kabupaten_kota'])->get();
-        $kecamatans = WilayahKecamatan::select(['id', 'nama_kecamatan'])->where('wilayah_kabupaten_kota_id', $this->kabKotaActive)->get();
-        $kelDesas = WilayahKelurahanDesa::select(['id', 'nama_kelurahan_desa'])->where('wilayah_kecamatan_id', $this->kecamatanActive)->get();
-        $tps = DataTps::select(['id', 'nama_tps'])->where('wilayah_kelurahan_desa_id', $this->kelDesaActive)->get();
+        // $kabKotas = WilayahKabupatenKota::select(['id', 'nama_kabupaten_kota'])->get();
+        // $kecamatans = WilayahKecamatan::select(['id', 'nama_kecamatan'])->where('wilayah_kabupaten_kota_id', $this->kabKotaActive)->get();
+        $kelDesas = WilayahKelurahanDesa::select(['id', 'nama_kelurahan_desa'])
+            ->whereRelation('userPemantau', 'user_id', Auth::id())
+            // ->withOnly([
+            //     'wilayahKecamatan',
+            //     'wilayahKecamatan.wilayahKabupatenKota',
+            // ])
+            // ->where('wilayah_kecamatan_id', $this->kecamatanActive)
+            ->get();
+        $tps = DataTps::select(['id', 'nama_tps'])
+            ->where('wilayah_kelurahan_desa_id', $this->kelDesaActive)
+            // ->doesntHave('perolehanSuaras')
+            ->whereDoesntHave('perolehanSuaras', function (Builder $query) {
+                $query->where('perolehan_suaras.user_id', Auth::id());
+            })
+            ->get();
 
         $kategoriPemilus = DataKategoriPemilu::select(['id', 'nama_kategori_pemilu'])->get();
 
@@ -117,14 +145,20 @@ class InputSuara extends Component
             ])
             ->get();
 
+        // $checkFotoCheckIn =  Auth::user()->fotoCheckIn()->where('data_tps_id', $this->tpsActive)->exists() ? true : false;
+        // $checkTpsInputSuara =  Auth::user()->InputSuara()->where('perolehan_suaras.data_tps_id', $this->tpsActive)->where('perolehan_suaras.is_active', true)->exists();
+
+        // dd($checkTpsInputSuara);
+        // dd(Auth::id());
+
         return view('livewire.quick-count.input-suara', [
-            'kabKotas' => $kabKotas,
-            'kecamatans' => $kecamatans,
+            // 'kabKotas' => $kabKotas,
+            // 'kecamatans' => $kecamatans,
             'kelDesas' => $kelDesas,
             'tps' => $tps,
             'kategoriPemilus' => $kategoriPemilus,
             'dapils' => $dapils,
             'dataPilihans' => $dataPilihans,
-        ]);
+            ]);
     }
 }

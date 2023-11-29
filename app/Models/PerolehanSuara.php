@@ -15,6 +15,7 @@ class PerolehanSuara extends Model
         'user_id',
         'suara_sah',
         'suara_tidak_sah',
+        'jumlah_dpt',
         'foto_c1',
         'foto_ba',
         'data_tps_id',
