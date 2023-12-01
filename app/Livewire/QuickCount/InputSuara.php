@@ -70,15 +70,15 @@ class InputSuara extends Component
 
     public function store()
     {
-        $savephotoCheckIn = $this->photoCheckIn->storePublicly('photo_check_in', 'store_public');
-        $savephotoC1 = $this->photoC1->storePublicly('photo_c1', 'store_public');
-        $savephotoBAHPS = $this->photoBAHPS->storePublicly('photo_bahps', 'store_public');
+        $savephotoCheckIn = $this->photoCheckIn->storePublicly('foto_qc.photo_check_in', 'store_public');
+        $savephotoC1 = $this->photoC1->storePublicly('foto_qc.photo_c1', 'store_public');
+        $savephotoBAHPS = $this->photoBAHPS->storePublicly('foto_qc.photo_bahps', 'store_public');
 
-        $optimizerChain = OptimizerChainFactory::create();
+        // $optimizerChain = OptimizerChainFactory::create();
 
-        $optimizerChain->optimize($savephotoCheckIn);
-        $optimizerChain->optimize($savephotoC1);
-        $optimizerChain->optimize($savephotoBAHPS);
+        // $optimizerChain->optimize($savephotoCheckIn);
+        // $optimizerChain->optimize($savephotoC1);
+        // $optimizerChain->optimize($savephotoBAHPS);
 
         // Auth::user()->check_in->updateOrCreate([
         //     'data_tps_id' => $this->tpsActive,
