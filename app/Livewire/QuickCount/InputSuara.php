@@ -17,7 +17,6 @@ use App\Models\WilayahKabupatenKota;
 use App\Models\WilayahKelurahanDesa;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Contracts\Database\Eloquent\Builder;
-use Spatie\LaravelImageOptimizer\Facades\ImageOptimizer;
 
 class InputSuara extends Component
 {
