@@ -42,7 +42,7 @@ Route::prefix('admin')->group(function () {
         ->name('dashboard.qc.detail.4');
 
     Route::get('/quick-count/input-suara', \App\Livewire\QuickCount\InputSuara::class)
-        ->middleware(['auth', 'optimizeImages'])
+        ->middleware(['auth'])
         ->name('qc.input-suara');
 
     Route::get('/timses/dashboard', \App\Livewire\Timses\Dashboard::class)

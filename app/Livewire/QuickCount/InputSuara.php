@@ -17,6 +17,7 @@ use App\Models\WilayahKabupatenKota;
 use App\Models\WilayahKelurahanDesa;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Contracts\Database\Eloquent\Builder;
+use Spatie\ImageOptimizer\OptimizerChainFactory;
 
 class InputSuara extends Component
 {
@@ -72,6 +73,12 @@ class InputSuara extends Component
         $savephotoCheckIn = $this->photoCheckIn->store('photo_check_in');
         $savephotoC1 = $this->photoC1->store('photo_c1');
         $savephotoBAHPS = $this->photoBAHPS->store('photo_bahps');
+
+        $optimizerChain = OptimizerChainFactory::create();
+
+        $optimizerChain->optimize($savephotoCheckIn);
+        $optimizerChain->optimize($savephotoC1);
+        $optimizerChain->optimize($savephotoBAHPS);
 
         // Auth::user()->check_in->updateOrCreate([
         //     'data_tps_id' => $this->tpsActive,
