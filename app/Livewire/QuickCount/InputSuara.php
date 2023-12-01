@@ -76,9 +76,9 @@ class InputSuara extends Component
 
         $optimizerChain = OptimizerChainFactory::create();
 
-        $optimizerChain->optimize($savephotoCheckIn);
-        $optimizerChain->optimize($savephotoC1);
-        $optimizerChain->optimize($savephotoBAHPS);
+        $optimizerChain->optimize(asset('storage/' . $savephotoCheckIn));
+        $optimizerChain->optimize(asset('storage/' . $savephotoC1));
+        $optimizerChain->optimize(asset('storage/' . $savephotoBAHPS));
 
         // Auth::user()->check_in->updateOrCreate([
         //     'data_tps_id' => $this->tpsActive,
