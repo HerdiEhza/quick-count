@@ -21,7 +21,6 @@ use Illuminate\Contracts\Database\Eloquent\Builder;
 class InputSuara extends Component
 {
     use WithFileUploads;
-    use ImageOptimizer;
 
     public array $suaraPartai;
 
