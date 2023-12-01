@@ -17,7 +17,8 @@ use App\Models\WilayahKabupatenKota;
 use App\Models\WilayahKelurahanDesa;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Contracts\Database\Eloquent\Builder;
-use ImageOptimizer;
+// use ImageOptimizer;
+use Spatie\LaravelImageOptimizer\Facades\ImageOptimizer;
 
 class InputSuara extends Component
 {
@@ -70,9 +71,13 @@ class InputSuara extends Component
 
     public function store()
     {
-        $savephotoCheckIn = ImageOptimizer::optimize($this->photoCheckIn->store('photo_check_in'));
-        $savephotoC1 = ImageOptimizer::optimize($this->photoC1->store('photo_c1'));
-        $savephotoBAHPS = ImageOptimizer::optimize($this->photoBAHPS->store('photo_bahps'));
+        $optimizePhotoCheckIn = ImageOptimizer::optimize($this->photoCheckIn);
+        $optimizePhotoC1 = ImageOptimizer::optimize($this->photoC1);
+        $optimizePhotoBAHPS = ImageOptimizer::optimize($this->photoBAHPS);
+
+        $savephotoCheckIn = $optimizePhotoCheckIn->store('photo_check_in');
+        $savephotoC1 = $optimizePhotoC1->store('photo_c1');
+        $savephotoBAHPS = $optimizePhotoBAHPS->store('photo_bahps');
 
         // Auth::user()->check_in->updateOrCreate([
         //     'data_tps_id' => $this->tpsActive,
