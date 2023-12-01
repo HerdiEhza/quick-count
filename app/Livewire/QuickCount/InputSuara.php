@@ -2,25 +2,27 @@
 
 namespace App\Livewire\QuickCount;
 
-use App\Models\DataDapil;
-use App\Models\DataKategoriPemilu;
-use App\Models\DataPartai;
 use App\Models\DataTps;
-use App\Models\PerolehanSuara;
-use App\Models\WilayahKabupatenKota;
-use App\Models\WilayahKecamatan;
-use App\Models\WilayahKelurahanDesa;
-use Illuminate\Contracts\Database\Eloquent\Builder;
-use Illuminate\Support\Facades\Auth;
-use Livewire\Attributes\On;
-use Livewire\Attributes\Rule;
-use Livewire\Attributes\Url;
 use Livewire\Component;
+use App\Models\DataDapil;
+use App\Models\DataPartai;
+use Livewire\Attributes\On;
+use Livewire\Attributes\Url;
+use Livewire\Attributes\Rule;
 use Livewire\WithFileUploads;
+use App\Models\PerolehanSuara;
+use App\Models\WilayahKecamatan;
+use App\Models\DataKategoriPemilu;
+use App\Models\WilayahKabupatenKota;
+use App\Models\WilayahKelurahanDesa;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Contracts\Database\Eloquent\Builder;
+use Spatie\LaravelImageOptimizer\Facades\ImageOptimizer;
 
 class InputSuara extends Component
 {
     use WithFileUploads;
+    use ImageOptimizer;
 
     public array $suaraPartai;
 
@@ -69,9 +71,9 @@ class InputSuara extends Component
 
     public function store()
     {
-        $savephotoCheckIn = $this->photoCheckIn->store('photo_check_in');
-        $savephotoC1 = $this->photoC1->store('photo_c1');
-        $savephotoBAHPS = $this->photoBAHPS->store('photo_bahps');
+        $savephotoCheckIn = ImageOptimizer::optimize($this->photoCheckIn->store('photo_check_in'));
+        $savephotoC1 = ImageOptimizer::optimize($this->photoC1->store('photo_c1'));
+        $savephotoBAHPS = ImageOptimizer::optimize($this->photoBAHPS->store('photo_bahps'));
 
         // Auth::user()->check_in->updateOrCreate([
         //     'data_tps_id' => $this->tpsActive,
