@@ -46,7 +46,7 @@ return [
 
         'store_public' => [
             'driver' => 'local',
-            'root' => public_path(),
+            'root' => public_path() . 'foto_quick_count',
             'url' => env('APP_URL'),
             'visibility' => 'public',
             'throw' => false,
