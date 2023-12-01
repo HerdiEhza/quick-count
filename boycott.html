@@ -1,0 +1,1316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorry</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio"></script>
+    <style type="text/tailwindcss">
+        .transform-fade-down-enter-active,
+        .transform-fade-down-leave-active {
+        @apply transition-all translate-y-0 duration-300;
+        }
+        .transform-fade-down-enter, .transform-fade-down-leave-to /* .fade-leave-active below version 2.1.8 */ {
+        @apply opacity-0 transform -translate-y-2;
+        }
+
+        .paragraph {
+        @apply text-gray-700 tracking-wide leading-relaxed;
+        }
+
+
+        /* for remove arrow spinner button on input number */
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0; 
+        }
+
+        input[type=number] {
+        -moz-appearance: textfield;
+        }
+    </style>
+</head>
+<body data-aos-easing="ease" data-aos-duration="400" data-aos-delay="0">
+    <div id="__nuxt"><!---->
+        <div id="__layout">
+            <div class="relative min-h-screen font-sans antialiased">
+                <div class="relative">
+                    <div
+                        class="absolute top-0 left-0 w-full h-[125vh] sm:h-[225vh] lg:h-[125vh] cover-gradient-2 sm:cover-gradient">
+                    </div>
+                    <nav id="navbar" class="relative z-10 w-full text-neutral-800">
+                        <div
+                            class="flex flex-col max-w-screen-xl px-8 py-4 mx-auto lg:items-center lg:justify-between lg:flex-row">
+                            <div class="flex flex-col items-center space-x-4 lg:flex-row xl:space-x-8">
+                                <div class="flex flex-row items-center justify-between w-full py-6">
+                                    <div><img src="https://nefa.vercel.app/_nuxt/img/nefa.37ff23e.svg" alt="Nefa Logo"
+                                            class="w-24 xl:w-28">
+                                    </div> <button
+                                        class="rounded-lg lg:hidden focus:outline-none focus:shadow-outline"><span
+                                            aria-hidden="true" role="img" class="material-design-icon segment-icon"><svg
+                                                fill="currentColor" width="24" height="24" viewBox="0 0 24 24"
+                                                class="material-design-icon__svg">
+                                                <path d="M21,8H3V6H21M9,13H21V11H9M9,18H21V16H9"><!----></path>
+                                            </svg></span></button>
+                                </div>
+                                <ul
+                                    class="flex flex-col flex-grow hidden w-full h-auto pb-4 space-y-3 duration-300 origin-top lg:items-center lg:pb-0 lg:justify-end lg:flex-row xl:space-x-2 lg:space-y-0 lg:flex">
+                                    <li class="w-full"><a href="#"
+                                            class="md:px-4 py-2 text-sm bg-transparent rounded-lg text-[#666666] hover:text-gray-900 focus:outline-none focus:shadow-outline">
+                                            Cryptocurrency
+                                        </a></li>
+                                    <li class="w-full"><a href="#"
+                                            class="md:px-4 py-2 text-sm bg-transparent rounded-lg text-[#666666] hover:text-gray-900 focus:outline-none focus:shadow-outline">
+                                            Exchanges
+                                        </a></li>
+                                    <li class="w-full"><a href="#"
+                                            class="md:px-4 py-2 text-sm bg-transparent rounded-lg text-[#666666] hover:text-gray-900 focus:outline-none focus:shadow-outline">
+                                            Watchlist
+                                        </a></li>
+                                    <li class="w-full"><a href="#"
+                                            class="md:px-4 py-2 text-sm bg-transparent rounded-lg text-[#666666] hover:text-gray-900 focus:outline-none focus:shadow-outline">
+                                            NFT
+                                        </a></li>
+                                    <li class="w-full"><a href="#"
+                                            class="md:px-4 py-2 text-sm bg-transparent rounded-lg text-[#666666] hover:text-gray-900 focus:outline-none focus:shadow-outline">
+                                            Portfolio
+                                        </a></li>
+                                    <li class="relative group"><button
+                                            class="md:px-4 py-2 text-sm bg-transparent rounded-lg text-[#666666] hover:text-gray-900 focus:outline-none focus:shadow-outline flex items-center"><span>Products</span>
+                                            <span aria-hidden="true" role="img"
+                                                class="material-design-icon chevron-down-icon"><svg fill="currentColor"
+                                                    width="16" height="16" viewBox="0 0 24 24"
+                                                    class="material-design-icon__svg">
+                                                    <path
+                                                        d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z">
+                                                        <!---->
+                                                    </path>
+                                                </svg></span></button> <!----></li>
+                                </ul>
+                            </div>
+                            <div class="hidden space-x-3 lg:flex"><button
+                                    class="text-sm text-center rounded-full hover:shadow-md hover:shadow-[#0c66ee]/50 transition duration-300 px-8 xl:px-10 py-3 mt-2 bg-inherit text-gradient border border-[#0c66ee]">
+                                    Login
+                                </button> <button
+                                    class="text-sm text-center rounded-full hover:shadow-md hover:shadow-[#0c66ee]/50 transition duration-300 px-8 xl:px-10 py-3 mt-2 bg-gradient-to-r from-[#468ef9] to-[#0c66ee] text-white">
+                                    Sign Up
+                                </button></div>
+                        </div>
+                    </nav>
+                    <main class="text-neutral-800">
+                        <div class="w-full" data-v-b444fb2c="">
+                            <section id="hero" class="w-full pb-24" data-v-b444fb2c="">
+                                <div class="relative grid max-w-screen-xl grid-cols-12 px-4 mx-auto overflow-hidden sm:px-8 gap-x-6"
+                                    data-v-b444fb2c="">
+                                    <div class="col-span-12 px-6 mt-12 space-y-4 text-center lg:col-span-6 xl:mt-10 sm:space-y-6 sm:text-left"
+                                        data-v-b444fb2c=""><span data-aos="fade-right" data-aos-once="true"
+                                            class="text-base font-semibold uppercase text-gradient aos-init aos-animate"
+                                            data-v-b444fb2c="">Sign Up Today</span>
+                                        <h1 data-aos="fade-right" data-aos-once="true"
+                                            class="text-[2.5rem] sm:text-5xl xl:text-6xl font-bold leading-tight capitalize sm:pr-8 xl:pr-10 aos-init aos-animate"
+                                            data-v-b444fb2c="">
+                                            The World's <span class="text-header-gradient" data-v-b444fb2c="">Fastest
+                                                Growing</span> Crypto Web App
+                                        </h1>
+                                        <p data-aos="fade-down" data-aos-once="true" data-aos-delay="300"
+                                            class="hidden paragraph sm:block aos-init aos-animate" data-v-b444fb2c="">
+                                            Buy and sell 200+ cryptocurrencies with 20+ flat currencies using bank
+                                            transfers or your credit/debit card.
+                                        </p>
+                                        <div data-aos="fade-up" data-aos-once="true" data-aos-delay="700"
+                                            class="flex flex-col mt-2 space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4 aos-init aos-animate"
+                                            data-v-b444fb2c=""><button
+                                                class="text-sm text-center rounded-full hover:shadow-md hover:shadow-[#0c66ee]/50 transition duration-300 max-w-full px-8 py-4 bg-gradient-to-r from-[#468ef9] to-[#0c66ee] border border-[#0c66ee] text-white"
+                                                data-v-b444fb2c="">
+                                                Get Started
+                                            </button> <button
+                                                class="text-sm text-center rounded-full hover:shadow-md hover:shadow-[#0c66ee]/50 transition duration-300 max-w-full px-6 py-4 bg-inherit text-gradient border border-[#0c66ee] flex items-center justify-center"
+                                                data-v-b444fb2c=""><span data-v-b444fb2c="">Download App</span> <span
+                                                    aria-hidden="true" role="img"
+                                                    class="material-design-icon chevron-down-icon mt-1 text-[#0c66ee]"
+                                                    data-v-b444fb2c=""><svg fill="currentColor" width="20" height="20"
+                                                        viewBox="0 0 24 24" class="material-design-icon__svg">
+                                                        <path
+                                                            d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z">
+                                                            <!---->
+                                                        </path>
+                                                    </svg></span></button></div>
+                                    </div>
+                                    <div class="hidden col-span-12 sm:block lg:col-span-6" data-v-b444fb2c="">
+                                        <div class="w-full" data-v-b444fb2c=""><img data-aos="fade-up"
+                                                data-aos-once="true"
+                                                src="https://nefa.vercel.app/_nuxt/img/hero-image.15eeae4.webp" alt=""
+                                                class="-mt-4 aos-init aos-animate" data-v-b444fb2c=""></div>
+                                    </div> <img data-aos="fade-up" data-aos-delay="300"
+                                        src="https://nefa.vercel.app/_nuxt/img/ellipse-1.4a34989.png"
+                                        class="absolute hidden w-6 sm:block bottom-12 xl:bottom-16 left-4 xl:left-0 aos-init"
+                                        data-v-b444fb2c=""> <img data-aos="fade-up" data-aos-delay="300"
+                                        src="https://nefa.vercel.app/_nuxt/img/ellipse-2.4f6027c.png"
+                                        class="hidden sm:block absolute top-4 sm:top-10 right-64 sm:right-96 xl:right-[32rem] w-6 aos-init aos-animate"
+                                        data-v-b444fb2c=""> <img data-aos="fade-up" data-aos-delay="300"
+                                        src="https://nefa.vercel.app/_nuxt/img/ellipse-3.397d7d7.png"
+                                        class="absolute hidden w-6 sm:block bottom-56 right-24 aos-init"
+                                        data-v-b444fb2c=""> <img data-aos="fade-up" data-aos-delay="300"
+                                        src="https://nefa.vercel.app/_nuxt/img/star.a8c53d6.png"
+                                        class="hidden sm:block absolute top-20 sm:top-28 right-16 lg:right-0 lg:left-[30rem] w-8 aos-init aos-animate"
+                                        data-v-b444fb2c="">
+                                </div>
+                            </section>
+                            <section
+                                class="max-w-screen-xl mx-2 sm:mx-auto px-4 sm:px-6 lg:px-0 py-6 pb-20 sm:py-8 rounded-[2.25rem] sm:rounded-xl bg-white shadow-lg sm:shadow-md transform lg:-translate-y-12"
+                                data-v-b444fb2c="">
+                                <div class="flex flex-col items-center justify-center w-full lg:flex-row"
+                                    data-v-b444fb2c="">
+                                    <div data-aos="fade-up"
+                                        class="w-full mt-6 space-y-6 overflow-hidden border-gray-200 lg:w-1/3 lg:mt-0 xl:border-r lg:px-8 aos-init"
+                                        data-v-b444fb2c="">
+                                        <div class="flex items-center justify-between w-full"><span
+                                                class="font-medium">🔥 Trending</span> <button href="#"
+                                                class="flex items-center px-3 py-1 space-x-1 text-sm font-medium text-blue-500 transition duration-300 rounded-md hover:bg-blue-50"><span>More</span>
+                                                <span aria-hidden="true" role="img"
+                                                    class="material-design-icon chevron-right-icon"><svg
+                                                        fill="currentColor" width="16" height="16" viewBox="0 0 24 24"
+                                                        class="material-design-icon__svg">
+                                                        <path
+                                                            d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z">
+                                                            <!---->
+                                                        </path>
+                                                    </svg></span></button></div>
+                                        <div class="flex flex-col">
+                                            <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+                                                <div
+                                                    class="inline-block min-w-full px-2 py-2 overflow-hidden align-middle sm:px-6">
+                                                    <table class="min-w-full">
+                                                        <thead>
+                                                            <tr>
+                                                                <th class="text-sm font-medium text-left text-gray-500">
+                                                                    Name</th>
+                                                                <th class="text-sm font-medium text-left text-gray-500">
+                                                                    Price</th>
+                                                                <th
+                                                                    class="hidden text-sm font-medium text-left text-gray-500 sm:block">
+                                                                    Chart</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr class="border-b border-gray-200">
+                                                                <td class="py-4 whitespace-nowrap">
+                                                                    <div class="flex items-center space-x-2"><img
+                                                                            src="https://nefa.vercel.app/_nuxt/img/bitcoin.2efeba4.png"
+                                                                            alt="">
+                                                                        <span>Bitcoin</span>
+                                                                    </div>
+                                                                </td>
+                                                                <td class="py-4 whitespace-nowrap">
+                                                                    <div class="flex items-center"><span
+                                                                            aria-hidden="true" role="img"
+                                                                            class="material-design-icon plus-thick-icon text-emerald-500"><svg
+                                                                                fill="currentColor" width="14"
+                                                                                height="14" viewBox="0 0 24 24"
+                                                                                class="material-design-icon__svg">
+                                                                                <path
+                                                                                    d="M20 14H14V20H10V14H4V10H10V4H14V10H20V14Z">
+                                                                                    <!---->
+                                                                                </path>
+                                                                            </svg></span> <span>$43180.13</span></div>
+                                                                </td>
+                                                                <td class="hidden sm:block whitespace-nowrap">
+                                                                    <div>
+                                                                        <div class="h-12 -mx-2 w-28">
+                                                                            <div class="chartjs-size-monitor">
+                                                                                <div
+                                                                                    class="chartjs-size-monitor-expand">
+                                                                                    <div class=""></div>
+                                                                                </div>
+                                                                                <div
+                                                                                    class="chartjs-size-monitor-shrink">
+                                                                                    <div class=""></div>
+                                                                                </div>
+                                                                            </div><canvas id="line-chart" width="112"
+                                                                                height="48"
+                                                                                style="display: block; width: 112px; height: 48px;"
+                                                                                class="chartjs-render-monitor"></canvas>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr class="border-b border-gray-200">
+                                                                <td class="py-4 whitespace-nowrap">
+                                                                    <div class="flex items-center space-x-2"><img
+                                                                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAHBSURBVHgBzZXPK0RRFMcPxu/fhbBAUQrRRDELFqKUrcUooWTlHyALFv4AbJiF8jdYSUkWShasrGxEJCmRpPz8nu6Zul3z3juvQU59mrn3nXO+795z7n1E/9DywBwoChOUSeGsHTSDeJigMCIlICb/x0GNNjCMSD+IyP8CMK8N1Io0gEZnrgd0ksI0Ijlg0OPZAiikHxDpJlOPVFYLJihNEU7eFeDDnVZNaYj0Oj7ZZM6IPcdNMOuXJMvnWSuZ4iaT8/ngreMGqBChV/AJ6sAVOEuVKOIhwElj8tb1oEnm7LgyUAyewSOYBHsyVq1kGIyAKKh0/PIFktXkkqkd+72AIzeZV02OwSnIIL3tkFnJN/NaCb/ViYi1kNmWpNkrYbsEU+LLfudakXvQB8rBKrgDHWRqkRR5AktgBUyDKrCZKplfC+/Km42BCzKF3ZZn/DtEprsSZA5lwitR0J5zcFz8uIMOwQ2Z8zMDSsVvlDzaVyPCxrdv1BpzvQas8QZY80ugubv2wa01tq8QLnoiKIFG5B1sgTdnnse8ZR9BCbTfkwdw4Mytg2tFrO/d5Ron5KukjcypXqZfMr4+FinE9/3P7AsBIj10rSdnZQAAAABJRU5ErkJggg=="
+                                                                            alt=""> <span>Ethereum</span></div>
+                                                                </td>
+                                                                <td class="py-4 whitespace-nowrap">
+                                                                    <div class="flex items-center"><span
+                                                                            aria-hidden="true" role="img"
+                                                                            class="text-red-500 material-design-icon minus-thick-icon"><svg
+                                                                                fill="currentColor" width="14"
+                                                                                height="14" viewBox="0 0 24 24"
+                                                                                class="material-design-icon__svg">
+                                                                                <path d="M20 14H4V10H20V14Z"><!---->
+                                                                                </path>
+                                                                            </svg></span> <span>$3480.65</span></div>
+                                                                </td>
+                                                                <td class="hidden sm:block whitespace-nowrap">
+                                                                    <div>
+                                                                        <div class="h-12 -mx-2 w-28">
+                                                                            <div class="chartjs-size-monitor">
+                                                                                <div
+                                                                                    class="chartjs-size-monitor-expand">
+                                                                                    <div class=""></div>
+                                                                                </div>
+                                                                                <div
+                                                                                    class="chartjs-size-monitor-shrink">
+                                                                                    <div class=""></div>
+                                                                                </div>
+                                                                            </div><canvas id="line-chart" width="112"
+                                                                                height="48"
+                                                                                style="display: block; width: 112px; height: 48px;"
+                                                                                class="chartjs-render-monitor"></canvas>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr class="border-b border-gray-200">
+                                                                <td class="py-4 whitespace-nowrap">
+                                                                    <div class="flex items-center space-x-2"><img
+                                                                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAMHSURBVHgB3VW/axRBFH5vZvZOVM6ACJJWjVgIKRIsrEKqRGuxEhsbGxsNYpM77QzYGO38A2KjlY0JqQIRToigjZBOxUYNAZG7nR9+b3Z2bzfcX3AbNm/n/Zhv5ntz3xBNysNHHcuvd2ZV5qessWQN0cjixR8dE1v3j+JkbIo1/aYOcHPjw2rOrmsDsIMh9p7YZaTY4w2kdUY296gKiEk8kHJcxCgAAHUasYA6jzrUa+/7ugS4/erjKrvQZQAoz0ikZBmJ8MECq2FV8tfzFSz75CPuBz65GEHuvvgUAYqCcgJFXBtzbcKjE/PRHPkm6v890V78fXr5UN9f+7Kq7AiguZNacSMmu0uxctK0i2IH1Hdn9OJ3AMgmjB6E46z0cybwF1fgE6eaWMuk4B0zSgOF48JqWC56hnwVkEuuADB82B6Gp58TwGQ9/Oze/len6YLF0XPGk4O1pU2+sTEcYxdpLKwzki/W/8zZL72/trBXgqiWpeutof7RHmhqxVclq6k9VNSONsVq4zbyClvGU2xgzh7Lzfbym53Zaifyb/3O/gwZs+1UmC5XOtpBfcXVasfHYm01PsBZWHh74+peJSsCpCnbRnC6mmQMPa42tomm0aJGgGmOA5WHhYZ2rd/6NtPKaMNpN+XSSm3Zmzixq3wuA4CCNumazxQgHj6bfF6HPzQxT4Oud0u/OkPDK+C+UzVRJRqysqlEudCgpB9EPvlzoQf0CY0eYpa3vFAFn/tn6gA611uZD3MiJywCKdb4QpMgOVarKCUq9ke0CgAiRfAT5IcBJtLiDMaokcWRUr2owrtXQscMwhbEbq4p46XKNqW+Uusklk2pr6myo97ao8tdvXs+dFoq30TSPDcKqVLY5l0yAldj7p5SubGV3uMnl7qyCXNKhU074HmGtmhsU/jVzkc6tEM/5Bu0xRi+tfQKt2H8PWCsYp6K1EidQ+7Aud7DtYvdshWGhrxiTHkGnFCJ61SRGlrycj8H4dfGZIh+vIo9Y9VDR7EuXtWpjqQ39uDBy3N7NJHPfweDNd8YAc+HAAAAAElFTkSuQmCC"
+                                                                            alt=""> <span>Solana</span></div>
+                                                                </td>
+                                                                <td class="py-4 whitespace-nowrap">
+                                                                    <div class="flex items-center"><span
+                                                                            aria-hidden="true" role="img"
+                                                                            class="material-design-icon plus-thick-icon text-emerald-500"><svg
+                                                                                fill="currentColor" width="14"
+                                                                                height="14" viewBox="0 0 24 24"
+                                                                                class="material-design-icon__svg">
+                                                                                <path
+                                                                                    d="M20 14H14V20H10V14H4V10H10V4H14V10H20V14Z">
+                                                                                    <!---->
+                                                                                </path>
+                                                                            </svg></span> <span>$150.2</span></div>
+                                                                </td>
+                                                                <td class="hidden sm:block whitespace-nowrap">
+                                                                    <div>
+                                                                        <div class="h-12 -mx-2 w-28">
+                                                                            <div class="chartjs-size-monitor">
+                                                                                <div
+                                                                                    class="chartjs-size-monitor-expand">
+                                                                                    <div class=""></div>
+                                                                                </div>
+                                                                                <div
+                                                                                    class="chartjs-size-monitor-shrink">
+                                                                                    <div class=""></div>
+                                                                                </div>
+                                                                            </div><canvas id="line-chart" width="112"
+                                                                                height="48"
+                                                                                style="display: block; width: 112px; height: 48px;"
+                                                                                class="chartjs-render-monitor"></canvas>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr class="border-b border-gray-200">
+                                                                <td class="py-4 whitespace-nowrap">
+                                                                    <div class="flex items-center space-x-2"><img
+                                                                            src="https://nefa.vercel.app/_nuxt/img/dogecoin.ef19fa0.png"
+                                                                            alt=""> <span>Dogecoin</span></div>
+                                                                </td>
+                                                                <td class="py-4 whitespace-nowrap">
+                                                                    <div class="flex items-center"><span
+                                                                            aria-hidden="true" role="img"
+                                                                            class="material-design-icon plus-thick-icon text-emerald-500"><svg
+                                                                                fill="currentColor" width="14"
+                                                                                height="14" viewBox="0 0 24 24"
+                                                                                class="material-design-icon__svg">
+                                                                                <path
+                                                                                    d="M20 14H14V20H10V14H4V10H10V4H14V10H20V14Z">
+                                                                                    <!---->
+                                                                                </path>
+                                                                            </svg></span> <span>$0.1572</span></div>
+                                                                </td>
+                                                                <td class="hidden sm:block whitespace-nowrap">
+                                                                    <div>
+                                                                        <div class="h-12 -mx-2 w-28">
+                                                                            <div class="chartjs-size-monitor">
+                                                                                <div
+                                                                                    class="chartjs-size-monitor-expand">
+                                                                                    <div class=""></div>
+                                                                                </div>
+                                                                                <div
+                                                                                    class="chartjs-size-monitor-shrink">
+                                                                                    <div class=""></div>
+                                                                                </div>
+                                                                            </div><canvas id="line-chart" width="112"
+                                                                                height="48"
+                                                                                style="display: block; width: 112px; height: 48px;"
+                                                                                class="chartjs-render-monitor"></canvas>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div data-aos="fade-up" data-aos-delay="150"
+                                        class="w-full mt-6 space-y-6 overflow-hidden border-gray-200 lg:w-1/3 lg:mt-0 xl:border-r lg:px-8 aos-init"
+                                        data-v-b444fb2c="">
+                                        <div class="flex items-center justify-between w-full"><span
+                                                class="font-medium">🚀 Top Gainers</span> <button href="#"
+                                                class="flex items-center px-3 py-1 space-x-1 text-sm font-medium text-blue-500 transition duration-300 rounded-md hover:bg-blue-50"><span>More</span>
+                                                <span aria-hidden="true" role="img"
+                                                    class="material-design-icon chevron-right-icon"><svg
+                                                        fill="currentColor" width="16" height="16" viewBox="0 0 24 24"
+                                                        class="material-design-icon__svg">
+                                                        <path
+                                                            d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z">
+                                                            <!---->
+                                                        </path>
+                                                    </svg></span></button></div>
+                                        <div class="flex flex-col">
+                                            <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+                                                <div
+                                                    class="inline-block min-w-full px-2 py-2 overflow-hidden align-middle sm:px-6">
+                                                    <table class="min-w-full">
+                                                        <thead>
+                                                            <tr>
+                                                                <th class="text-sm font-medium text-left text-gray-500">
+                                                                    Name</th>
+                                                                <th class="text-sm font-medium text-left text-gray-500">
+                                                                    Price</th>
+                                                                <th
+                                                                    class="hidden text-sm font-medium text-left text-gray-500 sm:block">
+                                                                    Chart</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr class="border-b border-gray-200">
+                                                                <td class="py-4 whitespace-nowrap">
+                                                                    <div class="flex items-center space-x-2"><img
+                                                                            src="https://nefa.vercel.app/_nuxt/img/pappay.4e13578.png"
+                                                                            alt="">
+                                                                        <span>PAPPAY</span>
+                                                                    </div>
+                                                                </td>
+                                                                <td class="py-4 whitespace-nowrap">
+                                                                    <div class="flex items-center"><span
+                                                                            aria-hidden="true" role="img"
+                                                                            class="material-design-icon plus-thick-icon text-emerald-500"><svg
+                                                                                fill="currentColor" width="14"
+                                                                                height="14" viewBox="0 0 24 24"
+                                                                                class="material-design-icon__svg">
+                                                                                <path
+                                                                                    d="M20 14H14V20H10V14H4V10H10V4H14V10H20V14Z">
+                                                                                    <!---->
+                                                                                </path>
+                                                                            </svg></span> <span>$0.00374</span></div>
+                                                                </td>
+                                                                <td class="hidden sm:block whitespace-nowrap">
+                                                                    <div>
+                                                                        <div class="h-12 -mx-2 w-28">
+                                                                            <div class="chartjs-size-monitor">
+                                                                                <div
+                                                                                    class="chartjs-size-monitor-expand">
+                                                                                    <div class=""></div>
+                                                                                </div>
+                                                                                <div
+                                                                                    class="chartjs-size-monitor-shrink">
+                                                                                    <div class=""></div>
+                                                                                </div>
+                                                                            </div><canvas id="line-chart" width="112"
+                                                                                height="48"
+                                                                                style="display: block; width: 112px; height: 48px;"
+                                                                                class="chartjs-render-monitor"></canvas>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr class="border-b border-gray-200">
+                                                                <td class="py-4 whitespace-nowrap">
+                                                                    <div class="flex items-center space-x-2"><img
+                                                                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAM2SURBVHgBlZXNaxNBFMDfm9mt/QhSi1gVbFPbCI3mJNqrSD0oSks9+Q+IHryoWCh4EEvBm3hrsScRPAl+IEItIp5aPanNJTXUKrX1YGOwapPdeb6ZTTa7S9Im77KzuzPv974HoAH5mTzblU8Nz670jHQ3ck7Uu1ED7F32DA7Qydg+NdMIqC5IGQDd6hDNCcA4JRoBYfDlR/zM3uZW63hoAwob2nHCAD5WbMKUAlrCDORpFBS5wTP/wJnfk36xWn63gj8NoE88wRaqfIzxulMBZBEwqSrfeSlOqAStwWP4jUECNGesIV49rQoxFrawhWnprTUgTkDPpOczespNkPlJCyWPlvlHCYSHVVRl7ZwYQA8DPpW27CaQDzYBOgDko03/pA4h8j7jcQ0RWwJKOcBBF+TtImAXg8YLgPsJxHlOw476QCGIKywJMQgBDKSbAI9yGJp5fUwZ5eJGEeS1or/HB7XpSFpNVSG6TOVOuoOdEAIERU1b4F63Qd3lVLJ+PF3xxgd1spftaiJY3qIMMI0W52rJQk2hDwLojQT10AJa5ETr+pCRPZ+5CiN9ZIUaTVuSdGtCsE+ZEgW2VoeG3rGNGxDuNix5lFKJGDAIRk5ZQlhT0O918nYirjiVF1auJq1IOwc80qABN9GWh0nRpJyLKi0yut63E1rgcL2VQO/ZoFaO1HgxlJOQ16xP63VZv2hNP1+2c8VBtVQCYW2ImuLEX7XBvdwE6iUn4wCH7YiqDuCR4+acwQ7Wb2JUBhGDoJegHsHyrGiJ/DjozbQyQH/yE6FBmMMx+I5QK3TikgPyXgHkdME0KOga+YYhD2BNgLtOo2WAltDsInAKyAmlL8KbSZF+wf4A3PH6hq32AZQ15QsSw1O5eklpUFb4HtGsBPeWDbDOxt/kZ56fFzgv960QADaqJ9SCWhIAGY9WGcRzUVeXNlN7Ww+gOuQvhsc13y14zjX3Cazwv17+99W7W/SaVs1NqbH+eX9dDSIEzBUXaSj4TeqhqWeaHjmRm1G9lhmVE2M6l5UTxGPNmQ/q2KIrKvKHR0+x3X4lSqBoH2x3vi5ICJRUCZWuH9CwaNCv1PCMHqqNnPsPVlWQgTRlc+gAAAAASUVORK5CYII="
+                                                                            alt=""> <span>Bitcoin Asia</span></div>
+                                                                </td>
+                                                                <td class="py-4 whitespace-nowrap">
+                                                                    <div class="flex items-center"><span
+                                                                            aria-hidden="true" role="img"
+                                                                            class="material-design-icon plus-thick-icon text-emerald-500"><svg
+                                                                                fill="currentColor" width="14"
+                                                                                height="14" viewBox="0 0 24 24"
+                                                                                class="material-design-icon__svg">
+                                                                                <path
+                                                                                    d="M20 14H14V20H10V14H4V10H10V4H14V10H20V14Z">
+                                                                                    <!---->
+                                                                                </path>
+                                                                            </svg></span> <span>$0.02096</span></div>
+                                                                </td>
+                                                                <td class="hidden sm:block whitespace-nowrap">
+                                                                    <div>
+                                                                        <div class="h-12 -mx-2 w-28">
+                                                                            <div class="chartjs-size-monitor">
+                                                                                <div
+                                                                                    class="chartjs-size-monitor-expand">
+                                                                                    <div class=""></div>
+                                                                                </div>
+                                                                                <div
+                                                                                    class="chartjs-size-monitor-shrink">
+                                                                                    <div class=""></div>
+                                                                                </div>
+                                                                            </div><canvas id="line-chart" width="112"
+                                                                                height="48"
+                                                                                style="display: block; width: 112px; height: 48px;"
+                                                                                class="chartjs-render-monitor"></canvas>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr class="border-b border-gray-200">
+                                                                <td class="py-4 whitespace-nowrap">
+                                                                    <div class="flex items-center space-x-2"><img
+                                                                            src="https://nefa.vercel.app/_nuxt/img/moonrock.71ab538.png"
+                                                                            alt=""> <span>MoonRock</span></div>
+                                                                </td>
+                                                                <td class="py-4 whitespace-nowrap">
+                                                                    <div class="flex items-center"><span
+                                                                            aria-hidden="true" role="img"
+                                                                            class="material-design-icon plus-thick-icon text-emerald-500"><svg
+                                                                                fill="currentColor" width="14"
+                                                                                height="14" viewBox="0 0 24 24"
+                                                                                class="material-design-icon__svg">
+                                                                                <path
+                                                                                    d="M20 14H14V20H10V14H4V10H10V4H14V10H20V14Z">
+                                                                                    <!---->
+                                                                                </path>
+                                                                            </svg></span> <span>$0.004907</span></div>
+                                                                </td>
+                                                                <td class="hidden sm:block whitespace-nowrap">
+                                                                    <div>
+                                                                        <div class="h-12 -mx-2 w-28">
+                                                                            <div class="chartjs-size-monitor">
+                                                                                <div
+                                                                                    class="chartjs-size-monitor-expand">
+                                                                                    <div class=""></div>
+                                                                                </div>
+                                                                                <div
+                                                                                    class="chartjs-size-monitor-shrink">
+                                                                                    <div class=""></div>
+                                                                                </div>
+                                                                            </div><canvas id="line-chart" width="112"
+                                                                                height="48"
+                                                                                style="display: block; width: 112px; height: 48px;"
+                                                                                class="chartjs-render-monitor"></canvas>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr class="border-b border-gray-200">
+                                                                <td class="py-4 whitespace-nowrap">
+                                                                    <div class="flex items-center space-x-2"><img
+                                                                            src="https://nefa.vercel.app/_nuxt/img/ninjafloki.768bc7a.png"
+                                                                            alt=""> <span>NinjaFloki</span></div>
+                                                                </td>
+                                                                <td class="py-4 whitespace-nowrap">
+                                                                    <div class="flex items-center"><span
+                                                                            aria-hidden="true" role="img"
+                                                                            class="material-design-icon plus-thick-icon text-emerald-500"><svg
+                                                                                fill="currentColor" width="14"
+                                                                                height="14" viewBox="0 0 24 24"
+                                                                                class="material-design-icon__svg">
+                                                                                <path
+                                                                                    d="M20 14H14V20H10V14H4V10H10V4H14V10H20V14Z">
+                                                                                    <!---->
+                                                                                </path>
+                                                                            </svg></span> <span>$0.000123</span></div>
+                                                                </td>
+                                                                <td class="hidden sm:block whitespace-nowrap">
+                                                                    <div>
+                                                                        <div class="h-12 -mx-2 w-28">
+                                                                            <div class="chartjs-size-monitor">
+                                                                                <div
+                                                                                    class="chartjs-size-monitor-expand">
+                                                                                    <div class=""></div>
+                                                                                </div>
+                                                                                <div
+                                                                                    class="chartjs-size-monitor-shrink">
+                                                                                    <div class=""></div>
+                                                                                </div>
+                                                                            </div><canvas id="line-chart" width="112"
+                                                                                height="48"
+                                                                                style="display: block; width: 112px; height: 48px;"
+                                                                                class="chartjs-render-monitor"></canvas>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div data-aos="fade-up" data-aos-delay="300"
+                                        class="w-full mt-6 space-y-6 overflow-hidden lg:w-1/3 lg:mt-0 lg:px-8 aos-init"
+                                        data-v-b444fb2c="">
+                                        <div class="flex items-center justify-between w-full"><span
+                                                class="font-medium">💎 Recently Added</span> <button href="#"
+                                                class="flex items-center px-3 py-1 space-x-1 text-sm font-medium text-blue-500 transition duration-300 rounded-md hover:bg-blue-50"><span>More</span>
+                                                <span aria-hidden="true" role="img"
+                                                    class="material-design-icon chevron-right-icon"><svg
+                                                        fill="currentColor" width="16" height="16" viewBox="0 0 24 24"
+                                                        class="material-design-icon__svg">
+                                                        <path
+                                                            d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z">
+                                                            <!---->
+                                                        </path>
+                                                    </svg></span></button></div>
+                                        <div class="flex flex-col">
+                                            <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+                                                <div
+                                                    class="inline-block min-w-full px-2 py-2 overflow-hidden align-middle sm:px-6">
+                                                    <table class="min-w-full">
+                                                        <thead>
+                                                            <tr>
+                                                                <th class="text-sm font-medium text-left text-gray-500">
+                                                                    Name</th>
+                                                                <th class="text-sm font-medium text-left text-gray-500">
+                                                                    Price</th>
+                                                                <th
+                                                                    class="hidden text-sm font-medium text-left text-gray-500 sm:block">
+                                                                    Chart</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr class="border-b border-gray-200">
+                                                                <td class="py-4 whitespace-nowrap">
+                                                                    <div class="flex items-center space-x-2"><img
+                                                                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAAAAADhgtq/AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAJcEhZcwAACxMAAAsTAQCanBgAAAAHdElNRQfmARcCMDgIp06qAAABDUlEQVQoz5XSMUvDQBjG8X90cMnQFPfW0UmdHMVPYhA/gINdmyLE1ToLXp0dFBwclEY3QbDg4nYnuDdfoORxSEKuLYI+y8H94Die90W/hT9Ino1OzfOyuOMIgOjAzct5mzrh0JckwMugkQvmM6zFrXu3a2FIlFcSw4n7PAJg20qQVLIBqVT0gcNcErQLCWkCpJLUKw8BVkK6B1JNv9xOJrlEAm4lJAOksp0tJz22Ygm4lpDuStnNpbOAUsYSki2lJ30bY14kwHl/s/2mSzarXw8glY2zMk8PcFVJ3qF1Y70eukXd2zggiBsI3puuR36fq8afz0e3eeptYdpmbwUI9i9nyxuSv2aT6f92ZzE//GqUhj4mcFUAAAAldEVYdGRhdGU6Y3JlYXRlADIwMjItMDEtMjNUMDI6NDg6NDcrMDA6MDCKZb1WAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDIyLTAxLTIzVDAyOjQ4OjQ3KzAwOjAw+zgF6gAAAABJRU5ErkJggg=="
+                                                                            alt=""> <span>MetaCraft</span></div>
+                                                                </td>
+                                                                <td class="py-4 whitespace-nowrap">
+                                                                    <div class="flex items-center"><span
+                                                                            aria-hidden="true" role="img"
+                                                                            class="text-red-500 material-design-icon minus-thick-icon"><svg
+                                                                                fill="currentColor" width="14"
+                                                                                height="14" viewBox="0 0 24 24"
+                                                                                class="material-design-icon__svg">
+                                                                                <path d="M20 14H4V10H20V14Z"><!---->
+                                                                                </path>
+                                                                            </svg></span> <span>$0.0608</span></div>
+                                                                </td>
+                                                                <td class="hidden sm:block whitespace-nowrap">
+                                                                    <div>
+                                                                        <div class="h-12 -mx-2 w-28">
+                                                                            <div class="chartjs-size-monitor">
+                                                                                <div
+                                                                                    class="chartjs-size-monitor-expand">
+                                                                                    <div class=""></div>
+                                                                                </div>
+                                                                                <div
+                                                                                    class="chartjs-size-monitor-shrink">
+                                                                                    <div class=""></div>
+                                                                                </div>
+                                                                            </div><canvas id="line-chart" width="112"
+                                                                                height="48"
+                                                                                style="display: block; width: 112px; height: 48px;"
+                                                                                class="chartjs-render-monitor"></canvas>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr class="border-b border-gray-200">
+                                                                <td class="py-4 whitespace-nowrap">
+                                                                    <div class="flex items-center space-x-2"><img
+                                                                            src="https://nefa.vercel.app/_nuxt/img/frog.ae03a20.png"
+                                                                            alt="">
+                                                                        <span>Frog</span>
+                                                                    </div>
+                                                                </td>
+                                                                <td class="py-4 whitespace-nowrap">
+                                                                    <div class="flex items-center"><span
+                                                                            aria-hidden="true" role="img"
+                                                                            class="text-red-500 material-design-icon minus-thick-icon"><svg
+                                                                                fill="currentColor" width="14"
+                                                                                height="14" viewBox="0 0 24 24"
+                                                                                class="material-design-icon__svg">
+                                                                                <path d="M20 14H4V10H20V14Z"><!---->
+                                                                                </path>
+                                                                            </svg></span> <span>$0.5875</span></div>
+                                                                </td>
+                                                                <td class="hidden sm:block whitespace-nowrap">
+                                                                    <div>
+                                                                        <div class="h-12 -mx-2 w-28">
+                                                                            <div class="chartjs-size-monitor">
+                                                                                <div
+                                                                                    class="chartjs-size-monitor-expand">
+                                                                                    <div class=""></div>
+                                                                                </div>
+                                                                                <div
+                                                                                    class="chartjs-size-monitor-shrink">
+                                                                                    <div class=""></div>
+                                                                                </div>
+                                                                            </div><canvas id="line-chart" width="112"
+                                                                                height="48"
+                                                                                style="display: block; width: 112px; height: 48px;"
+                                                                                class="chartjs-render-monitor"></canvas>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr class="border-b border-gray-200">
+                                                                <td class="py-4 whitespace-nowrap">
+                                                                    <div class="flex items-center space-x-2"><img
+                                                                            src="https://nefa.vercel.app/_nuxt/img/musk-doge.f53083a.png"
+                                                                            alt=""> <span>Musk Doge</span></div>
+                                                                </td>
+                                                                <td class="py-4 whitespace-nowrap">
+                                                                    <div class="flex items-center"><span
+                                                                            aria-hidden="true" role="img"
+                                                                            class="material-design-icon plus-thick-icon text-emerald-500"><svg
+                                                                                fill="currentColor" width="14"
+                                                                                height="14" viewBox="0 0 24 24"
+                                                                                class="material-design-icon__svg">
+                                                                                <path
+                                                                                    d="M20 14H14V20H10V14H4V10H10V4H14V10H20V14Z">
+                                                                                    <!---->
+                                                                                </path>
+                                                                            </svg></span> <span>$0.04041</span></div>
+                                                                </td>
+                                                                <td class="hidden sm:block whitespace-nowrap">
+                                                                    <div>
+                                                                        <div class="h-12 -mx-2 w-28">
+                                                                            <div class="chartjs-size-monitor">
+                                                                                <div
+                                                                                    class="chartjs-size-monitor-expand">
+                                                                                    <div class=""></div>
+                                                                                </div>
+                                                                                <div
+                                                                                    class="chartjs-size-monitor-shrink">
+                                                                                    <div class=""></div>
+                                                                                </div>
+                                                                            </div><canvas id="line-chart" width="112"
+                                                                                height="48"
+                                                                                style="display: block; width: 112px; height: 48px;"
+                                                                                class="chartjs-render-monitor"></canvas>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr class="border-b border-gray-200">
+                                                                <td class="py-4 whitespace-nowrap">
+                                                                    <div class="flex items-center space-x-2"><img
+                                                                            src="https://nefa.vercel.app/_nuxt/img/2share.785d7a0.png"
+                                                                            alt="">
+                                                                        <span>2SHARE</span>
+                                                                    </div>
+                                                                </td>
+                                                                <td class="py-4 whitespace-nowrap">
+                                                                    <div class="flex items-center"><span
+                                                                            aria-hidden="true" role="img"
+                                                                            class="material-design-icon plus-thick-icon text-emerald-500"><svg
+                                                                                fill="currentColor" width="14"
+                                                                                height="14" viewBox="0 0 24 24"
+                                                                                class="material-design-icon__svg">
+                                                                                <path
+                                                                                    d="M20 14H14V20H10V14H4V10H10V4H14V10H20V14Z">
+                                                                                    <!---->
+                                                                                </path>
+                                                                            </svg></span> <span>$1366.24</span></div>
+                                                                </td>
+                                                                <td class="hidden sm:block whitespace-nowrap">
+                                                                    <div>
+                                                                        <div class="h-12 -mx-2 w-28">
+                                                                            <div class="chartjs-size-monitor">
+                                                                                <div
+                                                                                    class="chartjs-size-monitor-expand">
+                                                                                    <div class=""></div>
+                                                                                </div>
+                                                                                <div
+                                                                                    class="chartjs-size-monitor-shrink">
+                                                                                    <div class=""></div>
+                                                                                </div>
+                                                                            </div><canvas id="line-chart" width="112"
+                                                                                height="48"
+                                                                                style="display: block; width: 112px; height: 48px;"
+                                                                                class="chartjs-render-monitor"></canvas>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <section class="w-full my-24" data-v-b444fb2c="">
+                                <div class="relative grid max-w-screen-xl grid-cols-12 px-4 mx-auto overflow-hidden sm:px-8 gap-x-6"
+                                    data-v-b444fb2c="">
+                                    <div class="col-span-12 mb-8 lg:col-span-6 sm:hidden" data-v-b444fb2c="">
+                                        <div class="w-full"><img
+                                                src="https://nefa.vercel.app/_nuxt/img/buy-and-trade.69b9f7b.webp"
+                                                alt="" class="mt-4 sm:-mt-4"></div>
+                                    </div>
+                                    <div data-aos="fade-right"
+                                        class="col-span-12 px-4 mt-4 space-y-6 lg:col-span-6 xl:mt-20 aos-init"
+                                        data-v-b444fb2c="">
+                                        <h2 class="text-4xl font-semibold sm:pr-8 xl:pr-12" data-v-b444fb2c="">
+                                            Buy &amp; trade on the <br class="hidden sm:block" data-v-b444fb2c="">
+                                            original crypto exchange.
+                                        </h2>
+                                        <p class="paragraph" data-v-b444fb2c="">
+                                            Buy now and get 40% extra bonus Minimum pre-sale amount 25 Crypto Coin. We
+                                            accept BTC crypto-currency
+                                        </p>
+                                        <div class="space-y-6 lg:pr-12" data-v-b444fb2c="">
+                                            <div class="flex items-center space-x-4" data-v-b444fb2c="">
+                                                <div
+                                                    class="lg:max-w-[336px] w-full flex items-center relative px-5 py-3 border border-[#0c66ee] rounded-xl">
+                                                    <span
+                                                        class="text-sm font-medium pr-5 py-3 text-[#0c66ee] border-r border-[#0c66ee]">
+                                                        Amount </span> <input type="number" name="amount" value="5.000"
+                                                        class="w-full text-lg font-medium text-right border-none ring-0 focus:outline-none focus:ring-0">
+                                                </div>
+                                                <div class="relative w-full max-w-[106px] sm:max-w-[159px]"><button
+                                                        type="button"
+                                                        class="w-full flex items-center justify-center space-x-1 relative sm:px-6 py-[1.35rem] border border-[#0c66ee] rounded-xl text-sm font-medium"><img
+                                                            src="https://nefa.vercel.app/_nuxt/img/eng.52eb53e.png"
+                                                            alt="" class="flex-shrink-0 w-6 h-6 rounded-full"> <span
+                                                            class="block ml-3 truncate">USD</span> <span
+                                                            aria-hidden="true" role="img"
+                                                            class="material-design-icon chevron-down-icon"><svg
+                                                                fill="currentColor" width="20" height="20"
+                                                                viewBox="0 0 24 24" class="material-design-icon__svg">
+                                                                <path
+                                                                    d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z">
+                                                                    <!---->
+                                                                </path>
+                                                            </svg></span></button> <!----></div>
+                                            </div>
+                                            <div class="flex items-center space-x-4" data-v-b444fb2c="">
+                                                <div
+                                                    class="lg:max-w-[336px] w-full flex items-center relative px-5 py-3 border border-[#0c66ee] rounded-xl">
+                                                    <span
+                                                        class="text-sm font-medium pr-5 py-3 text-[#0c66ee] border-r border-[#0c66ee]">
+                                                        Get </span> <input type="number" name="get" value="0.10901"
+                                                        class="w-full text-lg font-medium text-right border-none ring-0 focus:outline-none focus:ring-0">
+                                                </div>
+                                                <div class="relative w-full max-w-[106px] sm:max-w-[159px]"><button
+                                                        type="button"
+                                                        class="w-full flex items-center justify-center space-x-1 relative sm:px-6 py-[1.35rem] border border-[#0c66ee] rounded-xl text-sm font-medium"><img
+                                                            src="https://nefa.vercel.app/_nuxt/img/bitcoin.2efeba4.png"
+                                                            alt="" class="flex-shrink-0 w-6 h-6 rounded-full"> <span
+                                                            class="block ml-3 truncate">BTC</span> <span
+                                                            aria-hidden="true" role="img"
+                                                            class="material-design-icon chevron-down-icon"><svg
+                                                                fill="currentColor" width="20" height="20"
+                                                                viewBox="0 0 24 24" class="material-design-icon__svg">
+                                                                <path
+                                                                    d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z">
+                                                                    <!---->
+                                                                </path>
+                                                            </svg></span></button> <!----></div>
+                                            </div> <button
+                                                class="text-sm text-center rounded-full hover:shadow-md hover:shadow-[#0c66ee]/50 transition duration-300 w-full px-5 py-4 bg-blue-gradient text-white text-base font-medium"
+                                                data-v-b444fb2c="">Buy Now</button>
+                                        </div>
+                                    </div>
+                                    <div data-aos="fade-left" class="hidden col-span-12 lg:col-span-6 sm:block aos-init"
+                                        data-v-b444fb2c="">
+                                        <div class="w-full"><img
+                                                src="https://nefa.vercel.app/_nuxt/img/buy-and-trade.69b9f7b.webp"
+                                                alt="" class="mt-4 sm:-mt-4"></div>
+                                    </div>
+                                </div>
+                            </section>
+                            <section
+                                class="relative max-w-full my-24 overflow-hidden shadow bg-partner sm:mx-6 sm:rounded-2xl"
+                                data-v-b444fb2c="">
+                                <div class="flex flex-col items-center justify-center w-full px-6 py-16 space-y-4 text-center sm:px-0"
+                                    data-v-b444fb2c="">
+                                    <h3 data-aos="flip-down" class="text-2xl font-semibold text-neutral-800 aos-init"
+                                        data-v-b444fb2c="">Trusted Partners Worldwide</h3>
+                                    <p data-aos="flip-down" class="paragraph aos-init" data-v-b444fb2c="">We're partners
+                                        with countless major organisations around the globe</p>
+                                    <div data-aos="fade-up" class="flex flex-wrap items-center justify-center aos-init"
+                                        data-v-b444fb2c="">
+                                        <div data-v-b444fb2c=""><img
+                                                src="https://nefa.vercel.app/_nuxt/img/clever.8a49f14.png" alt=""
+                                                class="mx-auto sm:w-1/2 lg:w-72"></div>
+                                        <div data-v-b444fb2c=""><img
+                                                src="https://nefa.vercel.app/_nuxt/img/diamon-cutts.05f2972.png" alt=""
+                                                class="mx-auto sm:w-1/2 lg:w-72"></div>
+                                        <div data-v-b444fb2c=""><img
+                                                src="https://nefa.vercel.app/_nuxt/img/swiss-finance.7281595.png" alt=""
+                                                class="mx-auto sm:w-1/2 lg:w-72"></div>
+                                        <div data-v-b444fb2c=""><img
+                                                src="https://nefa.vercel.app/_nuxt/img/gambio.da697ab.png" alt=""
+                                                class="mx-auto sm:w-1/2 lg:w-72"></div>
+                                    </div>
+                                </div>
+                            </section>
+                            <section class="w-full my-36" data-v-b444fb2c="">
+                                <div data-aos="fade-down"
+                                    class="relative grid max-w-screen-xl grid-cols-12 px-4 mx-auto overflow-hidden sm:px-8 gap-x-6 aos-init"
+                                    data-v-b444fb2c="">
+                                    <div class="col-span-12 lg:col-span-7" data-v-b444fb2c="">
+                                        <div class="w-full" data-v-b444fb2c=""><img
+                                                src="https://nefa.vercel.app/_nuxt/img/nefa-cc.4277338.webp" alt=""
+                                                class="w-[95%]" data-v-b444fb2c=""></div>
+                                    </div>
+                                    <div class="col-span-12 px-4 mt-20 space-y-6 lg:col-span-5 sm:px-6"
+                                        data-v-b444fb2c="">
+                                        <h2 class="text-4xl font-semibold" data-v-b444fb2c="">
+                                            Introducing the <span class="text-header-gradient"
+                                                data-v-b444fb2c="">NEFA</span> Credit Card
+                                        </h2>
+                                        <p class="paragraph" data-v-b444fb2c="">Subject to cardholder and rewards terms
+                                            which will be available at application.</p>
+                                        <ul class="space-y-4 sm:space-y-2" data-v-b444fb2c="">
+                                            <li class="space-y-2" data-v-b444fb2c="">
+                                                <div class="flex items-center space-x-2"><span aria-hidden="true"
+                                                        role="img"
+                                                        class="material-design-icon check-circle-icon text-[#0c66ee]"><svg
+                                                            fill="currentColor" width="20" height="20"
+                                                            viewBox="0 0 24 24" class="material-design-icon__svg">
+                                                            <path
+                                                                d="M12 2C6.5 2 2 6.5 2 12S6.5 22 12 22 22 17.5 22 12 17.5 2 12 2M10 17L5 12L6.41 10.59L10 14.17L17.59 6.58L19 8L10 17Z">
+                                                                <!---->
+                                                            </path>
+                                                        </svg></span> <span>Up to 3% back on purchases</span></div>
+                                            </li>
+                                            <li class="space-y-2" data-v-b444fb2c="">
+                                                <div class="flex items-center space-x-2"><span aria-hidden="true"
+                                                        role="img"
+                                                        class="material-design-icon check-circle-icon text-[#0c66ee]"><svg
+                                                            fill="currentColor" width="20" height="20"
+                                                            viewBox="0 0 24 24" class="material-design-icon__svg">
+                                                            <path
+                                                                d="M12 2C6.5 2 2 6.5 2 12S6.5 22 12 22 22 17.5 22 12 17.5 2 12 2M10 17L5 12L6.41 10.59L10 14.17L17.59 6.58L19 8L10 17Z">
+                                                                <!---->
+                                                            </path>
+                                                        </svg></span> <span>Earn rewards in bitcoin or any crypto on
+                                                        NEFA</span></div>
+                                            </li>
+                                            <li class="space-y-2" data-v-b444fb2c="">
+                                                <div class="flex items-center space-x-2"><span aria-hidden="true"
+                                                        role="img"
+                                                        class="material-design-icon check-circle-icon text-[#0c66ee]"><svg
+                                                            fill="currentColor" width="20" height="20"
+                                                            viewBox="0 0 24 24" class="material-design-icon__svg">
+                                                            <path
+                                                                d="M12 2C6.5 2 2 6.5 2 12S6.5 22 12 22 22 17.5 22 12 17.5 2 12 2M10 17L5 12L6.41 10.59L10 14.17L17.59 6.58L19 8L10 17Z">
+                                                                <!---->
+                                                            </path>
+                                                        </svg></span> <span>No annual fee</span></div>
+                                            </li>
+                                        </ul> <button
+                                            class="text-sm text-center rounded-full hover:shadow-md hover:shadow-[#0c66ee]/50 transition duration-300 w-full sm:max-w-[240px] px-10 py-4 bg-inherit text-gradient border border-[#0c66ee] text-base"
+                                            data-v-b444fb2c="">Join the waitlist</button>
+                                    </div>
+                                </div>
+                            </section>
+                            <section
+                                class="relative max-w-full py-16 my-20 overflow-hidden shadow bg-trading-tools sm:mx-4 rounded-2xl"
+                                data-v-b444fb2c="">
+                                <div class="relative grid max-w-screen-xl grid-cols-12 px-4 mx-auto sm:px-2 gap-x-6"
+                                    data-v-b444fb2c="">
+                                    <div class="col-span-12 lg:col-span-6 sm:hidden" data-v-b444fb2c="">
+                                        <div class="w-full sm:mt-20 xl:mt-0"><img
+                                                src="https://nefa.vercel.app/_nuxt/img/advanced-trading-tools.4f95ae5.webp"
+                                                alt="" class="w-full"></div>
+                                    </div>
+                                    <div data-aos="fade-right"
+                                        class="col-span-12 px-4 mt-8 space-y-8 lg:col-span-6 sm:space-y-6 sm:px-6 aos-init"
+                                        data-v-b444fb2c="">
+                                        <h2 class="text-4xl font-semibold" data-v-b444fb2c="">Advanced Trading <span
+                                                class="text-header-gradient" data-v-b444fb2c="">Tools</span></h2>
+                                        <div class="space-y-2" data-v-b444fb2c="">
+                                            <h4 class="text-lg font-medium" data-v-b444fb2c="">Professional Access,
+                                                Non-stop Availability</h4>
+                                            <p class="text-sm paragraph xl:text-base" data-v-b444fb2c="">
+                                                We provide premium access to crypto trading for both individuals and
+                                                institutions through high liquidity,
+                                                reliable order execution and constant uptime.
+                                            </p>
+                                        </div>
+                                        <div class="space-y-2" data-v-b444fb2c="">
+                                            <h4 class="text-lg font-medium" data-v-b444fb2c="">A Range of Powerful Apis
+                                            </h4>
+                                            <p class="text-sm paragraph xl:text-base" data-v-b444fb2c="">
+                                                Set up your own trading interface or deploy your algorithmic strategy
+                                                with our high-performance FIX and
+                                                HTTP APIs. Connect to our WebSocket for real-time data streaming.
+                                            </p>
+                                        </div>
+                                        <div class="space-y-2" data-v-b444fb2c="">
+                                            <h4 class="text-lg font-medium" data-v-b444fb2c="">Customer Support</h4>
+                                            <p class="text-sm paragraph xl:text-base" data-v-b444fb2c="">
+                                                Premium 24/7 support available to all customers worldwide by phone or
+                                                email. Dedicated account managers
+                                                for partners.
+                                            </p>
+                                        </div>
+                                        <div class="flex flex-col sm:flex-row" data-v-b444fb2c=""><button
+                                                class="text-sm text-center rounded-full hover:shadow-md hover:shadow-[#0c66ee]/50 transition duration-300 px-10 py-4 bg-inherit text-gradient border border-[#4A8FF6] text-base"
+                                                data-v-b444fb2c="">
+                                                Get Started
+                                            </button> <button
+                                                class="text-sm text-center rounded-full hover:shadow-md hover:shadow-[#0c66ee]/50 transition duration-300 bg-inherit text-[#4A8FF6] px-10 py-4 text-center underline rounded-full"
+                                                data-v-b444fb2c="">
+                                                Learn More
+                                            </button></div>
+                                    </div>
+                                    <div data-aos="fade-left" class="hidden col-span-12 lg:col-span-6 sm:block aos-init"
+                                        data-v-b444fb2c="">
+                                        <div class="w-full sm:mt-20 xl:mt-0"><img
+                                                src="https://nefa.vercel.app/_nuxt/img/advanced-trading-tools.4f95ae5.webp"
+                                                alt="" class="w-full"></div>
+                                    </div>
+                                </div>
+                            </section>
+                            <section class="w-full my-24" data-v-b444fb2c="">
+                                <div class="relative grid max-w-screen-xl grid-cols-12 px-8 mx-auto gap-x-6"
+                                    data-v-b444fb2c="">
+                                    <div data-aos="fade-right" class="col-span-12 lg:col-span-6 aos-init"
+                                        data-v-b444fb2c="">
+                                        <div class="w-full" data-v-b444fb2c=""><img
+                                                src="https://nefa.vercel.app/_nuxt/img/industry-leading-security.16b398c.webp"
+                                                alt="" class="w-full" data-v-b444fb2c=""></div>
+                                    </div>
+                                    <div data-aos="fade-left"
+                                        class="col-span-12 mt-8 space-y-8 lg:col-span-5 sm:space-y-6 xl:px-8 aos-init"
+                                        data-v-b444fb2c="">
+                                        <h2 class="text-4xl font-semibold" data-v-b444fb2c="">Industry-leading security
+                                            from day one</h2>
+                                        <ul class="space-y-8 sm:space-y-4" data-v-b444fb2c="">
+                                            <li class="space-y-2" data-v-b444fb2c="">
+                                                <div class="flex items-center space-x-2"><span aria-hidden="true"
+                                                        role="img"
+                                                        class="material-design-icon check-circle-icon text-[#0c66ee]"><svg
+                                                            fill="currentColor" width="20" height="20"
+                                                            viewBox="0 0 24 24" class="material-design-icon__svg">
+                                                            <path
+                                                                d="M12 2C6.5 2 2 6.5 2 12S6.5 22 12 22 22 17.5 22 12 17.5 2 12 2M10 17L5 12L6.41 10.59L10 14.17L17.59 6.58L19 8L10 17Z">
+                                                                <!---->
+                                                            </path>
+                                                        </svg></span> <span>Safety, security and compliance</span></div>
+                                                <p class="text-sm leading-relaxed text-gray-700" data-v-b444fb2c="">
+                                                    NEFA is a licensed New York trust company that undergoes regular
+                                                    bank exams and is subject to the
+                                                    cybersecurity audits conducted by the New York Department of
+                                                    Financial Services.
+                                                    <span class="underline" data-v-b444fb2c="">Learn more</span> about
+                                                    our commitment to security.
+                                                </p>
+                                            </li>
+                                            <li class="space-y-2" data-v-b444fb2c="">
+                                                <div class="flex items-center space-x-2"><span aria-hidden="true"
+                                                        role="img"
+                                                        class="material-design-icon check-circle-icon text-[#0c66ee]"><svg
+                                                            fill="currentColor" width="20" height="20"
+                                                            viewBox="0 0 24 24" class="material-design-icon__svg">
+                                                            <path
+                                                                d="M12 2C6.5 2 2 6.5 2 12S6.5 22 12 22 22 17.5 22 12 17.5 2 12 2M10 17L5 12L6.41 10.59L10 14.17L17.59 6.58L19 8L10 17Z">
+                                                                <!---->
+                                                            </path>
+                                                        </svg></span> <span>Hardware security keys</span></div>
+                                                <p class="text-sm leading-relaxed text-gray-700" data-v-b444fb2c="">
+                                                    With NEFA you can secure your account with a hardware security key
+                                                    via WebAuthn.
+                                                </p>
+                                            </li>
+                                            <li class="space-y-2" data-v-b444fb2c="">
+                                                <div class="flex items-center space-x-2"><span aria-hidden="true"
+                                                        role="img"
+                                                        class="material-design-icon check-circle-icon text-[#0c66ee]"><svg
+                                                            fill="currentColor" width="20" height="20"
+                                                            viewBox="0 0 24 24" class="material-design-icon__svg">
+                                                            <path
+                                                                d="M12 2C6.5 2 2 6.5 2 12S6.5 22 12 22 22 17.5 22 12 17.5 2 12 2M10 17L5 12L6.41 10.59L10 14.17L17.59 6.58L19 8L10 17Z">
+                                                                <!---->
+                                                            </path>
+                                                        </svg></span> <span>SOC Certifications</span></div>
+                                                <p class="text-sm leading-relaxed text-gray-700" data-v-b444fb2c="">
+                                                    NEFA is <span class="underline" data-v-b444fb2c="">SOC 1 Type
+                                                        2</span> and
+                                                    <span class="underline" data-v-b444fb2c="">SOC 2 Type 2</span>
+                                                    compliant. We are the world’s first cryptocurrency exchange
+                                                    and custodian to complete these exams.
+                                                </p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </section>
+                            <section
+                                class="relative max-w-full my-24 overflow-hidden shadow bg-trading-tools sm:mx-4 xl:mx-10 sm:rounded-2xl"
+                                data-v-b444fb2c="">
+                                <div class="flex flex-col items-center w-full py-16" data-v-b444fb2c="">
+                                    <h2 data-aos="flip-down"
+                                        class="text-3xl font-semibold text-center sm:text-4xl aos-init"
+                                        data-v-b444fb2c="">
+                                        Get started in just a few minutes
+                                    </h2>
+                                    <div data-aos="fade-up"
+                                        class="relative flex flex-col items-center justify-between w-full px-4 mt-16 space-y-12 lg:flex-row lg:space-y-0 xl:px-10 sm:mt-8 aos-init"
+                                        data-v-b444fb2c="">
+                                        <div class="max-w-[280px] xl:max-w-[363px] space-y-6 sm:space-y-3 text-center"
+                                            data-v-b444fb2c=""><img
+                                                src="https://nefa.vercel.app/_nuxt/img/sign-up.4afd242.png" alt=""
+                                                class="max-w-[245px] mx-auto">
+                                            <h3 class="text-xl font-semibold text-neutral-800">Sign Up</h3>
+                                            <p class="text-sm leading-relaxed text-gray-700">
+                                                Sign up for your free NEFA Wallet on web, iOS or Android and follow our
+                                                easy process to set up your profile
+                                            </p>
+                                        </div>
+                                        <div class="max-w-[280px] xl:max-w-[363px] space-y-6 sm:space-y-3 text-center"
+                                            data-v-b444fb2c=""><img
+                                                src="https://nefa.vercel.app/_nuxt/img/fund.93372b0.png" alt=""
+                                                class="max-w-[245px] mx-auto">
+                                            <h3 class="text-xl font-semibold text-neutral-800">Fund</h3>
+                                            <p class="text-sm leading-relaxed text-gray-700">
+                                                Choose your preferred payment method such as bank transfer or credit
+                                                card to top up your NEFA Wallet
+                                            </p>
+                                        </div>
+                                        <div class="max-w-[280px] xl:max-w-[363px] space-y-6 sm:space-y-3 text-center"
+                                            data-v-b444fb2c=""><img
+                                                src="https://nefa.vercel.app/_nuxt/img/buy-crypto.46d8692.png" alt=""
+                                                class="max-w-[245px] mx-auto">
+                                            <h3 class="text-xl font-semibold text-neutral-800">Buy Crypto</h3>
+                                            <p class="text-sm leading-relaxed text-gray-700">
+                                                Buy Bitcoin or Ethereum, then securely store it in your Wallet or send
+                                                it on easily to your friends anywhere
+                                            </p>
+                                        </div> <img src="https://nefa.vercel.app/_nuxt/img/arrow.60f4e50.png" alt=""
+                                            class="hidden lg:inline-block absolute top-32 left-64 xl:left-[22rem] w-24 xl:w-[9.5rem]"
+                                            data-v-b444fb2c=""> <img
+                                            src="https://nefa.vercel.app/_nuxt/img/arrow.60f4e50.png" alt=""
+                                            class="hidden lg:inline-block absolute top-32 right-64 xl:right-[22rem] w-24 xl:w-[9.5rem]"
+                                            data-v-b444fb2c="">
+                                    </div>
+                                </div>
+                            </section>
+                            <section class="w-full my-24" data-v-b444fb2c="">
+                                <div class="relative grid max-w-screen-xl grid-cols-12 px-4 mx-auto overflow-hidden sm:px-8 gap-x-6"
+                                    data-v-b444fb2c="">
+                                    <div data-aos="fade-right" data-aos-delay="150"
+                                        class="col-span-12 lg:col-span-6 aos-init" data-v-b444fb2c="">
+                                        <div class="w-full" data-v-b444fb2c=""><img
+                                                src="https://nefa.vercel.app/_nuxt/img/faq.05e12ee.webp" alt=""
+                                                class="w-full" data-v-b444fb2c=""></div>
+                                    </div>
+                                    <div data-aos="fade-left" data-aos-delay="150"
+                                        class="col-span-12 px-4 mt-8 lg:col-span-6 sm:px-6 aos-init" data-v-b444fb2c="">
+                                        <span class="mb-4 text-base font-semibold uppercase text-gradient sm:mb-2"
+                                            data-v-b444fb2c="">Support</span>
+                                        <h2 class="mb-10 text-3xl font-semibold sm:text-4xl sm:mb-6" data-v-b444fb2c="">
+                                            Frequently asked questions</h2>
+                                        <ul class="shadow-box" data-v-b444fb2c="">
+                                            <li class="relative border-b-2 border-gray-200" data-v-b444fb2c=""><button
+                                                    type="button" class="w-full py-4 text-left">
+                                                    <div class="flex items-center justify-between"><span
+                                                            class="font-medium">Why should I choose NEFA?</span> <span
+                                                            aria-hidden="true" role="img"
+                                                            class="material-design-icon chevron-down-icon"><svg
+                                                                fill="currentColor" width="20" height="20"
+                                                                viewBox="0 0 24 24" class="material-design-icon__svg">
+                                                                <path
+                                                                    d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z">
+                                                                    <!---->
+                                                                </path>
+                                                            </svg></span></div>
+                                                </button> <!----></li>
+                                            <li class="relative border-b-2 border-gray-200" data-v-b444fb2c=""><button
+                                                    type="button" class="w-full py-4 text-left">
+                                                    <div class="flex items-center justify-between"><span
+                                                            class="font-medium">How secure is NEFA?</span> <span
+                                                            aria-hidden="true" role="img"
+                                                            class="material-design-icon chevron-down-icon"><svg
+                                                                fill="currentColor" width="20" height="20"
+                                                                viewBox="0 0 24 24" class="material-design-icon__svg">
+                                                                <path
+                                                                    d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z">
+                                                                    <!---->
+                                                                </path>
+                                                            </svg></span></div>
+                                                </button> <!----></li>
+                                            <li class="relative border-b-2 border-gray-200" data-v-b444fb2c=""><button
+                                                    type="button" class="w-full py-4 text-left">
+                                                    <div class="flex items-center justify-between"><span
+                                                            class="font-medium">Do I have to buy a whole Bitcoin?</span>
+                                                        <span aria-hidden="true" role="img"
+                                                            class="material-design-icon chevron-down-icon"><svg
+                                                                fill="currentColor" width="20" height="20"
+                                                                viewBox="0 0 24 24" class="material-design-icon__svg">
+                                                                <path
+                                                                    d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z">
+                                                                    <!---->
+                                                                </path>
+                                                            </svg></span>
+                                                    </div>
+                                                </button> <!----></li>
+                                            <li class="relative border-b-2 border-gray-200" data-v-b444fb2c=""><button
+                                                    type="button" class="w-full py-4 text-left">
+                                                    <div class="flex items-center justify-between"><span
+                                                            class="font-medium">How do I actually buy Bitcoin?</span>
+                                                        <span aria-hidden="true" role="img"
+                                                            class="material-design-icon chevron-down-icon"><svg
+                                                                fill="currentColor" width="20" height="20"
+                                                                viewBox="0 0 24 24" class="material-design-icon__svg">
+                                                                <path
+                                                                    d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z">
+                                                                    <!---->
+                                                                </path>
+                                                            </svg></span>
+                                                    </div>
+                                                </button> <!----></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </section>
+                            <div class="flex justify-center w-full my-10" data-v-b444fb2c=""><a data-aos="flip-down"
+                                    data-aos-delay="150" href="#navbar"
+                                    class="px-6 py-3 flex items-center space-x-2 bg-[#FAFAFA] hover:bg-gray-100 hover:shadow-md border border-[#DDDDDD] rounded-md text-gray-700 aos-init"
+                                    data-v-b444fb2c=""><span data-v-b444fb2c="">Back to top</span> <span
+                                        aria-hidden="true" role="img" class="material-design-icon arrow-up-icon"
+                                        data-v-b444fb2c=""><svg fill="currentColor" width="20" height="20"
+                                            viewBox="0 0 24 24" class="material-design-icon__svg">
+                                            <path
+                                                d="M13,20H11V8L5.5,13.5L4.08,12.08L12,4.16L19.92,12.08L18.5,13.5L13,8V20Z">
+                                                <!---->
+                                            </path>
+                                        </svg></span></a></div>
+                        </div>
+                    </main>
+                    <footer class="max-w-screen-xl px-8 mx-auto">
+                        <div class="w-full border-y border-[#DDDDDD]">
+                            <div class="grid xl:grid-cols-4 lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1">
+                                <div
+                                    class="md:w-full lg:w-full w-full sm:w-1/2 xl:w-fit flex flex-col sm:flex-row sm:px-6 py-6 sm:py-12 sm:space-x-10 sm:border-r-0 border-[#DDDDDD]">
+                                    <div class="mb-6 sm:hidden xl:block sm:mb-0"><a href="#"><img
+                                                src="https://nefa.vercel.app/_nuxt/img/nefa.37ff23e.svg" alt="Nefa Logo"
+                                                class="w-24 -mt-2"></a></div>
+                                    <ul class="space-y-4">
+                                        <li class="w-full"><a href="#"
+                                                class="md:px-4 py-2 text-sm bg-transparent rounded-lg text-[#666666] hover:text-gray-900 focus:outline-none focus:shadow-outline">
+                                                Cryptocurrency
+                                            </a></li>
+                                        <li class="w-full"><a href="#"
+                                                class="md:px-4 py-2 text-sm bg-transparent rounded-lg text-[#666666] hover:text-gray-900 focus:outline-none focus:shadow-outline">
+                                                Exchanges
+                                            </a></li>
+                                        <li class="w-full"><a href="#"
+                                                class="md:px-4 py-2 text-sm bg-transparent rounded-lg text-[#666666] hover:text-gray-900 focus:outline-none focus:shadow-outline">
+                                                Watchlist
+                                            </a></li>
+                                        <li class="w-full"><a href="#"
+                                                class="md:px-4 py-2 text-sm bg-transparent rounded-lg text-[#666666] hover:text-gray-900 focus:outline-none focus:shadow-outline">
+                                                Portfolio
+                                            </a></li>
+                                        <li class="w-full"><a href="#"
+                                                class="md:px-4 py-2 text-sm bg-transparent rounded-lg text-[#666666] hover:text-gray-900 focus:outline-none focus:shadow-outline">
+                                                NFT
+                                            </a></li>
+                                    </ul>
+                                </div>
+                                <div
+                                    class="md:w-full lg:w-full lg:border-r w-full sm:w-1/2 xl:w-fit sm:px-16 py-6 sm:py-12 border-t sm:border-t xl:border-r border-[#DDDDDD]">
+                                    <ul class="space-y-4">
+                                        <li class="w-full"><a href="#"
+                                                class="md:px-4 py-2 text-sm bg-transparent rounded-lg text-[#666666] hover:text-gray-900 focus:outline-none focus:shadow-outline">
+                                                Products
+                                            </a></li>
+                                        <li class="w-full"><a href="#"
+                                                class="md:px-4 py-2 text-sm bg-transparent rounded-lg text-[#666666] hover:text-gray-900 focus:outline-none focus:shadow-outline">
+                                                About Us
+                                            </a></li>
+                                        <li class="w-full"><a href="#"
+                                                class="md:px-4 py-2 text-sm bg-transparent rounded-lg text-[#666666] hover:text-gray-900 focus:outline-none focus:shadow-outline">
+                                                Careers
+                                            </a></li>
+                                        <li class="w-full"><a href="#"
+                                                class="md:px-4 py-2 text-sm bg-transparent rounded-lg text-[#666666] hover:text-gray-900 focus:outline-none focus:shadow-outline">
+                                                Blog
+                                            </a></li>
+                                        <li class="w-full"><a href="#"
+                                                class="md:px-4 py-2 text-sm bg-transparent rounded-lg text-[#666666] hover:text-gray-900 focus:outline-none focus:shadow-outline">
+                                                Security
+                                            </a></li>
+                                    </ul>
+                                </div>
+                                <div
+                                    class="md:w-full md:border-t lg:w-full w-full sm:w-1/2 xl:w-fit sm:px-16 py-6 sm:py-12 border-t sm:border-t-0 sm:border-r-0 border-[#DDDDDD]">
+                                    <ul class="space-y-4">
+                                        <li class="w-full"><a href="#"
+                                                class="md:px-4 py-2 text-sm bg-transparent rounded-lg text-[#666666] hover:text-gray-900 focus:outline-none focus:shadow-outline">
+                                                Help Center
+                                            </a></li>
+                                        <li class="w-full"><a href="#"
+                                                class="md:px-4 py-2 text-sm bg-transparent rounded-lg text-[#666666] hover:text-gray-900 focus:outline-none focus:shadow-outline">
+                                                Contact Us
+                                            </a></li>
+                                        <li class="w-full"><a href="#"
+                                                class="md:px-4 py-2 text-sm bg-transparent rounded-lg text-[#666666] hover:text-gray-900 focus:outline-none focus:shadow-outline">
+                                                System Status
+                                            </a></li>
+                                        <li class="w-full"><a href="#"
+                                                class="md:px-4 py-2 text-sm bg-transparent rounded-lg text-[#666666] hover:text-gray-900 focus:outline-none focus:shadow-outline">
+                                                Area of Avaibility
+                                            </a></li>
+                                        <li class="w-full"><a href="#"
+                                                class="md:px-4 py-2 text-sm bg-transparent rounded-lg text-[#666666] hover:text-gray-900 focus:outline-none focus:shadow-outline">
+                                                Privacy Policy
+                                            </a></li>
+                                    </ul>
+                                </div>
+                                <div
+                                    class="md:w-full md:border-t lg:w-full sm:px-10 py-6 sm:py-12 w-full sm:w-1/2 xl:w-[22rem] space-y-4 sm:border-t border-[#DDDDDD]">
+                                    <h5
+                                        class="text-sm font-medium text-[#666666] focus:outline-none focus:shadow-outline">
+                                        Newsletter</h5>
+                                    <p class="text-sm text-[#666666] focus:outline-none focus:shadow-outline">
+                                        Never miss anything crypto when <br class="sm:hidden">you're on the go
+                                    </p>
+                                    <div class="flex items-center space-x-2"><input type="text"
+                                            placeholder="Enter your email"
+                                            class="w-full px-2 py-4 sm:py-3 rounded-lg sm:rounded-md text-sm focus:outline-none border border-[#AAAAAA] placeholder-[#888]">
+                                        <button
+                                            class="px-4 py-4 text-white transition duration-300 rounded-md bg-blue-gradient sm:py-3 hover:shadow-md"><span
+                                                aria-hidden="true" role="img"
+                                                class="material-design-icon arrow-right-icon"><svg fill="currentColor"
+                                                    width="20" height="20" viewBox="0 0 24 24"
+                                                    class="material-design-icon__svg">
+                                                    <path
+                                                        d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z">
+                                                        <!---->
+                                                    </path>
+                                                </svg></span></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="py-8 sm:py-4 text-center text-sm text-[#666666] hover:text-gray-900">
+                            © Copyright 2022 NEFA LLC. All rights reserved
+                        </div>
+                    </footer>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>window.__NUXT__ = (function (a, b) { return { layout: "default", data: [{}], fetch: {}, error: a, serverRendered: true, routePath: b, config: { _app: { basePath: b, assetsPath: "\u002F_nuxt\u002F", cdnURL: a } } } }(null, "\u002F"));</script>
+    <script src="https://nefa.vercel.app/_nuxt/49b9de0.js" defer=""></script>
+    <script src="https://nefa.vercel.app/_nuxt/7eb2420.js" defer=""></script>
+    <script src="https://nefa.vercel.app/_nuxt/bf21072.js" defer=""></script>
+    <!-- <script src="https://nefa.vercel.app/_nuxt/4979715.js" defer=""></script> -->
+
+
+</body>
+</html>
