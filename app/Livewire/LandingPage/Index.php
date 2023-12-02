@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Http;
 
 class Index extends Component
 {
-    #[Layout('layouts.landing-page')]
+    #[Layout('components.layouts.landing-page')]
     public function render()
     {
         $getPost = Http::get('https://newsapi.org/v2/everything?q=pemilu 2024&from=2023-10-28&pageSize=6&sortBy=publishedAt&apiKey=574bb1d394344ae2bcc8fc6848db4c81');
