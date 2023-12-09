@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+use Database\Seeders\Caleg\SubandiSeeder;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 
@@ -53,7 +55,8 @@ class DatabaseSeeder extends Seeder
         $this->call(DataTpsSeeder::class);
         $this->call(UserSeeder::class);
 
-        $this->call(TimSuksesSeeder::class);
+        // $this->call(SubandiSeeder::class);
+        // $this->call(TimSuksesSeeder::class);
 
         // $this->call(PerolehanSuaraSeeder::class);
         // $this->call(PerolehanSuaraBacalegSeeder::class);

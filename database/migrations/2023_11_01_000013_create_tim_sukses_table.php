@@ -4,8 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
-{
+return new class () extends Migration {
     /**
      * Run the migrations.
      */
@@ -22,7 +21,7 @@ return new class extends Migration
             $table->unsignedBigInteger('wilayah_kabupaten_kota_id');
             $table->unsignedBigInteger('wilayah_kecamatan_id');
             $table->unsignedBigInteger('wilayah_kelurahan_desa_id');
-            $table->boolean('is_out_range');
+            $table->boolean('is_out_range')->default(false);
 
             $table->timestamps();
         });
