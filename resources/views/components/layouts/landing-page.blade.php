@@ -17,6 +17,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @livewireStyles
 
+    @production
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-VNWDD6W96R"></script>
     <script>
@@ -26,6 +27,7 @@
 
         gtag('config', 'G-VNWDD6W96R');
     </script>
+    @endproduction
 </head>
 <body class="font-sans antialiased">
     <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
