@@ -1,8 +1,11 @@
 /.phpunit.cache
 /node_modules
-# /public/build
+/public/build
 /public/hot
 /public/storage
+/public/photo_bahps
+/public/photo_c1
+/public/photo_check_in
 /storage/*.key
 /vendor
 .env
@@ -23,3 +26,5 @@ yarn-error.log
 /data_caleg/*.DS_Store
 .DS_Store
 /.DS_Store
+
+.htaccess
