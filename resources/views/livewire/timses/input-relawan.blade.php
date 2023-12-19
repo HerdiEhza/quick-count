@@ -8,6 +8,7 @@
                         class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
                         Tambah relawan
                     </h1>
+                    @if (config('orchid_opinion.timses.import_relawan', false))
                     <button type="button"
                         class="text-white bg-[#FF9119] hover:bg-[#FF9119]/80 focus:ring-4 focus:outline-none focus:ring-[#FF9119]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:hover:bg-[#FF9119]/80 dark:focus:ring-[#FF9119]/40 me-2 mb-2">
                         Import
@@ -33,6 +34,7 @@
                             </path>
                         </svg>
                     </button>
+                    @endif
                 </div>
                 <form class="space-y-4 md:space-y-6" action="#">
                     <div>

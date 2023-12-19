@@ -1,15 +1,23 @@
 <?php
 
 return [
-    'bacaleg' => 258,
-    // 'bacaleg' => 127,
-    // 'bacaleg' => 17,
-    // 'bacaleg' => 258 | Agung Prasetyo,
-    // 'dapil' => 1 | DPR RI,
-    'dapil' => 3,
-    'kategori_pemilu' => 3,
 
     'timses' => [
+        // 'bacaleg' => 127, // Ustad Miftah
+        // 'dapil' => 1, // Ustad  Miftah
+        // 'kategori_pemilu' => 2, // Ustad  Miftah
+
+        // 'bacaleg' => 258, // Agung Prasetyo
+        // 'dapil' => 3, // Agung Prasetyo
+        // 'kategori_pemilu' => 3,
+
+        'bacaleg' => 764, // Subandi
+        'dapil' => 75, // Subandi
+        'kategori_pemilu' => 4, // Subandi
+
+        //
+
+        'import_relawan' => false,
         'use_ktp' => false,
     ],
 

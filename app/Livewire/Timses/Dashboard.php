@@ -15,49 +15,49 @@ use Livewire\Component;
 
 class Dashboard extends Component
 {
-    // public $kategoriPemilu = Config::get('orchid_opinion.kategori_pemilu', 'default');
-    // public $dapilId = config('orchid_opinion.dapil');
-    // public $bacalegId = config('orchid_opinion.bacaleg');
+    // public $kategoriPemilu = Config::get('orchid_opinion.timses.kategori_pemilu', 'default');
+    // public $dapilId = config('orchid_opinion.timses.dapil');
+    // public $bacalegId = config('orchid_opinion.timses.bacaleg');
 
     public function render()
     {
-        // $getDapil = DataDapil::findOrFail(config('orchid_opinion.dapil'));
-        $kabKotas = WilayahKabupatenKota::WhereRelation('dapils', 'dapil_id', config('orchid_opinion.dapil'))
-            ->withCount(['allTimSukses as total_dukungan_kab_kota' => fn ($q) => ($q->where('data_bakal_calon_id', config('orchid_opinion.bacaleg')))])
+        // $getDapil = DataDapil::findOrFail(config('orchid_opinion.timses.dapil'));
+        $kabKotas = WilayahKabupatenKota::WhereRelation('dapils', 'dapil_id', config('orchid_opinion.timses.dapil'))
+            ->withCount(['allTimSukses as total_dukungan_kab_kota' => fn($q) => ($q->where('data_bakal_calon_id', config('orchid_opinion.timses.bacaleg')))])
             ->orderByDesc('total_dukungan_kab_kota')
             ->take(9)
             ->get();
-        $kecamatans = WilayahKecamatan::WhereRelation('dapils', 'dapil_id', config('orchid_opinion.dapil'))
-            ->withCount(['allTimSukses as total_dukungan_kecamatan' => fn ($q) => ($q->where('data_bakal_calon_id', config('orchid_opinion.bacaleg')))])
+        $kecamatans = WilayahKecamatan::WhereRelation('dapils', 'dapil_id', config('orchid_opinion.timses.dapil'))
+            ->withCount(['allTimSukses as total_dukungan_kecamatan' => fn($q) => ($q->where('data_bakal_calon_id', config('orchid_opinion.timses.bacaleg')))])
             ->orderByDesc('total_dukungan_kecamatan')
             ->take(9)
             ->get();
-        $kelDesas = WilayahKelurahanDesa::WhereRelation('dapils', 'dapil_id', config('orchid_opinion.dapil'))
-            ->withCount(['allTimSukses as total_dukungan_kel_desa' => fn ($q) => ($q->where('data_bakal_calon_id', config('orchid_opinion.bacaleg')))])
+        $kelDesas = WilayahKelurahanDesa::WhereRelation('dapils', 'dapil_id', config('orchid_opinion.timses.dapil'))
+            ->withCount(['allTimSukses as total_dukungan_kel_desa' => fn($q) => ($q->where('data_bakal_calon_id', config('orchid_opinion.timses.bacaleg')))])
             ->orderByDesc('total_dukungan_kel_desa')
             ->take(9)
             ->get();
 
-        if (config('orchid_opinion.kategori_pemilu') === 2) {
+        if (config('orchid_opinion.timses.kategori_pemilu') === 2) {
             $dapils = DataDapil::withCount('dataTpsDPRRI as total_tps')
                 ->withSum('dataTpsDPRRI as total_dpt', 'jumlah_dpt')
-                ->findOrFail(config('orchid_opinion.dapil'));
-        } elseif (config('orchid_opinion.kategori_pemilu') === 3) {
+                ->findOrFail(config('orchid_opinion.timses.dapil'));
+        } elseif (config('orchid_opinion.timses.kategori_pemilu') === 3) {
             $dapils = DataDapil::withCount('dataTpsDPRDProvinsi as total_tps')
                 ->withSum('dataTpsDPRDProvinsi as total_dpt', 'jumlah_dpt')
-                ->findOrFail(config('orchid_opinion.dapil'));
+                ->findOrFail(config('orchid_opinion.timses.dapil'));
         } else {
             $dapils = DataDapil::withCount('dataTpsDPRDKabKota as total_tps')
                 ->withSum('dataTpsDPRDKabKota as total_dpt', 'jumlah_dpt')
-                ->findOrFail(config('orchid_opinion.dapil'));
+                ->findOrFail(config('orchid_opinion.timses.dapil'));
         }
 
         $getUserRing1 = User::where('timses_ring', 1)
-            ->whereRelation('timses', 'data_bakal_calon_id', config('orchid_opinion.bacaleg'))
-            ->withCount(['timses as total_dukungan_ring1' => fn ($q) => ($q->where('data_bakal_calon_id', config('orchid_opinion.bacaleg')))]);
+            ->whereRelation('timses', 'data_bakal_calon_id', config('orchid_opinion.timses.bacaleg'))
+            ->withCount(['timses as total_dukungan_ring1' => fn($q) => ($q->where('data_bakal_calon_id', config('orchid_opinion.timses.bacaleg')))]);
         $getUserRing2 = User::where('timses_ring', 2)
-            ->whereRelation('timses', 'data_bakal_calon_id', config('orchid_opinion.bacaleg'))
-            ->withCount(['timses as total_dukungan_ring2' => fn ($q) => ($q->where('data_bakal_calon_id', config('orchid_opinion.bacaleg')))]);
+            ->whereRelation('timses', 'data_bakal_calon_id', config('orchid_opinion.timses.bacaleg'))
+            ->withCount(['timses as total_dukungan_ring2' => fn($q) => ($q->where('data_bakal_calon_id', config('orchid_opinion.timses.bacaleg')))]);
 
         $danaRing1 = $getUserRing1->orderByDesc('total_dukungan_ring1')->get()->sum('total_dukungan_ring1');
         $danaRing2 = $getUserRing2->orderByDesc('total_dukungan_ring2')->get()->sum('total_dukungan_ring2');
@@ -71,7 +71,7 @@ class Dashboard extends Component
             ->take(5)
             ->get();
 
-        $dukungans = TimSukses::where('data_bakal_calon_id', config('orchid_opinion.bacaleg'))->get();
+        $dukungans = TimSukses::where('data_bakal_calon_id', config('orchid_opinion.timses.bacaleg'))->get();
         $totalDukungans = $dukungans->count();
 
         return view('livewire.timses.dashboard', [

@@ -2,7 +2,7 @@
 
     <div class="h-full py-8">
 
-        
+
         <!-- Statistics Cards -->
         <div class="grid grid-cols-1 gap-4 p-4 sm:grid-cols-2 lg:grid-cols-4">
             <div class="flex-shrink w-full max-w-full">
@@ -19,7 +19,7 @@
                                     <path
                                         d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z">
                                     </path>
-                                </svg> 
+                                </svg>
                                 <span>{{ number_format($dapils->total_tps) }}</span>
                             </h3>
                             <p class="text-sm text-green-500">
@@ -42,7 +42,8 @@
                             <h5 class="mb-1 text-sm text-gray-500">Total DPT</h5>
                             <h3 class="mb-1 text-lg font-bold">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                    class="inline-block -mt-1 ltr:mr-2 rtl:ml-2 bi bi-hand-thumbs-up" viewBox="0 0 16 16">
+                                    class="inline-block -mt-1 ltr:mr-2 rtl:ml-2 bi bi-hand-thumbs-up"
+                                    viewBox="0 0 16 16">
                                     <path
                                         d="M8.864.046C7.908-.193 7.02.53 6.956 1.466c-.072 1.051-.23 2.016-.428 2.59-.125.36-.479 1.013-1.04 1.639-.557.623-1.282 1.178-2.131 1.41C2.685 7.288 2 7.87 2 8.72v4.001c0 .845.682 1.464 1.448 1.545 1.07.114 1.564.415 2.068.723l.048.03c.272.165.578.348.97.484.397.136.861.217 1.466.217h3.5c.937 0 1.599-.477 1.934-1.064a1.86 1.86 0 0 0 .254-.912c0-.152-.023-.312-.077-.464.201-.263.38-.578.488-.901.11-.33.172-.762.004-1.149.069-.13.12-.269.159-.403.077-.27.113-.568.113-.857 0-.288-.036-.585-.113-.856a2.144 2.144 0 0 0-.138-.362 1.9 1.9 0 0 0 .234-1.734c-.206-.592-.682-1.1-1.2-1.272-.847-.282-1.803-.276-2.516-.211a9.84 9.84 0 0 0-.443.05 9.365 9.365 0 0 0-.062-4.509A1.38 1.38 0 0 0 9.125.111L8.864.046zM11.5 14.721H8c-.51 0-.863-.069-1.14-.164-.281-.097-.506-.228-.776-.393l-.04-.024c-.555-.339-1.198-.731-2.49-.868-.333-.036-.554-.29-.554-.55V8.72c0-.254.226-.543.62-.65 1.095-.3 1.977-.996 2.614-1.708.635-.71 1.064-1.475 1.238-1.978.243-.7.407-1.768.482-2.85.025-.362.36-.594.667-.518l.262.066c.16.04.258.143.288.255a8.34 8.34 0 0 1-.145 4.725.5.5 0 0 0 .595.644l.003-.001.014-.003.058-.014a8.908 8.908 0 0 1 1.036-.157c.663-.06 1.457-.054 2.11.164.175.058.45.3.57.65.107.308.087.67-.266 1.022l-.353.353.353.354c.043.043.105.141.154.315.048.167.075.37.075.581 0 .212-.027.414-.075.582-.05.174-.111.272-.154.315l-.353.353.353.354c.047.047.109.177.005.488a2.224 2.224 0 0 1-.505.805l-.353.353.353.354c.006.005.041.05.041.17a.866.866 0 0 1-.121.416c-.165.288-.503.56-1.066.56z">
                                     </path>
@@ -69,7 +70,8 @@
                             <h5 class="mb-1 text-sm text-gray-500">Total dukungan / total target dukungan</h5>
                             <h3 class="mb-1 text-lg font-bold">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                    class="inline-block -mt-1 ltr:mr-2 rtl:ml-2 bi bi-chat-left-text" viewBox="0 0 16 16">
+                                    class="inline-block -mt-1 ltr:mr-2 rtl:ml-2 bi bi-chat-left-text"
+                                    viewBox="0 0 16 16">
                                     <path
                                         d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4.414A2 2 0 0 0 3 11.586l-2 2V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z">
                                     </path>
@@ -216,42 +218,42 @@
                             </thead>
                             <tbody>
                                 @forelse ($timsesRing1 as $dukunganRing1)
-                                    <tr class="text-gray-700 dark:text-gray-100">
-                                        <th
-                                            class="p-4 px-2 text-xs text-left align-middle border-t-0 border-l-0 border-r-0 whitespace-nowrap">
-                                            {{ $loop->iteration }}.
-                                        </th>
-                                        <td
-                                            class="p-4 px-4 text-xs align-middle border-t-0 border-l-0 border-r-0 whitespace-nowrap">
-                                            {{ $dukunganRing1->name }}
-                                        </td>
-                                        <td
-                                            class="p-4 px-4 text-xs align-middle border-t-0 border-l-0 border-r-0 whitespace-nowrap">
-                                            480</td>
-                                        <td
-                                            class="p-4 px-4 text-xs align-middle border-t-0 border-l-0 border-r-0 whitespace-nowrap">
-                                            {{ number_format($dukunganRing1->total_dukungan_ring1) }}</td>
-                                        <td
-                                            class="p-4 px-4 text-xs align-middle border-t-0 border-l-0 border-r-0 whitespace-nowrap">
-                                            {{ number_format($dukunganRing1->total_dukungan_ring1 * 20000) }}</td>
-                                        <td
-                                            class="p-4 px-4 text-xs align-middle border-t-0 border-l-0 border-r-0 whitespace-nowrap">
-                                            <div class="flex items-center">
-                                                <span class="mr-2">
-                                                    {{ $dukunganRing1->total_dukungan_ring1 === 0 ? 0 : number_format((($dukunganRing1->total_dukungan_ring1 / 480) * 100), 2) }}%
-                                                </span>
-                                                <div class="relative w-full">
-                                                    <div class="flex h-2 overflow-hidden text-xs bg-blue-200 rounded">
-                                                        <div style="width: {{ $dukunganRing1->total_dukungan_ring1 === 0 ? 0 : number_format((($dukunganRing1->total_dukungan_ring1 / 480) * 100), 2) }}%"
-                                                            class="flex flex-col justify-center text-center text-white bg-blue-600 shadow-none whitespace-nowrap">
-                                                        </div>
+                                <tr class="text-gray-700 dark:text-gray-100">
+                                    <th
+                                        class="p-4 px-2 text-xs text-left align-middle border-t-0 border-l-0 border-r-0 whitespace-nowrap">
+                                        {{ $loop->iteration }}.
+                                    </th>
+                                    <td
+                                        class="p-4 px-4 text-xs align-middle border-t-0 border-l-0 border-r-0 whitespace-nowrap">
+                                        {{ $dukunganRing1->name }}
+                                    </td>
+                                    <td
+                                        class="p-4 px-4 text-xs align-middle border-t-0 border-l-0 border-r-0 whitespace-nowrap">
+                                        480</td>
+                                    <td
+                                        class="p-4 px-4 text-xs align-middle border-t-0 border-l-0 border-r-0 whitespace-nowrap">
+                                        {{ number_format($dukunganRing1->total_dukungan_ring1) }}</td>
+                                    <td
+                                        class="p-4 px-4 text-xs align-middle border-t-0 border-l-0 border-r-0 whitespace-nowrap">
+                                        {{ number_format($dukunganRing1->total_dukungan_ring1 * 20000) }}</td>
+                                    <td
+                                        class="p-4 px-4 text-xs align-middle border-t-0 border-l-0 border-r-0 whitespace-nowrap">
+                                        <div class="flex items-center">
+                                            <span class="mr-2">
+                                                {{ $dukunganRing1->total_dukungan_ring1 === 0 ? 0 : number_format((($dukunganRing1->total_dukungan_ring1 / 480) * 100), 2) }}%
+                                            </span>
+                                            <div class="relative w-full">
+                                                <div class="flex h-2 overflow-hidden text-xs bg-blue-200 rounded">
+                                                    <div style="width: {{ $dukunganRing1->total_dukungan_ring1 === 0 ? 0 : number_format((($dukunganRing1->total_dukungan_ring1 / 480) * 100), 2) }}%"
+                                                        class="flex flex-col justify-center text-center text-white bg-blue-600 shadow-none whitespace-nowrap">
                                                     </div>
                                                 </div>
                                             </div>
-                                        </td>
-                                    </tr>
+                                        </div>
+                                    </td>
+                                </tr>
                                 @empty
-                                    
+
                                 @endforelse
                             </tbody>
                         </table>
@@ -259,7 +261,7 @@
                 </div>
             </div>
             <!-- ./TIMSES RING 1 -->
-            
+
             <!-- TIMSES RING 2 -->
             <div
                 class="relative flex flex-col w-full min-w-0 mb-4 break-words border rounded-md lg:mb-0 bg-gray-50 dark:bg-gray-800">
@@ -300,42 +302,42 @@
                             </thead>
                             <tbody>
                                 @forelse ($timsesRing2 as $dukunganRing2)
-                                    <tr class="text-gray-700 dark:text-gray-100">
-                                        <th
-                                            class="p-4 px-2 text-xs text-left align-middle border-t-0 border-l-0 border-r-0 whitespace-nowrap">
-                                            {{ $loop->iteration }}.
-                                        </th>
-                                        <td
-                                            class="p-4 px-4 text-xs align-middle border-t-0 border-l-0 border-r-0 whitespace-nowrap">
-                                            {{ $dukunganRing2->name }}
-                                        </td>
-                                        <td
-                                            class="p-4 px-4 text-xs align-middle border-t-0 border-l-0 border-r-0 whitespace-nowrap">
-                                            480</td>
-                                        <td
-                                            class="p-4 px-4 text-xs align-middle border-t-0 border-l-0 border-r-0 whitespace-nowrap">
-                                            {{ number_format($dukunganRing2->total_dukungan_ring2) }}</td>
-                                        <td
-                                            class="p-4 px-4 text-xs align-middle border-t-0 border-l-0 border-r-0 whitespace-nowrap">
-                                            {{ number_format($dukunganRing2->total_dukungan_ring2 * 30000) }}</td>
-                                        <td
-                                            class="p-4 px-4 text-xs align-middle border-t-0 border-l-0 border-r-0 whitespace-nowrap">
-                                            <div class="flex items-center">
-                                                <span class="mr-2">
-                                                    {{ $dukunganRing2->total_dukungan_ring2 === 0 ? 0 : number_format((($dukunganRing2->total_dukungan_ring2 / 480) * 100), 2) }}%
-                                                </span>
-                                                <div class="relative w-full">
-                                                    <div class="flex h-2 overflow-hidden text-xs bg-blue-200 rounded">
-                                                        <div style="width: {{ $dukunganRing2->total_dukungan_ring2 === 0 ? 0 : number_format((($dukunganRing2->total_dukungan_ring2 / 480) * 100), 2) }}%"
-                                                            class="flex flex-col justify-center text-center text-white bg-blue-600 shadow-none whitespace-nowrap">
-                                                        </div>
+                                <tr class="text-gray-700 dark:text-gray-100">
+                                    <th
+                                        class="p-4 px-2 text-xs text-left align-middle border-t-0 border-l-0 border-r-0 whitespace-nowrap">
+                                        {{ $loop->iteration }}.
+                                    </th>
+                                    <td
+                                        class="p-4 px-4 text-xs align-middle border-t-0 border-l-0 border-r-0 whitespace-nowrap">
+                                        {{ $dukunganRing2->name }}
+                                    </td>
+                                    <td
+                                        class="p-4 px-4 text-xs align-middle border-t-0 border-l-0 border-r-0 whitespace-nowrap">
+                                        480</td>
+                                    <td
+                                        class="p-4 px-4 text-xs align-middle border-t-0 border-l-0 border-r-0 whitespace-nowrap">
+                                        {{ number_format($dukunganRing2->total_dukungan_ring2) }}</td>
+                                    <td
+                                        class="p-4 px-4 text-xs align-middle border-t-0 border-l-0 border-r-0 whitespace-nowrap">
+                                        {{ number_format($dukunganRing2->total_dukungan_ring2 * 30000) }}</td>
+                                    <td
+                                        class="p-4 px-4 text-xs align-middle border-t-0 border-l-0 border-r-0 whitespace-nowrap">
+                                        <div class="flex items-center">
+                                            <span class="mr-2">
+                                                {{ $dukunganRing2->total_dukungan_ring2 === 0 ? 0 : number_format((($dukunganRing2->total_dukungan_ring2 / 480) * 100), 2) }}%
+                                            </span>
+                                            <div class="relative w-full">
+                                                <div class="flex h-2 overflow-hidden text-xs bg-blue-200 rounded">
+                                                    <div style="width: {{ $dukunganRing2->total_dukungan_ring2 === 0 ? 0 : number_format((($dukunganRing2->total_dukungan_ring2 / 480) * 100), 2) }}%"
+                                                        class="flex flex-col justify-center text-center text-white bg-blue-600 shadow-none whitespace-nowrap">
                                                     </div>
                                                 </div>
                                             </div>
-                                        </td>
-                                    </tr>
+                                        </div>
+                                    </td>
+                                </tr>
                                 @empty
-                                    
+
                                 @endforelse
                             </tbody>
                         </table>
@@ -347,10 +349,12 @@
         </div>
 
         <!-- Dukungan Wilayah -->
-        <div class="grid grid-cols-1 gap-4 p-4 text-black md:grid-cols-2 xl:grid-cols-3 dark:text-white">
+        <div
+            class="grid grid-cols-1 gap-4 p-4 text-black md:grid-cols-2 {{ config('orchid_opinion.timses.kategori_pemilu') != 4 ? 'xl:grid-cols-3' : 'xl:grid-cols-2' }} dark:text-white">
             <div class="md:col-span-2 xl:col-span-3">
                 <h3 class="text-lg font-semibold">Dukungan berdasarkan wilayah</h3>
             </div>
+            @if (config('orchid_opinion.timses.kategori_pemilu') != 4)
             <div class="md:col-span-2 xl:col-span-1">
                 <div class="p-3 bg-gray-100 border rounded dark:bg-gray-800">
                     <div class="flex justify-between py-1 text-black dark:text-white">
@@ -358,24 +362,30 @@
                     </div>
                     <ul class="mt-2 text-sm text-black dark:text-gray-50">
                         @forelse ($kabKotas as $kabKota)
-                            <li class="p-2 mt-1 bg-white border-b border-gray-100 rounded cursor-pointer dark:bg-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700 dark:border-gray-900">
-                                <div class="flex justify-between">
-                                    <div class="flex space-x-2">
-                                        <dt class="text-sm font-normal leading-6 text-gray-900">{{ $loop->iteration }}.</dt>
-                                        <dt class="text-sm font-medium leading-6 text-gray-900">{{ $kabKota->nama_kabupaten_kota }}</dt>
-                                    </div>
-                                    <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{{ number_format($kabKota->total_dukungan_kab_kota) }}</dd>
+                        <li
+                            class="p-2 mt-1 bg-white border-b border-gray-100 rounded cursor-pointer dark:bg-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700 dark:border-gray-900">
+                            <div class="flex justify-between">
+                                <div class="flex space-x-2">
+                                    <dt class="text-sm font-normal leading-6 text-gray-900">{{ $loop->iteration }}.</dt>
+                                    <dt class="text-sm font-medium leading-6 text-gray-900">
+                                        {{ $kabKota->nama_kabupaten_kota }}</dt>
                                 </div>
-                            </li>
+                                <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
+                                    {{ number_format($kabKota->total_dukungan_kab_kota) }}</dd>
+                            </div>
+                        </li>
                         @empty
-                            
+
                         @endforelse
                         <div class="mt-3">
-                            <button class="w-full px-3 py-1 mb-1 mr-1 text-xs font-bold text-white uppercase transition-all duration-150 ease-linear bg-blue-500 rounded outline-none dark:bg-gray-100 active:bg-blue-600 dark:text-gray-800 dark:active:text-gray-700 focus:outline-none" type="button">Lihat detail</button>
+                            <button
+                                class="w-full px-3 py-1 mb-1 mr-1 text-xs font-bold text-white uppercase transition-all duration-150 ease-linear bg-blue-500 rounded outline-none dark:bg-gray-100 active:bg-blue-600 dark:text-gray-800 dark:active:text-gray-700 focus:outline-none"
+                                type="button">Lihat detail</button>
                         </div>
                     </ul>
                 </div>
             </div>
+            @endif
             <div class="md:col-span-2 xl:col-span-1">
                 <div class="p-3 bg-gray-100 border rounded dark:bg-gray-800">
                     <div class="flex justify-between py-1 text-black dark:text-white">
@@ -383,20 +393,25 @@
                     </div>
                     <ul class="mt-2 text-sm text-black dark:text-gray-50">
                         @forelse ($kecamatans as $kecamatan)
-                            <li class="p-2 mt-1 bg-white border-b border-gray-100 rounded cursor-pointer dark:bg-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700 dark:border-gray-900">
-                                <div class="flex justify-between">
-                                    <div class="flex space-x-2">
-                                        <dt class="text-sm font-normal leading-6 text-gray-900">{{ $loop->iteration }}.</dt>
-                                        <dt class="text-sm font-medium leading-6 text-gray-900">{{ $kecamatan->nama_kecamatan }}</dt>
-                                    </div>
-                                    <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{{ number_format($kecamatan->total_dukungan_kecamatan) }}</dd>
+                        <li
+                            class="p-2 mt-1 bg-white border-b border-gray-100 rounded cursor-pointer dark:bg-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700 dark:border-gray-900">
+                            <div class="flex justify-between">
+                                <div class="flex space-x-2">
+                                    <dt class="text-sm font-normal leading-6 text-gray-900">{{ $loop->iteration }}.</dt>
+                                    <dt class="text-sm font-medium leading-6 text-gray-900">
+                                        {{ $kecamatan->nama_kecamatan }}</dt>
                                 </div>
-                            </li>
+                                <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
+                                    {{ number_format($kecamatan->total_dukungan_kecamatan) }}</dd>
+                            </div>
+                        </li>
                         @empty
-                            
+
                         @endforelse
                         <div class="mt-3">
-                            <button class="w-full px-3 py-1 mb-1 mr-1 text-xs font-bold text-white uppercase transition-all duration-150 ease-linear bg-blue-500 rounded outline-none dark:bg-gray-100 active:bg-blue-600 dark:text-gray-800 dark:active:text-gray-700 focus:outline-none" type="button">Lihat detail</button>
+                            <button
+                                class="w-full px-3 py-1 mb-1 mr-1 text-xs font-bold text-white uppercase transition-all duration-150 ease-linear bg-blue-500 rounded outline-none dark:bg-gray-100 active:bg-blue-600 dark:text-gray-800 dark:active:text-gray-700 focus:outline-none"
+                                type="button">Lihat detail</button>
                         </div>
                     </ul>
                 </div>
@@ -408,20 +423,25 @@
                     </div>
                     <ul class="mt-2 text-sm text-black dark:text-gray-50">
                         @forelse ($kelDesas as $kelDesa)
-                            <li class="p-2 mt-1 bg-white border-b border-gray-100 rounded cursor-pointer dark:bg-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700 dark:border-gray-900">
-                                <div class="flex justify-between">
-                                    <div class="flex space-x-2">
-                                        <dt class="text-sm font-normal leading-6 text-gray-900">{{ $loop->iteration }}.</dt>
-                                        <dt class="text-sm font-medium leading-6 text-gray-900">{{ $kelDesa->nama_kelurahan_desa }}</dt>
-                                    </div>
-                                    <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{{ number_format($kelDesa->total_dukungan_kel_desa) }}</dd>
+                        <li
+                            class="p-2 mt-1 bg-white border-b border-gray-100 rounded cursor-pointer dark:bg-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700 dark:border-gray-900">
+                            <div class="flex justify-between">
+                                <div class="flex space-x-2">
+                                    <dt class="text-sm font-normal leading-6 text-gray-900">{{ $loop->iteration }}.</dt>
+                                    <dt class="text-sm font-medium leading-6 text-gray-900">
+                                        {{ $kelDesa->nama_kelurahan_desa }}</dt>
                                 </div>
-                            </li>
+                                <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
+                                    {{ number_format($kelDesa->total_dukungan_kel_desa) }}</dd>
+                            </div>
+                        </li>
                         @empty
-                            
+
                         @endforelse
                         <div class="mt-3">
-                            <button class="w-full px-3 py-1 mb-1 mr-1 text-xs font-bold text-white uppercase transition-all duration-150 ease-linear bg-blue-500 rounded outline-none dark:bg-gray-100 active:bg-blue-600 dark:text-gray-800 dark:active:text-gray-700 focus:outline-none" type="button">Lihat detail</button>
+                            <button
+                                class="w-full px-3 py-1 mb-1 mr-1 text-xs font-bold text-white uppercase transition-all duration-150 ease-linear bg-blue-500 rounded outline-none dark:bg-gray-100 active:bg-blue-600 dark:text-gray-800 dark:active:text-gray-700 focus:outline-none"
+                                type="button">Lihat detail</button>
                         </div>
                     </ul>
                 </div>

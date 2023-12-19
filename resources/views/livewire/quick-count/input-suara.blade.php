@@ -120,7 +120,8 @@
                                     <button x-show="step <= 4" @click="step++"
                                         class="w-32 px-5 py-2 font-medium text-center text-white bg-blue-500 border border-transparent rounded-lg shadow-sm disabled:border-gray-200 disabled:bg-white disabled:text-gray-600 disabled:cursor-not-allowed focus:outline-none hover:bg-blue-600"
                                         {{-- @disabled(empty($kabKotaActive) || empty($kecamatanActive) || empty($kelDesaActive) --}}
-                                        @disabled(empty($kelDesaActive) || empty($tpsActive))
+                                        {{-- @disabled(empty($this->kelDesaActive) || empty($this->tpsActive)) --}}
+                                        x-bind:disabled="!$wire.is_int(tpsActive)"
                                         {{-- {{ empty($kabKotaActive) || empty($kecamatanActive) || empty($kelDesaActive) ||empty($tpsActive) ? 'disabled' : '' }}
                                         --}}>
                                         Lanjut
@@ -159,6 +160,29 @@
     </div>
 </div>
 
+@push('scripts')
+<script>
+    function previewImage() {
+            return {
+                imageUrl: "",
+        
+                fileChosen(event) {
+                    this.fileToDataUrl(event, (src) => (this.imageUrl = src));
+                },
+        
+                fileToDataUrl(event, callback) {
+                    if (!event.target.files.length) return;
+        
+                    let file = event.target.files[0],
+                        reader = new FileReader();
+        
+                    reader.readAsDataURL(file);
+                    reader.onload = (e) => callback(e.target.result);
+                },
+            };
+        }
+</script>
+@endpush
 {{-- @push('scripts')
             <script>
                 document.addEventListener('livewire:init', () => {
