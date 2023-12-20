@@ -100,7 +100,8 @@
                 Media Sosial</h2>
             <div
                 class="z-40 grid grid-cols-2 gap-8 text-gray-500 sm:gap-12 md:grid-cols-3 lg:grid-cols-3 dark:text-gray-400">
-                <a href="#" class="flex items-center justify-center">
+                <a href="https://www.facebook.com/profile.php?id=61554398523957"
+                    class="flex items-center justify-center">
                     <div class="mr-4">
                         <svg class="text-gray-100 h-9 hover:text-gray-200 dark:hover:text-white" height="100%"
                             style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"

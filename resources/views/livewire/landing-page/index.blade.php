@@ -82,8 +82,9 @@
                 class="mb-8 text-3xl font-extrabold leading-tight tracking-tight text-center text-white lg:mb-16 md:text-4xl">
                 Media Sosial</h2>
             <div
-                class="z-40 grid grid-cols-2 gap-8 text-gray-500 sm:gap-12 md:grid-cols-3 lg:grid-cols-3 dark:text-gray-400">
-                <a href="#" class="flex items-center justify-center">
+                class="z-40 grid grid-cols-2 gap-8 text-gray-500 sm:gap-12 md:grid-cols-4 lg:grid-cols-4 dark:text-gray-400">
+                <a href="https://www.facebook.com/profile.php?id=61554398523957" target="_blank" rel="noreferrer"
+                    class="flex items-center justify-center">
                     <div class="mr-4">
                         <svg class="text-gray-100 h-9 hover:text-gray-200 dark:hover:text-white" height="100%"
                             style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"
@@ -102,7 +103,8 @@
                     </div>
                     <span class="text-gray-100 hover:text-gray-200 dark:hover:text-white">Facebook</span>
                 </a>
-                <a href="#" class="flex items-center justify-center">
+                <a href="https://www.instagram.com/ustadzmiftahshi/" target="_blank" rel="noreferrer"
+                    class="flex items-center justify-center">
                     <div class="mr-4">
                         <svg class="text-gray-100 h-9 hover:text-gray-200 dark:hover:text-white" version="1.1"
                             id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -176,7 +178,8 @@
                     </div>
                     <span class="text-gray-100 hover:text-gray-200 dark:hover:text-white">Instagram</span>
                 </a>
-                <a href="#" class="flex items-center justify-center">
+                <a href="https://twitter.com/UstadzMiftahSHI" target="_blank" rel="noreferrer"
+                    class="flex items-center justify-center">
                     <div class="mr-4">
                         <svg class="text-gray-100 h-9 hover:text-gray-200 dark:hover:text-white" aria-hidden="true"
                             xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
@@ -185,6 +188,14 @@
                         </svg>
                     </div>
                     <span class="text-gray-100 hover:text-gray-200 dark:hover:text-white">Twitter</span>
+                </a>
+                <a href="https://www.tiktok.com/@ustadzmiftah" target="_blank" rel="noreferrer"
+                    class="flex items-center justify-center">
+                    <div class="mr-4">
+                        <img src="{{ asset('tik-tok.svg') }}" alt="TikTok Logo" srcset="{{ asset('tik-tok.svg') }}"
+                            class="h-9">
+                    </div>
+                    <span class="text-gray-100 hover:text-gray-200 dark:hover:text-white">TikTok</span>
                 </a>
             </div>
         </div>
