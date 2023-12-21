@@ -1,6 +1,6 @@
 <div class="w-full col-span-2">
     <p id="input_suara_helper_text"
-        class="flex flex-col mt-2 space-x-0 text-xs text-gray-500 md:space-x-1 md:flex-row dark:text-gray-400">
+        class="flex flex-col mt-2 space-x-0 text-gray-500 text-md md:space-x-1 md:flex-row dark:text-gray-400">
         <span>Perhatian, harap mengisi angka 0 ('nol')</span>
         <span>jika Partai atau CALEG tidak mendapatkan suara.</span>
     </p>
