@@ -21,7 +21,7 @@
                     </div>
                     <div class="w-full">
                         <input type="number"
-                            class="bg-gray-50 w-full border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            class="placeholder:italic placeholder:text-slate-400 placeholder:text-sm bg-gray-50 w-full border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                             placeholder="Suara Partai" required id="suaraPartai.{{ $dataPilihan->id }}"
                             wire:model="suaraPartai.{{ $dataPilihan->id }}">
                     </div>
@@ -39,7 +39,7 @@
                         <span class="flex flex-col items-end w-20">
                             <div>
                                 <input type="number" id="first_name"
-                                    class="bg-gray-50 w-20 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                    class="placeholder:italic placeholder:text-slate-400 placeholder:text-xs bg-gray-50 w-24 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                     placeholder="Suara Caleg" required id="suaraBacaleg.{{ $bacaleg->id }}"
                                     wire:model="suaraBacaleg.{{ $bacaleg->id }}">
                             </div>

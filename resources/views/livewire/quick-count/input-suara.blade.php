@@ -1,23 +1,46 @@
 <div>
-    <ol class="flex items-center justify-center p-4 mx-auto mb-4 sm:mb-5">
-        @for ($i = 1; $i < 5; $i++) <li
-            class="{{ $activeStep >= $i ? 'text-blue-600 dark:text-blue-500 after:border-blue-100 dark:after:border-blue-800' : 'after:border-gray-100 dark:after:border-gray-700' }} flex w-full items-center after:content-[''] after:w-full after:h-1 after:border-b after:border-4 after:inline-block">
-            <div
-                class="{{ $activeStep >= $i ? 'bg-blue-100 dark:bg-blue-800' : 'bg-gray-100 dark:bg-gray-700' }} font-bold flex items-center justify-center w-10 h-10 rounded-full lg:h-12 lg:w-12 shrink-0">
-                {{ $i }}
-            </div>
-            </li>
-            @endfor
-            <li class="{{ $activeStep === 5 ? 'text-blue-600 dark:text-blue-500' : '' }} flex items-center w-full">
-                <div
-                    class="{{ $activeStep === 5 ? 'bg-blue-100 dark:bg-blue-700' : 'bg-gray-100 dark:bg-gray-700' }} font-bold flex items-center justify-center w-10 h-10 rounded-full lg:h-12 lg:w-12 shrink-0">
-                    5
+    <div class="p-4 py-4 border-b-2">
+        <div class="mb-1 text-xs font-bold leading-tight tracking-wide text-gray-500 uppercase">
+            Langkah: {{ $activeStep }} dari {{ $totalStep }}
+        </div>
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between">
+            <div class="flex-1">
+                <div>
+                    @switch($activeStep)
+                    @case(1)
+                    <div class="text-lg font-bold leading-tight text-gray-700">Pilih Lokasi TPS</div>
+                    @break
+                    @case(2)
+                    <div class="text-lg font-bold leading-tight text-gray-700">Upload Foto Kehadiran</div>
+                    @break
+                    @case(3)
+                    <div class="text-lg font-bold leading-tight text-gray-700">Pilih DAPIL Pemilu</div>
+                    @break
+                    @case(4)
+                    <div class="text-lg font-bold leading-tight text-gray-700">Input Perolehan Suara</div>
+                    @break
+                    @case(5)
+                    <div class="text-lg font-bold leading-tight text-gray-700">Input & Upload Bukti TPS</div>
+                    @break
+                    @default
+
+                    @endswitch
+
                 </div>
-            </li>
-    </ol>
+            </div>
+
+            <div class="flex items-center md:w-64">
+                <div class="w-full mr-2 bg-white rounded-full">
+                    <div class="h-2 text-xs leading-none text-center text-white bg-green-500 rounded-full border-gray-50"
+                        style="width: {{ ($activeStep / $totalStep * 100) }}%"></div>
+                </div>
+                <div class="w-10 text-xs text-gray-600">
+                    {{ ($activeStep / $totalStep * 100) }}%</div>
+            </div>
+        </div>
+    </div>
     <form action="#">
         <div class="p-4">
-            <h3 class="mb-4 text-lg font-medium leading-none text-gray-900 dark:text-white">Invoice details</h3>
             <div class="grid gap-4 mb-4 sm:grid-cols-2">
                 @switch($activeStep)
                 @case(1)
