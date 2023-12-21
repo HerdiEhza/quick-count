@@ -7,7 +7,22 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <link rel="shortcut icon" href="{{ asset('assets/logo-partai/Logo_PPP.svg') }}" type="image/x-icon">
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8">
+    <meta name="description" content="Profile CALEG DPRRI Dapil KALBAR 1, H. Miftah S.H.I">
+    <link rel="canonical" href="https://www.miftahdprri2024.com/">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="author" content="Herdi Ehza">
+    <meta name="your keywords" content="dpr ri, pemilu 2024, partai ppp, ulama, ustadz, ulama kalbar">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('assets/favicon/apple-touch-icon.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('assets/favicon/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/favicon/favicon-16x16.png') }}">
+
+    <link rel="manifest" href="{{ asset('assets/favicon/site.webmanifest') }}">
+    <link rel="mask-icon" href="{{ asset('assets/favicon/safari-pinned-tab.html') }}" color="#096309">
+    <meta name="msapplication-TileColor" content="#096309">
+    <meta name="theme-color" content="#096309">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
