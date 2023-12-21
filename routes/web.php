@@ -45,6 +45,10 @@ Route::prefix('admin')->group(function () {
         ->middleware(['auth'])
         ->name('qc.input-suara');
 
+    Route::get('/quick-count/input-suara-old', \App\Livewire\QuickCount\InputSuaraOld::class)
+        ->middleware(['auth'])
+        ->name('qc.input-suara-old');
+
     Route::get('/timses/dashboard', \App\Livewire\Timses\Dashboard::class)
         ->middleware(['auth'])
         ->name('timses.dashboard');

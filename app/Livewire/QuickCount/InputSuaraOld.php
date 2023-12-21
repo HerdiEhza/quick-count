@@ -19,28 +19,9 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Contracts\Database\Eloquent\Builder;
 use Spatie\ImageOptimizer\OptimizerChainFactory;
 
-class InputSuara extends Component
+class InputSuaraOld extends Component
 {
     use WithFileUploads;
-
-    #[Url(as: 'step', keep: true)]
-    public $activeStep = 1;
-    public $totalStep = 5;
-
-    public function nextStep()
-    {
-        if($this->activeStep < $this->totalStep) {
-            $this->activeStep++;
-        }
-    }
-    public function prevStep()
-    {
-        if($this->activeStep > 1) {
-            $this->activeStep--;
-        }
-    }
-
-    // ----- //
 
     public array $suaraPartai;
 
@@ -77,15 +58,15 @@ class InputSuara extends Component
     #[Rule('image|max:1024')]
     public $photoBAHPS;
 
-    // public function prevStep()
-    // {
-    //     $this->formStep--;
-    // }
+    public function prevStep()
+    {
+        $this->formStep--;
+    }
 
-    // public function nextStep()
-    // {
-    //     $this->formStep++;
-    // }
+    public function nextStep()
+    {
+        $this->formStep++;
+    }
 
     public function store()
     {
@@ -171,7 +152,13 @@ class InputSuara extends Component
             ])
             ->get();
 
-        return view('livewire.quick-count.input-suara', [
+        // $checkFotoCheckIn =  Auth::user()->fotoCheckIn()->where('data_tps_id', $this->tpsActive)->exists() ? true : false;
+        // $checkTpsInputSuara =  Auth::user()->InputSuara()->where('perolehan_suaras.data_tps_id', $this->tpsActive)->where('perolehan_suaras.is_active', true)->exists();
+
+        // dd($checkTpsInputSuara);
+        // dd(Auth::id());
+
+        return view('livewire.quick-count.input-suara-old', [
             // 'kabKotas' => $kabKotas,
             // 'kecamatans' => $kecamatans,
             'kelDesas' => $kelDesas,
