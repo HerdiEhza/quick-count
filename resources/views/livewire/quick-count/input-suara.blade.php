@@ -58,8 +58,6 @@
                 @case(5)
                 @include('livewire.quick-count.steps-new.step-5')
                 @break
-                @default
-
                 @endswitch
             </div>
         </div>

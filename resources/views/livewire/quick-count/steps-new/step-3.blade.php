@@ -31,6 +31,11 @@
         <option>Tidak ada Kategori PEMILU</option>
         @endforelse
     </select>
+    <div>@error('kategoriPemiluActive')
+        <p id="kategoriPemiluActive_error_help" class="mt-2 text-xs text-red-600 dark:text-red-400">
+            <span class="font-medium">Maaf!</span> {{ $message }}.
+        </p> @enderror
+    </div>
 </div>
 <div>
     <label for="tps" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
@@ -45,4 +50,9 @@
         <option>Tidak ada DAPIL</option>
         @endforelse
     </select>
+    <div>@error('dapilActive')
+        <p id="dapilActive_error_help" class="mt-2 text-xs text-red-600 dark:text-red-400">
+            <span class="font-medium">Maaf!</span> {{ $message }}.
+        </p> @enderror
+    </div>
 </div>

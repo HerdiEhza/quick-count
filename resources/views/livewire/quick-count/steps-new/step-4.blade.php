@@ -1,5 +1,10 @@
-<div class="mb-5">
-    <div class="grid grid-cols-1 gap-4 p-4 sm:grid-cols-2 lg:grid-cols-4">
+<div class="w-full col-span-2">
+    <p id="input_suara_helper_text"
+        class="flex flex-col mt-2 space-x-0 text-xs text-gray-500 md:space-x-1 md:flex-row dark:text-gray-400">
+        <span>Perhatian, harap mengisi angka 0 ('nol')</span>
+        <span>jika Partai atau CALEG tidak mendapatkan suara.</span>
+    </p>
+    <div class="grid grid-cols-1 gap-4 mt-4 sm:grid-cols-2 lg:grid-cols-4">
         @foreach ($dataPilihans as $dataPilihan)
         <div class="py-2 bg-white border-2 border-gray-300 rounded dark:border-gray-400">
             <div class="flex items-center px-2 py-4 border-b border-gray-500 dark:border-gray-600 gap-x-4">
@@ -23,7 +28,7 @@
                         <input type="number"
                             class="placeholder:italic placeholder:text-slate-400 placeholder:text-sm bg-gray-50 w-full border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                             placeholder="Suara Partai" required id="suaraPartai.{{ $dataPilihan->id }}"
-                            wire:model="suaraPartai.{{ $dataPilihan->id }}">
+                            wire:model.live="suaraPartai.{{ $dataPilihan->id }}">
                     </div>
                 </li>
                 @forelse ($dataPilihan->dataBakalCalons as $bacaleg)
@@ -41,7 +46,7 @@
                                 <input type="number" id="first_name"
                                     class="placeholder:italic placeholder:text-slate-400 placeholder:text-xs bg-gray-50 w-24 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                     placeholder="Suara Caleg" required id="suaraBacaleg.{{ $bacaleg->id }}"
-                                    wire:model="suaraBacaleg.{{ $bacaleg->id }}">
+                                    wire:model.live="suaraBacaleg.{{ $bacaleg->id }}">
                             </div>
                         </span>
                     </div>
@@ -54,5 +59,15 @@
             </ul>
         </div>
         @endforeach
+    </div>
+    <div>@error('suaraPartai')
+        <p id="suaraPartai_error_help" class="mt-2 text-xs text-red-600 dark:text-red-400">
+            <span class="font-medium">Maaf!</span> {{ $message }}.
+        </p> @enderror
+    </div>
+    <div>@error('suaraBacaleg')
+        <p id="suaraBacaleg_error_help" class="mt-2 text-xs text-red-600 dark:text-red-400">
+            <span class="font-medium">Maaf!</span> {{ $message }}.
+        </p> @enderror
     </div>
 </div>

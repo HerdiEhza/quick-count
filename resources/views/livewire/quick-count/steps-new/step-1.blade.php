@@ -12,6 +12,11 @@
         <option>Tidak ada Kelurahan Desa</option>
         @endforelse
     </select>
+    <div>@error('kelDesaActive')
+        <p id="kelDesaActive_error_help" class="mt-2 text-xs text-red-600 dark:text-red-400">
+            <span class="font-medium">Maaf!</span> {{ $message }}.
+        </p> @enderror
+    </div>
 </div>
 <div>
     <label for="tps" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
@@ -26,4 +31,9 @@
         <option>Tidak ada TPS</option>
         @endforelse
     </select>
+    <div>@error('tpsActive')
+        <p id="tpsActive_error_help" class="mt-2 text-xs text-red-600 dark:text-red-400">
+            <span class="font-medium">Maaf!</span> {{ $message }}.
+        </p> @enderror
+    </div>
 </div>

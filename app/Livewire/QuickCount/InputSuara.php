@@ -27,8 +27,37 @@ class InputSuara extends Component
     public $activeStep = 1;
     public $totalStep = 5;
 
+    // #[Url(as: 'kk')]
+    // public $kabKotaActive;
+    // #[Url(as: 'k')]
+    // public $kecamatanActive;
+    #[Url(as: 'kd')]
+    public $kelDesaActive;
+    #[Url(as: 't')]
+    public $tpsActive;
+
+    #[Rule('image|max:3024')]
+    public $photoCheckIn;
+
+    #[Url(as: 'kp')]
+    public $kategoriPemiluActive;
+    #[Url(as: 'd')]
+    public $dapilActive;
+
+    public array $suaraPartai;
+    public array $suaraBacaleg;
+
+    public $jumlahSuaraSah;
+    public $jumlahSuaraTidakSah;
+    public $jumlahDPT;
+    #[Rule('image|max:3024')]
+    public $photoC1;
+    #[Rule('image|max:3024')]
+    public $photoBAHPS;
+
     public function nextStep()
     {
+        $this->validateForm();
         if($this->activeStep < $this->totalStep) {
             $this->activeStep++;
         }
@@ -40,42 +69,70 @@ class InputSuara extends Component
         }
     }
 
+    public function validateForm()
+    {
+        switch ($this->activeStep) {
+            case 1:
+                $validated = $this->validate(
+                    [
+                    'kelDesaActive' => 'required',
+                    'tpsActive' => 'required',
+                ],
+                    [
+                    'kelDesaActive.required' => 'harap pilih Kel/Desa terlebih dahulu',
+                    'tpsActive.required' => 'harap pilih lokasi TPS terlebih dahulu'
+                ]
+                );
+                break;
+            case 2:
+                $validated = $this->validate(
+                    [
+                    'photoCheckIn' => 'required|max:3024',
+                ],
+                    [
+                    'photoCheckIn.required' => 'harap unggah foto bahwa Anda berada di lokasi TPS',
+                    'photoCheckIn.max' => 'foto yang di unggah tidak boleh lebih dari 3 MB',
+                ]
+                );
+                break;
+            case 3:
+                $validated = $this->validate(
+                    [
+                    'kategoriPemiluActive' => 'required',
+                    'dapilActive' => 'required',
+                ],
+                    [
+                    'kategoriPemiluActive.required' => 'harap pilih Ketegori Pemilu terlebih dahulu',
+                    'dapilActive.required' => 'harap pilih DAPIL terlebih dahulu'
+                ]
+                );
+                break;
+            case 4:
+                $validated = $this->validate(
+                    [
+                    'suaraPartai' => 'required',
+                    'suaraBacaleg' => 'required',
+                ],
+                    [
+                'suaraPartai.required' => 'harap isi semua Suara Partai terlebih dahulu',
+                'suaraBacaleg.required' => 'harap isi semua Suara CALEG terlebih dahulu'
+            ]
+                );
+                break;
+            case 5:
+                $validated = $this->validate([
+                    'photoC1' => 'required|max:3024',
+                    'photoBAHPS' => 'required|max:3024',
+                ]);
+                break;
+        }
+    }
+
     // ----- //
-
-    public array $suaraPartai;
-
-    public array $suaraBacaleg;
-    public $jumlahSuaraSah;
-    public $jumlahSuaraTidakSah;
-    public $jumlahDPT;
 
     #[Url(as: 'formStep')]
     public $formStep = 2;
 
-    #[Url(as: 'kp')]
-    public $kategoriPemiluActive;
-
-    #[Url(as: 'd')]
-    public $dapilActive;
-
-    #[Url(as: 'kk')]
-    public $kabKotaActive;
-
-    #[Url(as: 'k')]
-    public $kecamatanActive;
-
-    #[Url(as: 'kd')]
-    public $kelDesaActive;
-
-    #[Url(as: 't')]
-    public $tpsActive;
-
-    #[Rule('image|max:1024')]
-    public $photoCheckIn;
-    #[Rule('image|max:1024')]
-    public $photoC1;
-    #[Rule('image|max:1024')]
-    public $photoBAHPS;
 
     // public function prevStep()
     // {

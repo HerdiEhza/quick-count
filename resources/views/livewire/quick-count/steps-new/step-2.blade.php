@@ -1,8 +1,8 @@
-<div>
+<div class="w-full col-span-2">
     <div class="items-center w-full text-center">
         <div class="flex items-center justify-center">
             <div class="p-4 text-sm w-80">
-                <div class="mb-2 font-bold">Alpine Upload Image Preview</div>
+                <div class="mb-2 font-bold">Unggah foto Anda berada di lokasi TPS</div>
                 <div class="" x-data="previewImage()">
                     <div class="flex flex-col items-center justify-center w-full">
                         <label for="photoCheckIn"
@@ -20,10 +20,15 @@
                                         mengupload</span> foto kehadiran</p>
                                 <p class="text-xs text-gray-500 dark:text-gray-400">PNG, JPG (MAX.800x400px)</p>
                             </div>
-                            <input class="hidden" type="file" name="photoCheckIn" id="photoCheckIn" accept="image/*"
-                                @change="fileChosen">
+                            <input class="hidden" type="file" wire:model="photoCheckIn" name="photoCheckIn"
+                                id="photoCheckIn" accept="image/*" @change="fileChosen">
                         </label>
                         <span x-show="imageUrl">Untuk mengubah foto, tekan kembali foto diatas ini.</span>
+                        <div>@error('photoCheckIn')
+                            <p id="photoCheckIn_error_help" class="mt-2 text-xs text-red-600 dark:text-red-400">
+                                <span class="font-medium">Maaf!</span> {{ $message }}.
+                            </p> @enderror
+                        </div>
                     </div>
                 </div>
             </div>
