@@ -3,9 +3,9 @@
 /public/build
 /public/hot
 /public/storage
-/public/photo_bahps
-/public/photo_c1
-/public/photo_check_in
+/public/photo_bahps/*
+/public/photo_c1/*
+/public/photo_check_in/*
 /storage/*.key
 /vendor
 .env
