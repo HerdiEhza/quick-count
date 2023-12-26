@@ -39,7 +39,7 @@
             </div>
         </div>
     </div>
-    <form action="#">
+    <form wire:submit="submitQC">
         <div class="p-4">
             <div class="grid gap-4 mb-4 sm:grid-cols-2">
                 @switch($activeStep)

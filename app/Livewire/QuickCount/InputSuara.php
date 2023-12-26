@@ -128,6 +128,69 @@ class InputSuara extends Component
         }
     }
 
+    public function resetForm()
+    {
+        $this->activeStep = 1;
+        $this->kelDesaActive = null;
+        $this->tpsActive = null;
+        $this->photoCheckIn = null;
+        $this->kategoriPemiluActive = null;
+        $this->dapilActive = null;
+        $this->suaraPartai = [];
+        $this->suaraBacaleg = [];
+        $this->jumlahSuaraSah = null;
+        $this->jumlahSuaraTidakSah = null;
+        $this->jumlahDPT = null;
+        $this->photoC1 = null;
+        $this->photoBAHPS = null;
+
+        return route('qc.input-suara');
+    }
+
+    public function submitQC()
+    {
+        $savephotoCheckIn = $this->photoCheckIn->storePublicly('photo_check_in', 'store_public');
+        $savephotoC1 = $this->photoC1->storePublicly('photo_c1', 'store_public');
+        $savephotoBAHPS = $this->photoBAHPS->storePublicly('photo_bahps', 'store_public');
+
+        $optimizerChain = OptimizerChainFactory::create();
+
+        $optimizerChain->optimize($savephotoCheckIn);
+        $optimizerChain->optimize($savephotoC1);
+        $optimizerChain->optimize($savephotoBAHPS);
+
+        DataTps::findOrFail($this->tpsActive)
+            ->fotoCheckIn()
+            ->sync([Auth::id() => ['photo_path' => $savephotoCheckIn]]);
+
+        $masterSuara = PerolehanSuara::create([
+            'user_id' => Auth::id(),
+            'suara_sah' => $this->jumlahSuaraSah,
+            'suara_tidak_sah' => $this->jumlahSuaraTidakSah,
+            'jumlah_dpt' => $this->jumlahDPT,
+            'foto_c1' => $savephotoC1,
+            'foto_ba' => $savephotoBAHPS,
+            'data_tps_id' => $this->tpsActive,
+            'data_kategori_pemilu_id' => $this->kategoriPemiluActive,
+            'data_dapil_id' => $this->dapilActive,
+        ]);
+
+        foreach ($this->suaraBacaleg as $key => $value) {
+            $masterSuara->perolehanSuaraBacalegs()->create([
+                'data_bakal_calon_id' => $key,
+                'suara' => $value,
+            ]);
+        }
+        foreach ($this->suaraPartai as $key => $value) {
+            $masterSuara->perolehanSuaraPartais()->create([
+                'data_partai_id' => $key,
+                'suara' => $value,
+            ]);
+        }
+
+        $this->resetForm();
+    }
+
     // ----- //
 
     #[Url(as: 'formStep')]

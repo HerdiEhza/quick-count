@@ -22,24 +22,7 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
 
-        $user = \App\Models\User::factory()
-            ->count(1)
-            ->create([
-                'email' => 'marketing@dku.id',
-                'password' => Hash::make('Mekikau19'),
-            ]);
-        $user = \App\Models\User::factory()
-            ->count(1)
-            ->create([
-                'email' => 'jo@dku.id',
-                'password' => Hash::make('Qwerty2021!'),
-            ]);
-        $user = \App\Models\User::factory()
-            ->count(1)
-            ->create([
-                'email' => 'sani@dku.id',
-                'password' => Hash::make('Qwerty2021!'),
-            ]);
+        $this->call(UserSeeder::class);
 
         $this->call(PermissionsSeeder::class);
 
@@ -53,7 +36,6 @@ class DatabaseSeeder extends Seeder
         $this->call(WilayahKelurahanDesaSeeder::class);
         $this->call(WilayahDapilSeeder::class);
         $this->call(DataTpsSeeder::class);
-        $this->call(UserSeeder::class);
 
         // $this->call(SubandiSeeder::class);
         // $this->call(TimSuksesSeeder::class);
