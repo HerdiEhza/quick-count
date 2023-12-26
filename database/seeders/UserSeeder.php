@@ -14,23 +14,49 @@ class UserSeeder extends Seeder
      */
     public function run(): void
     {
-        $user = \App\Models\User::factory()
+        \App\Models\User::factory()
             ->count(1)
             ->create([
                 'email' => 'marketing@dku.id',
                 'password' => Hash::make('Mekikau19'),
             ]);
-        $user = \App\Models\User::factory()
+        \App\Models\User::factory()
             ->count(1)
             ->create([
                 'email' => 'jo@dku.id',
                 'password' => Hash::make('Qwerty2021!'),
             ]);
-        $user = \App\Models\User::factory()
+        \App\Models\User::factory()
             ->count(1)
             ->create([
                 'email' => 'sani@dku.id',
                 'password' => Hash::make('Qwerty2021!'),
             ]);
+
+        $userPemantaus = User::select(['id'])->get();
+
+        foreach ($userPemantaus as $userPemantau) {
+            // DB::table('user_pemantau_wilayah_kelurahan_desa')->insert([
+            //     'user_id' => $userPemantau['id'],
+            //     'wilayah_kelurahan_desa_id' => rand(1, 1000),
+            // ]);
+            // DB::table('user_pemantau_wilayah_kelurahan_desa')->insert([
+            //     'user_id' => $userPemantau['id'],
+            //     'wilayah_kelurahan_desa_id' => rand(1001, 2000),
+            // ]);
+            // DB::table('user_pemantau_wilayah_kelurahan_desa')->insert([
+            //     'user_id' => $userPemantau['id'],
+            //     'wilayah_kelurahan_desa_id' => rand(2001, 2100),
+            // ]);
+            // DB::table('user_pemantau_wilayah_kelurahan_desa')->insert([
+            //     'user_id' => $userPemantau['id'],
+            //     'wilayah_kelurahan_desa_id' => rand(2101, 2140),
+            // ]);
+
+            DB::table('user_pemantau_wilayah_kelurahan_desa')->insert([
+                'user_id' => $userPemantau['id'],
+                'wilayah_kelurahan_desa_id' => rand(155, 157),
+            ]);
+        }
     }
 }

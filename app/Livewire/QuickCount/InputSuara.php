@@ -36,7 +36,7 @@ class InputSuara extends Component
     #[Url(as: 't')]
     public $tpsActive;
 
-    #[Rule('image|max:3024')]
+    #[Rule('image|max:5024')]
     public $photoCheckIn;
 
     #[Url(as: 'kp')]
@@ -50,9 +50,9 @@ class InputSuara extends Component
     public $jumlahSuaraSah;
     public $jumlahSuaraTidakSah;
     public $jumlahDPT;
-    #[Rule('image|max:3024')]
+    #[Rule('image|max:5024')]
     public $photoC1;
-    #[Rule('image|max:3024')]
+    #[Rule('image|max:5024')]
     public $photoBAHPS;
 
     public function nextStep()
@@ -87,7 +87,7 @@ class InputSuara extends Component
             case 2:
                 $validated = $this->validate(
                     [
-                    'photoCheckIn' => 'required|max:3024',
+                    'photoCheckIn' => 'required|max:5024',
                 ],
                     [
                     'photoCheckIn.required' => 'harap unggah foto bahwa Anda berada di lokasi TPS',
@@ -121,8 +121,8 @@ class InputSuara extends Component
                 break;
             case 5:
                 $validated = $this->validate([
-                    'photoC1' => 'required|max:3024',
-                    'photoBAHPS' => 'required|max:3024',
+                    'photoC1' => 'required|max:5024',
+                    'photoBAHPS' => 'required|max:5024',
                 ]);
                 break;
         }
@@ -144,7 +144,7 @@ class InputSuara extends Component
         $this->photoC1 = null;
         $this->photoBAHPS = null;
 
-        return route('qc.input-suara');
+        return redirect('/admin/quick-count/input-suara');
     }
 
     public function submitQC()

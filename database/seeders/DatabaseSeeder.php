@@ -22,7 +22,6 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
 
-        $this->call(UserSeeder::class);
 
         $this->call(PermissionsSeeder::class);
 
@@ -36,6 +35,8 @@ class DatabaseSeeder extends Seeder
         $this->call(WilayahKelurahanDesaSeeder::class);
         $this->call(WilayahDapilSeeder::class);
         $this->call(DataTpsSeeder::class);
+
+        $this->call(UserSeeder::class);
 
         // $this->call(SubandiSeeder::class);
         // $this->call(TimSuksesSeeder::class);

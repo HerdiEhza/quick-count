@@ -13,12 +13,12 @@ return new class () extends Migration {
         Schema::create('user_pemantau_wilayah_kelurahan_desa', function (Blueprint $table) {
             $table->foreignId('user_id')->nullable()->constrained(
                 table: 'users',
-                indexName: 'pemantau_user_id'
+                indexName: 'user_pemantau_user_id'
             )->cascadeOnDelete()->cascadeOnUpdate();
 
             $table->foreignId('wilayah_kelurahan_desa_id')->nullable()->constrained(
-                table: 'data_tps',
-                indexName: 'pemantau_wilayah_kelurahan_desa_id'
+                table: 'wilayah_kelurahan_desas',
+                indexName: 'user_pemantau_wilayah_kelurahan_desa_id'
             )->cascadeOnDelete()->cascadeOnUpdate();
 
             $table->primary(['user_id', 'wilayah_kelurahan_desa_id'], 'user_pemantau_wilayah_kelurahan_desa_data_user_id_wilayah_kelurahan_desa_id_primary');
