@@ -2,6 +2,22 @@
 
 return [
 
+    'quick_count' => [
+        'bacaleg' => 127, // Ustad Miftah
+        'dapil' => 1, // Ustad  Miftah
+        'kategori_pemilu' => 2, // Ustad  Miftah
+
+        // 'bacaleg' => 258, // Agung Prasetyo
+        // 'dapil' => 3, // Agung Prasetyo
+        // 'kategori_pemilu' => 3,
+
+        // 'bacaleg' => 764, // Subandi
+        // 'dapil' => 75, // Subandi
+        // 'kategori_pemilu' => 4, // Subandi
+
+        //
+    ],
+
     'timses' => [
         // 'bacaleg' => 127, // Ustad Miftah
         // 'dapil' => 1, // Ustad  Miftah

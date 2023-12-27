@@ -1,5 +1,6 @@
 <?php
 
+use Livewire\Volt\Volt;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,6 +17,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/boycot', function () {
     return view('boycot');
 });
+
+Volt::route('/dashboard', 'test.dashboard')
+        ->name('dashboard');
 
 // Route::view('/', 'welcome');
 
@@ -59,9 +63,9 @@ Route::prefix('admin')->group(function () {
         ->middleware(['auth'])
         ->name('timses.input-relawan');
 
-    Route::view('dashboard', 'dashboard')
-        ->middleware(['auth', 'verified'])
-        ->name('dashboard');
+    // Route::view('dashboard', 'dashboard')
+    //     ->middleware(['auth', 'verified'])
+    //     ->name('dashboard');
 
     Route::view('profile', 'profile')
         ->middleware(['auth'])

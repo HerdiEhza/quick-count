@@ -30,11 +30,11 @@ class WilayahKelurahanDesaSeeder extends Seeder
             ]);
         }
 
-        WilayahKelurahanDesa::create([
-            'nama_kelurahan_desa' => 'test kelurahan desa',
-            'jumlah_tps' => null,
-            'jumlah_dpt' => null,
-            'wilayah_kecamatan_id' => 1,
-        ]);
+        // WilayahKelurahanDesa::create([
+        //     'nama_kelurahan_desa' => 'test kelurahan desa',
+        //     'jumlah_tps' => null,
+        //     'jumlah_dpt' => null,
+        //     'wilayah_kecamatan_id' => 1,
+        // ]);
     }
 }
