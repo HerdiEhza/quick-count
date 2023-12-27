@@ -77,10 +77,10 @@ new #[Layout('layouts.app')] class extends Component
         </div>
     </button>
 
+    @foreach ($dapils->kabupatenKota as $kabKota)
+    @foreach ($kabKota->wilayahKecamatans as $kecamatan)
+    @foreach ($kecamatan->wilayahKelurahanDesas as $kelDesa)
     <div class="relative mt-8 overflow-x-auto shadow-md sm:rounded-lg">
-        @foreach ($dapils->kabupatenKota as $kabKota)
-        @foreach ($kabKota->wilayahKecamatans as $kecamatan)
-        @foreach ($kecamatan->wilayahKelurahanDesas as $kelDesa)
         <table class="w-full text-sm text-left text-gray-500 rtl:text-right dark:text-gray-400">
             <caption
                 class="p-5 text-lg font-semibold text-left text-gray-900 bg-white rtl:text-right dark:text-white dark:bg-gray-800">
@@ -145,9 +145,9 @@ new #[Layout('layouts.app')] class extends Component
                 @endforeach
             </tbody>
         </table>
-        @endforeach
-        @endforeach
-        @endforeach
     </div>
+    @endforeach
+    @endforeach
+    @endforeach
 
 </div>
