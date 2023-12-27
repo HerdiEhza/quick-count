@@ -18,9 +18,6 @@ Route::get('/boycot', function () {
     return view('boycot');
 });
 
-Volt::route('/dashboard', 'test.dashboard')
-        ->name('dashboard');
-
 // Route::view('/', 'welcome');
 
 Route::get('/', \App\Livewire\LandingPage\Index::class)->name('landing-page.index');
@@ -63,6 +60,8 @@ Route::prefix('admin')->group(function () {
         ->middleware(['auth'])
         ->name('timses.input-relawan');
 
+    Volt::route('/dashboard', 'test.dashboard')
+    ->name('dashboard');
     // Route::view('dashboard', 'dashboard')
     //     ->middleware(['auth', 'verified'])
     //     ->name('dashboard');
