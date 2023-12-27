@@ -1,10 +1,9 @@
 <?php
 
-use App\Livewire\Forms\LoginForm;
-use App\Providers\RouteServiceProvider;
-use Illuminate\Support\Facades\Session;
 use Livewire\Attributes\Layout;
 use Livewire\Volt\Component;
+use App\Models\WilayahKecamatan;
+use App\Models\WilayahKelurahanDesa;
 use App\Models\DataDapil;
 use Illuminate\Contracts\Database\Eloquent\Builder;
 use App\Exports\PerolehanSuaraExport;
@@ -12,18 +11,28 @@ use App\Exports\PerKabKotaExport;
 
 new #[Layout('layouts.app')] class extends Component
 {
+    public $kabupatenKotas;
+    public $kecamatans;
+    public $kelurahanDesas;
+
+    public $kabKotaActive;
+    public $kecamatanActive;
+    public $kelDesaActive;
+
     public $dapils;
-    /**
-     * Mount the component.
-     */
-    public function mount()
+
+    public function updatedKabKotaActive()
     {
+        $this->kecamatans = WilayahKecamatan::where('wilayah_kabupaten_kota_id', $this->kabKotaActive)->get();
+
         $dapilActive = Config::get('orchid_opinion.quick_count.dapil');
         $calegActive = Config::get('orchid_opinion.quick_count.bacaleg');
 
         $this->dapils = DataDapil::
                             withOnly([
-                                'kabupatenKota',
+                                'kabupatenKota' => function (Builder $query) {
+                                    $query->where('id', $this->kabKotaActive);
+                                },
                                 'kabupatenKota.wilayahKecamatans',
                                 'kabupatenKota.wilayahKecamatans.wilayahKelurahanDesas',
                                 'kabupatenKota.wilayahKecamatans.wilayahKelurahanDesas.allDataTps',
@@ -37,6 +46,70 @@ new #[Layout('layouts.app')] class extends Component
                                 },
                             ])
                             ->findOrFail($dapilActive);
+    }
+    public function updatedKecamatanActive()
+    {
+        $this->kelurahanDesas = WilayahKelurahanDesa::where('wilayah_kecamatan_id', $this->kecamatanActive)->get();
+
+        $dapilActive = Config::get('orchid_opinion.quick_count.dapil');
+        $calegActive = Config::get('orchid_opinion.quick_count.bacaleg');
+
+        $this->dapils = DataDapil::
+                            withOnly([
+                                'kabupatenKota' => function (Builder $query) {
+                                    $query->where('id', $this->kabKotaActive);
+                                },
+                                'kabupatenKota.wilayahKecamatans' => function (Builder $query) {
+                                    $query->where('id', $this->kecamatanActive);
+                                },
+                                'kabupatenKota.wilayahKecamatans.wilayahKelurahanDesas',
+                                'kabupatenKota.wilayahKecamatans.wilayahKelurahanDesas.allDataTps',
+                                'kabupatenKota.wilayahKecamatans.wilayahKelurahanDesas.allDataTps.perolehanSuaras' => function (Builder $query) use ($calegActive) {
+                                    $query->select(['id', 'suara_sah', 'suara_tidak_sah', 'jumlah_dpt', 'data_tps_id'])
+                                            ->with([
+                                                'perolehanSuaraBacalegs' => function (Builder $query) use ($calegActive) {
+                                                    $query->where('data_bakal_calon_id', $calegActive);
+                                                },
+                                            ]);
+                                },
+                            ])
+                            ->findOrFail($dapilActive);
+    }
+
+    public function updatedKelDesaActive()
+    {
+        $dapilActive = Config::get('orchid_opinion.quick_count.dapil');
+        $calegActive = Config::get('orchid_opinion.quick_count.bacaleg');
+
+        $this->dapils = DataDapil::
+                            withOnly([
+                                'kabupatenKota' => function (Builder $query) {
+                                    $query->where('id', $this->kabKotaActive);
+                                },
+                                'kabupatenKota.wilayahKecamatans' => function (Builder $query) {
+                                    $query->where('id', $this->kecamatanActive);
+                                },
+                                'kabupatenKota.wilayahKecamatans.wilayahKelurahanDesas' => function (Builder $query) {
+                                    $query->where('id', $this->kelDesaActive);
+                                },
+                                'kabupatenKota.wilayahKecamatans.wilayahKelurahanDesas.allDataTps',
+                                'kabupatenKota.wilayahKecamatans.wilayahKelurahanDesas.allDataTps.perolehanSuaras' => function (Builder $query) use ($calegActive) {
+                                    $query->select(['id', 'suara_sah', 'suara_tidak_sah', 'jumlah_dpt', 'data_tps_id'])
+                                            ->with([
+                                                'perolehanSuaraBacalegs' => function (Builder $query) use ($calegActive) {
+                                                    $query->where('data_bakal_calon_id', $calegActive);
+                                                },
+                                            ]);
+                                },
+                            ])
+                            ->findOrFail($dapilActive);
+    }
+
+    public function mount()
+    {
+        $dapilActive = Config::get('orchid_opinion.quick_count.dapil');
+
+        $this->kabupatenKotas = DataDapil::withOnly('kabupatenKota')->findOrFail($dapilActive);
     }
 
     public function export() 
@@ -57,7 +130,7 @@ new #[Layout('layouts.app')] class extends Component
                 <path stroke-linecap="round" stroke-linejoin="round"
                     d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" />
             </svg>
-            <span>Download Excel</span>
+            <span>Download All Data</span>
         </div>
 
         <div wire:loading wire:target="export" class="flex items-center">
@@ -73,9 +146,55 @@ new #[Layout('layouts.app')] class extends Component
                 </svg>
                 <span class="sr-only">Loading...</span>
             </div>
-            {{-- <span>Preparing your file</span> --}}
         </div>
     </button>
+
+    <div class="grid grid-cols-1 mt-10 gap-x-6 gap-y-8 sm:grid-cols-6">
+        <div class="sm:col-span-2 sm:col-start-1">
+            <label class="block text-sm font-medium leading-6 text-gray-900">Kabupaten/Kota</label>
+            <div class="mt-2">
+                <select wire:model.live="kabKotaActive"
+                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                    <option selected>Pilih Kabupaten/Kota</option>
+                    @foreach ($kabupatenKotas->kabupatenKota as $selectKabKota)
+                    <option value="{{ $selectKabKota->id }}">{{ $selectKabKota->nama_kabupaten_kota }}</option>
+                    @endforeach
+                </select>
+            </div>
+        </div>
+
+        <div class="sm:col-span-2">
+            <label class="block text-sm font-medium leading-6 text-gray-900">Kecamatan</label>
+            <div class="mt-2">
+                <select wire:model.live="kecamatanActive"
+                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                    <option selected>Pilih Kabupaten/Kota Dulu</option>
+                    @if ($kecamatans)
+                    @foreach ($kecamatans as $selectKecamatan)
+                    <option value="{{ $selectKecamatan->id }}">{{ $selectKecamatan->nama_kecamatan }}</option>
+                    @endforeach
+                    @endif
+                </select>
+            </div>
+        </div>
+
+        <div class="sm:col-span-2">
+            <label class="block text-sm font-medium leading-6 text-gray-900">Kelurahan/Desa</label>
+            <div class="mt-2">
+                <select wire:model.live="kelDesaActive"
+                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                    <option selected>Pilih Kecamatan Dulu</option>
+                    @if ($kelurahanDesas)
+                    @foreach ($kelurahanDesas as $selectKelDesa)
+                    <option value="{{ $selectKelDesa->id }}">{{ $selectKelDesa->nama_kelurahan_desa }}</option>
+                    @endforeach
+                    @endif
+                </select>
+            </div>
+        </div>
+    </div>
+
+    @if ($dapils)
 
     @foreach ($dapils->kabupatenKota as $kabKota)
     @foreach ($kabKota->wilayahKecamatans as $kecamatan)
@@ -149,5 +268,7 @@ new #[Layout('layouts.app')] class extends Component
     @endforeach
     @endforeach
     @endforeach
+
+    @endif
 
 </div>
