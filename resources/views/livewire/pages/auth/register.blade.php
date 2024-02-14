@@ -24,7 +24,7 @@ new #[Layout('layouts.guest')] class extends Component
      */
     public function register(): void
     {
-        $kabKota = WilayahKabupatenKota::select(['id','nama_kabupaten_kota'])->get();
+        $kabKotas = WilayahKabupatenKota::select(['id','nama_kabupaten_kota'])->get();
 
         $validated = $this->validate([
             'name' => ['required', 'string', 'max:255'],
