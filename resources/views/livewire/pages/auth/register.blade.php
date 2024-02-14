@@ -21,7 +21,7 @@ new #[Layout('layouts.guest')] class extends Component
 
     public function mount()
     {
-        $kabKotas = WilayahKabupatenKota::select(['id','nama_kabupaten_kota'])->get();
+        $this->kabKotas = WilayahKabupatenKota::select(['id','nama_kabupaten_kota'])->get();
     }
 
     /**
