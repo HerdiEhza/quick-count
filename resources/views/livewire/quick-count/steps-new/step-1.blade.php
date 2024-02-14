@@ -2,7 +2,7 @@
     <label for="kab/kota" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
         Harap pilih kabupaten Kota
     </label>
-    <select id="kab/kota" wire:model.live="kelDesaActive"
+    <select id="kab/kota" wire:model.live="kabKotaActive"
         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
         <option selected>Harap pilih kab/kota</option>
         @forelse ($kabKotas as $kabKota)
