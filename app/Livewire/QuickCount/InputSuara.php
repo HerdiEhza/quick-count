@@ -27,10 +27,10 @@ class InputSuara extends Component
     public $activeStep = 1;
     public $totalStep = 5;
 
-    // #[Url(as: 'kk')]
-    // public $kabKotaActive;
-    // #[Url(as: 'k')]
-    // public $kecamatanActive;
+    #[Url(as: 'kk')]
+    public $kabKotaActive;
+    #[Url(as: 'k')]
+    public $kecamatanActive;
     #[Url(as: 'kd')]
     public $kelDesaActive;
     #[Url(as: 't')]
@@ -292,8 +292,8 @@ class InputSuara extends Component
             ->get();
 
         return view('livewire.quick-count.input-suara', [
-            // 'kabKotas' => $kabKotas,
-            // 'kecamatans' => $kecamatans,
+            'kabKotas' => $kabKotas,
+            'kecamatans' => $kecamatans,
             'kelDesas' => $kelDesas,
             'tps' => $tps,
             'kategoriPemilus' => $kategoriPemilus,

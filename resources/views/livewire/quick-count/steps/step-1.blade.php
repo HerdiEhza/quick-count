@@ -1,6 +1,6 @@
 <div class="mb-5">
     <div class="flex flex-col space-y-2">
-        {{-- <select wire:model.live="kabKotaActive" aria-placeholder="Pilih Kabupaten Kota" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+        <select wire:model.live="kabKotaActive" aria-placeholder="Pilih Kabupaten Kota" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
             <option selected>Harap Pilih Kabupaten Kota</option>
             @forelse ($kabKotas as $kabKota)
                 <option value="{{ $kabKota->id }}">{{ $kabKota->nama_kabupaten_kota }}</option>
@@ -18,7 +18,7 @@
             <option>Tidak ada Kecamatan</option>
             @endforelse
             @endif
-        </select> --}}
+        </select>
         <select wire:model.live="kelDesaActive" aria-placeholder="Pilih Kelurahan Desa"
             class="bg-white border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
             <option selected>Harap Pilih Kelurahan Desa</option>
