@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\User;
+use App\Models\WilayahKabupatenKota;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Support\Facades\Auth;
@@ -23,7 +24,7 @@ new #[Layout('layouts.guest')] class extends Component
      */
     public function register(): void
     {
-        $kabKota = kabupatenKota::select(['id','nama_kabupaten_kota'])->get();
+        $kabKota = WilayahKabupatenKota::select(['id','nama_kabupaten_kota'])->get();
 
         $validated = $this->validate([
             'name' => ['required', 'string', 'max:255'],
@@ -87,7 +88,12 @@ new #[Layout('layouts.guest')] class extends Component
             <select id="kab/kota" wire:model.live="tps_kab_kota_id"
                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                 <option selected>Harap pilih kab/kota</option>
-                
+                @forelse ($kabKotas as $kabKota)
+                <option value="{{ $kabKota->id }}">{{ $kabKota->nama_kabupaten_kota }}
+                </option>
+                @empty
+                <option>Tidak ada Kabupaten Kota</option>
+                @endforelse
             </select>
 
             <x-input-error :messages="$errors->get('tps_kab_kota_id')" class="mt-2" />
