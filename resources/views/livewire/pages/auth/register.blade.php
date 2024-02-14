@@ -17,7 +17,7 @@ new #[Layout('layouts.guest')] class extends Component
     public string $password = '';
     public string $password_confirmation = '';
     public $tps_kab_kota_id;
-    public $kabKota;
+    public $kabKotas;
 
     /**
      * Handle an incoming registration request.
