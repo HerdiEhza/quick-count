@@ -29,7 +29,7 @@ new #[Layout('layouts.guest')] class extends Component
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
             'password' => ['required', 'string', 'confirmed', Rules\Password::defaults()],
-            'tps_kab_kota_id' => ['required'],
+            'kabKotaActive' => ['required'],
         ]);
 
         $validated['password'] = Hash::make($validated['password']);
