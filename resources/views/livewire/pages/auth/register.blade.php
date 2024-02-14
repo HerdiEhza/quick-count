@@ -84,7 +84,11 @@ new #[Layout('layouts.guest')] class extends Component
         <div class="mt-4">
             <x-input-label for="kab/kota" :value="__('Pilih Kabupaten Kota')" />
 
-           
+            <select id="kab/kota" wire:model.live="tps_kab_kota_id"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                <option selected>Harap pilih kab/kota</option>
+                
+            </select>
 
             <x-input-error :messages="$errors->get('tps_kab_kota_id')" class="mt-2" />
         </div>
