@@ -15,21 +15,21 @@ new #[Layout('layouts.guest')] class extends Component
     public string $email = '';
     public string $password = '';
     public string $password_confirmation = '';
-    public $kabKotaActive;
-    public $kabKotas;
+    public $tps_kab_kota_id;
+    public $kabKota;
 
     /**
      * Handle an incoming registration request.
      */
     public function register(): void
     {
-        $kabKotas = kabupatenKota::select(['id','nama_kabupaten_kota'])->get();
+        $kabKota = kabupatenKota::select(['id','nama_kabupaten_kota'])->get();
 
         $validated = $this->validate([
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
             'password' => ['required', 'string', 'confirmed', Rules\Password::defaults()],
-            'kabKotaActive' => ['required'],
+            'tps_kab_kota_id' => ['required'],
         ]);
 
         $validated['password'] = Hash::make($validated['password']);
@@ -82,9 +82,9 @@ new #[Layout('layouts.guest')] class extends Component
         </div>
 
         <div class="mt-4">
-            <x-input-label for="kab/kota" :value="__('Pilih Kabupaten / Kota')" />
+            <x-input-label for="kab/kota" :value="__('Pilih Kabupaten Kota')" />
 
-            <select id="kab/kota" wire:model.live="kabKotaActive"
+            <select id="kab/kota" wire:model.live="tps_kab_kota_id"
                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                 <option selected>Harap pilih kab/kota</option>
                 @forelse ($kabKotas as $kabKota)
@@ -95,7 +95,7 @@ new #[Layout('layouts.guest')] class extends Component
                 @endforelse
             </select>
 
-            <x-input-error :messages="$errors->get('kabKotaActive')" class="mt-2" />
+            <x-input-error :messages="$errors->get('tps_kab_kota_id')" class="mt-2" />
         </div>
 
         <div class="flex items-center justify-end mt-4">
