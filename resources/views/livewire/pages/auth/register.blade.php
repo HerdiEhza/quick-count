@@ -21,10 +21,13 @@ new #[Layout('layouts.guest')] class extends Component
      */
     public function register(): void
     {
+        $kabKota = kabupatenKota::select(['id','nama_kabupaten_kota'])->get();
+
         $validated = $this->validate([
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
             'password' => ['required', 'string', 'confirmed', Rules\Password::defaults()],
+            'tps_kab_kota_id' => ['required'],
         ]);
 
         $validated['password'] = Hash::make($validated['password']);
@@ -72,6 +75,28 @@ new #[Layout('layouts.guest')] class extends Component
             <x-text-input wire:model="password_confirmation" id="password_confirmation" class="block mt-1 w-full"
                             type="password"
                             name="password_confirmation" required autocomplete="new-password" />
+
+            <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
+        </div>
+
+        <div class="mt-4">
+            <x-input-label for="password_confirmation" :value="__('Confirm Password')" />
+
+            <select id="kab/kota" wire:model.live="kabKotaActive"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                <option selected>Harap pilih kab/kota</option>
+                @forelse ($kabKotas as $kabKota)
+                <option value="{{ $kabKota->id }}">{{ $kabKota->nama_kabupaten_kota }}
+                </option>
+                @empty
+                <option>Tidak ada Kabupaten Kota</option>
+                @endforelse
+            </select>
+            <div>@error('kabKotaActive')
+                <p id="kabKotaActive_error_help" class="mt-2 text-xs text-red-600 dark:text-red-400">
+                    <span class="font-medium">Maaf!</span> {{ $message }}.
+                </p> @enderror
+            </div>
 
             <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
         </div>

@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('foto_check_in')->nullable();
             $table->string('timses_ring')->nullable();
             $table->unsignedBigInteger('timses_leader_id')->nullable();
+            $table->unsignedBigInteger('tps_kab_kota_id')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

@@ -14,9 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/boycot', function () {
-    return view('boycot');
-});
+// Route::get('/boycot', function () {
+//     return view('boycot');
+// });
 
 // Route::view('/', 'welcome');
 
@@ -25,6 +25,7 @@ Route::get('/', \App\Livewire\LandingPage\Index::class)->name('landing-page.inde
 Route::view('/multi-step', 'multi-step');
 Route::view('/dynamic-form', 'dynamic-form');
 Route::redirect('/login', '/admin/login');
+Route::redirect('/register', '/admin/register');
 Route::prefix('admin')->group(function () {
     Route::get('/quick-count/dashboard', \App\Livewire\Dashboard::class)
         ->middleware(['auth'])

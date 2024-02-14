@@ -18,6 +18,12 @@ return new class extends Migration
                 ->on('users')
                 ->onUpdate('CASCADE')
                 ->onDelete('CASCADE');
+            $table
+                ->foreign('tps_kab_kota_id')
+                ->references('id')
+                ->on('wilayah_kabupaten_kotas')
+                ->onUpdate('CASCADE')
+                ->onDelete('CASCADE');
         });
     }
 
@@ -28,6 +34,7 @@ return new class extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->dropForeign(['timses_leader_id']);
+            $table->dropForeign(['tps_kab_kota_id']);
         });
     }
 };

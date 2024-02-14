@@ -31,6 +31,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'tps_kab_kota_id',
     ];
 
     /**
@@ -52,6 +53,11 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function tpsKabKota(): BelongsToMany
+    {
+        return $this->belongsToMany(WilayahKabupatenKota::class);
+    }
 
     public function fotoCheckIn(): BelongsToMany
     {
