@@ -19,13 +19,16 @@ new #[Layout('layouts.guest')] class extends Component
     public $tps_kab_kota_id;
     public $kabKotas;
 
+    public function render()
+    {
+        $kabKotas = WilayahKabupatenKota::select(['id','nama_kabupaten_kota'])->get();
+    }
+
     /**
      * Handle an incoming registration request.
      */
     public function register(): void
     {
-        $kabKotas = WilayahKabupatenKota::select(['id','nama_kabupaten_kota'])->get();
-
         $validated = $this->validate([
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
