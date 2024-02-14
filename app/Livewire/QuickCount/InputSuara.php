@@ -258,15 +258,15 @@ class InputSuara extends Component
 
     public function render()
     {
-        // $kabKotas = WilayahKabupatenKota::select(['id', 'nama_kabupaten_kota'])->get();
-        // $kecamatans = WilayahKecamatan::select(['id', 'nama_kecamatan'])->where('wilayah_kabupaten_kota_id', $this->kabKotaActive)->get();
+        $kabKotas = WilayahKabupatenKota::select(['id', 'nama_kabupaten_kota'])->get();
+        $kecamatans = WilayahKecamatan::select(['id', 'nama_kecamatan'])->where('wilayah_kabupaten_kota_id', $this->kabKotaActive)->get();
         $kelDesas = WilayahKelurahanDesa::select(['id', 'nama_kelurahan_desa'])
-            ->whereRelation('userPemantau', 'user_id', Auth::id())
+            // ->whereRelation('userPemantau', 'user_id', Auth::id())
             // ->withOnly([
             //     'wilayahKecamatan',
             //     'wilayahKecamatan.wilayahKabupatenKota',
             // ])
-            // ->where('wilayah_kecamatan_id', $this->kecamatanActive)
+            ->where('wilayah_kecamatan_id', $this->kecamatanActive)
             ->get();
         $tps = DataTps::select(['id', 'nama_tps'])
             ->where('wilayah_kelurahan_desa_id', $this->kelDesaActive)
